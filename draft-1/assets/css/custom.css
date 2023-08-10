@@ -1,12 +1,35 @@
-.swiper-button-next, .swiper-button-prev {
-            background-color: white;
-            padding: 8px 16px;
-            border-radius: 100%;
-            border: 2px solid rgb(136, 153, 5);
-            color: red;
-          }
-.swiper-pagination-bullet{
-            width: 40px;
-            height: 40px;
-            background-color: red;
-          }
+.intro-logo{
+  /* position: absolute; */
+    /* width: 25%; */
+    height: 100%;
+    /* max-height: 80vh; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    transition: all 0.5s ease;
+    animation: fadeout 10s linear;
+    /* transform-origin: center center; */
+    backdrop-filter: blur(5px); 
+    border-radius: 50%; 
+    padding: 10px;
+    border: 6px white solid;
+}
+@keyframes fadeout {
+  0%   {
+    scale: 0.7;
+  }
+  100%  {
+    scale: 1;
+  }
+}
+.intro-logo-div{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
