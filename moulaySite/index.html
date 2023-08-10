@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hôtel Akid Home Page</title>
+
+    <!-- custom CSS should come after Bootstrap CSS -->
+    <link rel="stylesheet" href="./custom.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary py-2" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand hotel-font font-weight-bold" href="#">Hôtel Akid</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Chambres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Restaurants</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Salle Séminaires</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              
+            </ul>
+            
+            <button class="btn btn-primary ms-3" type="submit">Réserver Une Chambre</button>
+          </div>
+        </div>
+      </nav>
+
+<section class="slider-section ss-style-triangles">
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="images/slider1.jpg" alt="">
+          </div>
+          <div class="swiper-slide"> <img src="images/slider2.jpg" alt=""></div>
+          
+          
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+
+    <div class="slider">
+        
+    </div>
+</section>
+
+
+<section class="section py-5 bg-gray">
+    <div class="container">
+        <h2 class="section-title hotel-font text-center" data-aos="fade-in">
+            Hôtel Akid
+        </h2>
+
+
+        <div style="height: 48px;"></div>
+
+        <div class="row align-items-center">
+            <div class="col-md-6" data-aos="fade-in">
+                <img src="images/section1.jpg" alt="">
+            </div>
+
+            <div class="col-md-6 p-5" data-aos="fade-in">
+                <h3 class="section-subtitle">Titre Section</h3>
+                
+                <div class="section-small-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellendus nemo qui totam possimus nisi, accusantium maiores dolore distinctio architecto.</p>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero natus nisi, omnis architecto impedit voluptate nihil nesciunt voluptatibus voluptatum quidem nostrum esse fugiat ullam suscipit incidunt autem optio quas voluptas.</p>
+    
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores non quia rem eos neque facere error nisi, veritatis temporibus. Odit dicta quaerat eius aliquam voluptatem labore dolorum suscipit optio nam. Perferendis ducimus doloremque sit at beatae mollitia, sapiente laborum repellat.</p>
+
+                    <div class="mt-4">
+                        <a href="" class="btn btn-primary me-2">Voir la Vidéo</a>
+                        <a href="" class="btn btn-primary">En Savoir Plus</a>
+                    </div>
+
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section py-5">
+    <div class="container">
+        <h2 class="section-title hotel-font text-center" data-aos="slide-up">
+            Chambres & Suites
+        </h2>
+
+        <p class="section-text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+
+        <div class="container d-flex justify-items-center w-100" style="gap: 2rem;">
+            <div class="section-item" data-aos="fade-in">
+                <a href="">
+                    <img src="images/room1.jpg" alt="" width="400" class="mb-4">
+                </a>
+                
+                <div class="text-center">
+                    <h4 class="fw-bold">Chambre à Coucher</h4>
+                    <p class="text-primary text-uppercase" style="font-size: 20px;">9000 DA / Par Nuit</p>
+                </div>
+            </div>
+
+            <div class="section-item" data-aos="fade-in">
+                <a href="">
+                    <img src="images/room2.jpg" alt="" width="400" class="mb-4">
+                </a>
+                
+                <div class="text-center">
+                    <h4 class="fw-bold">Chambre Famille</h4>
+                    <p class="text-primary text-uppercase" style="font-size: 20px;">13000 DA / Par Nuit</p>
+                </div>
+            </div>
+
+            <div class="section-item">
+                <a href="">
+                    <img src="images/room3.jpg" alt="" width="400" class="mb-4">
+                </a>
+                
+                <div class="text-center" data-aos="fade-in">
+                    <h4 class="fw-bold">Chambre Royale</h4>
+                    <p class="text-primary text-uppercase" style="font-size: 20px;">25000 DA / Par Nuit</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+<script src="app.js"></script>
+</body>
+</html>
