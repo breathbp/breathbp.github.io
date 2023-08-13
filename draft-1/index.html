@@ -1,141 +1,139 @@
-<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AKID HOTEL</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-<link rel="stylesheet" href="assets/css/custom.css">
-
+    <link rel="stylesheet" href="assets/css/bee_slide.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>BeeSlider</title>
 </head>
 
-<body style="background-color: black;">
-  <!-- <div style="height: 60px; width: 100vw; position: fixed; background-color: #ffd9007e; backdrop-filter: blur(5px); z-index: 9999;">
-        <div class="d-flex align-items-center justify-content-between"> -->
-  <!-- <div class="p-2" style="color: white; font-size: 1.8rem; font-weight: 600;">AKID HOTEL</div> -->
-  <!-- </div>
-    </div> -->
-  <!-- Slider main container -->
-  <div class="intro-logo-div" id="logo-div">
-    <img class="intro-logo" src="assets/images/logo.webp" alt="logo"  style="">
-  </div>
-  <div class="intro-container" id="introDiv" style="width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: 2;">
-    <video autoplay muted onended="introEnd()">
-      <source src="/assets/images/vid2.mp4" />
-    </video>
-    <!-- <video id="intro" src="assets/images/vid2.mp4"  autoplay onended="introEnd()"></video> -->
-  </div>
- 
-  <div id="slider" class="swiper" style="height: 100vh; width: 100vw; opacity: 0;">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide" style="background-image: url('assets/images/chambres/1.jpg');"></div>
-      <div class="swiper-slide" style="background-image: url('assets/images/chambres/2.jpg');"></div>
-      <div class="swiper-slide" style="background-image: url('assets/images/chambres/3.jpg');"></div>
-      <div class="swiper-slide" style="background-image: url('assets/images/chambres/4.jpg');"></div>
-      <div class="swiper-slide" style="background-image: url('assets/images/chambres/5.jpg');"></div>
-      ...
+<body style="background-image: url(assets/images/akidhotel.png); background-position: center;
+background-size: contain;">
+    <div class="d-flex justify-content-between" id="nav-bar" style="background-color: rgb(255 255 255 / 14%); width: 100vw; position: fixed; z-index: 4; opacity: 0; backdrop-filter: blur(10px);">
+        <a href="#" style="font-family: 'Great Vibes', cursive; color: white; font-size: 2rem; margin: 0; padding: 20px;">
+            Hotel Akid
+        </a>
+        <div class="d-flex align-items-center" style="margin-right: 10px;">
+            <button type="button" class="btn btn-outline-warning" style="font-family: 'Great Vibes'; font-size: 1.5rem;">Réservation</button>
+        </div>
+        
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
+    <div class="intro-logo-div" id="logo-div">
 
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+        <img class="intro-logo" src="assets/images/logo.webp" alt="logo" style="">
+    </div>
+    <div class="intro-container" id="introDiv"
+        style="width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: 2;">
+        <video autoplay muted onended="introEnd()" preload="auto">
+            <source src="/assets/images/vid2.mp4" />
+        </video>
+        <!-- <video id="intro" src="assets/images/vid2.mp4"  autoplay onended="introEnd()"></video> -->
+    </div>
 
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+
+    <div id="slider"
+        style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw;">
+        <div class="beeslide-container">
+            <img class="beeSlides beeslide-move-right" src="assets/images/chambres/11.jpg" loading="lazy">
+            <img class="beeSlides beeslide-move-right" src="assets/images/chambres/13.jpg" loading="lazy">
+            <img class="beeSlides beeslide-move-right" src="assets/images/chambres/6.jpg" loading="lazy">
+            <img class="beeSlides beeslide-move-right" src="assets/images/chambres/4.jpg" loading="lazy">
+            <img class="beeSlides beeslide-move-right" src="assets/images/chambres/12.jpg" loading="lazy">
+            <img class="beeSlides beeslide-move-right" src="assets/images/chambres/14.jpg" loading="lazy">
+            <!-- <div class="beeSlides beeslide-move-right" style="background-color: black; color: aliceblue; font-size: 65px; display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;"><div style="background-color: black; color: aliceblue; font-size: 65px; display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;">Hello</div></div> -->
+            <button class="beeslide-button beeslide-black beeslide-left" onclick="plusDivs(this,-1)">&#10094;</button>
+            <button class="beeslide-button beeslide-black beeslide-right" onclick="plusDivs(this,1)">&#10095;</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-  <script src="assets/js/swiper-bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <!-- <script src="assets/js/glider.min.js"></script>
-    <script src="assets/js/glider-compat.min.js"></script> -->
-  <script>
-    // $('#intro').trigger('play');
-      const swiper = new Swiper('.swiper', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
-      speed: 4000,
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-        waitForTransition: true,
-      },
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        //AUTOMATIC SLIDE SHOW
+        let slidePos = 0;
+        showSlides();
 
-      effect: 'creative',
-      creativeEffect: {
-        // progressMultiplier : 2,
-        prev: {
-          // will set `translateZ(-400px)` on previous slides
-          //   translate: [0, 0, -400],
-          // scale: 1,
-          // translate: [0, 0, 100],
-          opacity: 0,
-          // origin: center,
-        },
-        next: {
-          // will set `translateX(100%)` on next slides
-          //   translate: [0, 0, 0],
-          scale: 1.3,
-          opacity: 0,
-          //   origin : center,
-          //   translate: ['100%', 0, 0],
-        },
-      },
-
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-    });
-
-    function introEnd(){
-      $( '#introDiv' ).animate({
-    opacity: 0,
-  }, 2500, function() {
-    $('.intro-container').addClass('d-none');
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("beeSlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slidePos++;
+            if (slidePos > slides.length) { slidePos = 1 }
+            slides[slidePos - 1].style.display = "block";
+            setTimeout(showSlides, 10000);
+        }
+        /////////////////////////////////
 
 
-  });
-      
-  $('#logo-div').animate({
-      height: '150px',
-      top: '85px',
-    },500);
+        // var slideIndex = 1;
+        // showDivs(slideIndex);
 
-    $( '#slider' ).animate({
-    opacity: 1,
-  }, 2500, function() {
-    // Animation complete.
-  });
+        function plusDivs(element, n) {
+            showDivs(slideIndex += n, n);
+        }
 
-    }
+        function showDivs(n, t) {
+            var i;
+            var x = document.getElementsByClassName("beeSlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            if (t > 0) {
+                x[slideIndex - 1].classList.remove("beeslide-move-left");
+                x[slideIndex - 1].classList.add("beeslide-move-right");
 
-    //     $(document).ready(function () {
-          
-    // });
 
-  </script>
+            } else {
+                x[slideIndex - 1].classList.remove("beeslide-move-right");
+                x[slideIndex - 1].classList.add("beeslide-move-left");
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+
+        function introEnd() {
+            $('#introDiv').animate({
+                opacity: 0,
+            }, 2500, function () {
+                $('.intro-container').addClass('d-none');
+
+
+            });
+
+            $('#logo-div').animate({
+
+                height: '150px',
+                top: '70px',
+                width: '150px',
+            }, 2500);
+
+            $('#nav-bar').animate({
+                opacity: 1,
+            }, 2500);
+
+            $('#slider').animate({
+                opacity: 1,
+            }, 2500, function () {
+                // Animation complete.
+                $(this).css('z-index', '2');
+                $('#content-div').removeClass('d-none');
+            });
+        };
+
+
+    </script>
 </body>
 
 </html>
