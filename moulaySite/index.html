@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hôtel Akid Home Page</title>
+    <title>Akid Hôtel Home Page</title>
 
     <!-- custom CSS should come after Bootstrap CSS -->
     <link rel="stylesheet" href="./custom.css">
@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary py-2" id="navbar_top" data-bs-theme="dark">
         <div class="container">
-          <a class="navbar-brand hotel-font font-weight-bold" href="#">Hôtel Akid</a>
+          <a class="navbar-brand hotel-font font-weight-bold" href="#">Akid Hôtel</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -82,21 +82,20 @@
 </section>
 
 
-<section class="section py-5 bg-gray">
+<section class="section py-5 bg-gray pb-5" style="background-image: url('images/background_text_black2.png')">
     <div class="container">
         <h2 class="section-title hotel-font text-center" data-aos="fade-in">
-            Hôtel Akid
+            Akid Hôtel
         </h2>
 
+        <hr class="section-break-1" />
 
-        <div style="height: 48px;"></div>
-
-        <div class="row align-items-center">
-            <div class="col-md-6" data-aos="fade-in">
+        <div class="row align-items-center" style="margin-top: 5rem;">
+            <div class="col-md-6 image-rectangle" data-aos="fade-in">
                 <img src="images/section1.jpg" alt="">
             </div>
 
-            <div class="col-md-6 p-5" data-aos="fade-in">
+            <div class="col-md-6 p-5" data-aos="fade-in" >
                 <h3 class="section-subtitle">Titre Section</h3>
                 
                 <div class="section-small-text">
@@ -107,8 +106,8 @@
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores non quia rem eos neque facere error nisi, veritatis temporibus. Odit dicta quaerat eius aliquam voluptatem labore dolorum suscipit optio nam. Perferendis ducimus doloremque sit at beatae mollitia, sapiente laborum repellat.</p>
 
                     <div class="mt-4">
-                        <a href="" class="btn btn-primary me-2">Voir la Vidéo</a>
-                        <a href="" class="btn btn-primary">En Savoir Plus</a>
+                        <a href="" class="btn btn-primary bg-darkgray-btn me-2">Voir la Vidéo</a>
+                        <a href="" class="btn btn-primary bg-darkgray-btn">En Savoir Plus</a>
                     </div>
 
                     
@@ -119,56 +118,228 @@
     </div>
 </section>
 
-<section class="section py-5">
+<section class="section py-5 pb-5 bg-primary-light">
+  <div class="container">
+      <h2 class="section-title hotel-font text-center" data-aos="fade-in">
+          Présentation
+      </h2>
+
+      <hr class="section-break-1 mb-5" />
+
+      <div class="row align-items-center" style="padding-bottom: 4rem; margin-top: 5rem;">
+          <div class="col-md-6 p-5" data-aos="fade-in">
+              <h3 class="section-subtitle">Titre Section</h3>
+              
+              <div class="section-small-text">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellendus nemo qui totam possimus nisi, accusantium maiores dolore distinctio architecto.</p>
+  
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores non quia rem eos neque facere error nisi, veritatis temporibus. Odit dicta quaerat eius aliquam voluptatem labore dolorum suscipit optio nam. Perferendis ducimus doloremque sit at beatae mollitia, sapiente laborum repellat.</p>
+
+                  <div class="mt-4">
+                      <a href="" class="btn btn-primary bg-darkgray-btn me-2">Découvrir les Chambres</a>
+                     
+                  </div>
+
+                  
+              </div>
+              
+          </div>
+
+          <div class="col-md-6" data-aos="fade-in">
+            <img src="images/section2.jpg" alt="" class="rectangle-shadow">
+          </div>
+
+      </div>
+  </div>
+</section>
+
+
+<section class="section" style="background-image: url('images/restaurant_parallax2.jpg'); background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover; padding: 6rem 0;">
+  <div class="container">
+      <h2 class="section-title-white hotel-font text-center" data-aos="fade-in">
+          Notre Restaurant
+      </h2>
+
+      <p class="text-white text-center mb-5" style="padding: 0 12rem;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+
+      <div class="d-flex mx-auto mb-5 justify-content-center" style="gap: 3rem; letter-spacing: 3px;">
+        <span class="text-white restaurant-heading text-uppercase fs-4 fw-bold cursor-pointer">Entrées</span>
+        <span class="text-primary text-uppercase fs-4 fw-bold cursor-pointer">Boissons</span>
+        <span class="text-primary text-uppercase fs-4 fw-bold cursor-pointer">Desserts</span>
+      </div>
+
+      <div class="restaurant-padding d-flex flex-column text-white mt-5 container mx-auto" data-aos="fade-in">
+        <div class="d-flex mb-5" style="gap: 2rem;">
+          <div class="d-flex flex-column" style="gap: 0.4rem;">
+            <span class="text-primary fw-bold fs-4">200.00 DA</span>
+            <span class="fs-3">Soupe Entrée</span>
+            <p class="opacity-75">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+
+          <div class="d-flex flex-column" style="gap: 0.4rem;">
+            <span class="text-primary fw-bold fs-4">300.00 DA</span>
+            <span class="fs-3">French Toast</span>
+            <p class="opacity-75">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+
+        <div class="d-flex mb-5" style="gap: 2rem;">
+          <div class="d-flex flex-column" style="gap: 0.4rem;">
+            <span class="text-primary fw-bold fs-4">200.00 DA</span>
+            <span class="fs-3">Soupe Entrée</span>
+            <p class="opacity-75">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+
+          <div class="d-flex flex-column" style="gap: 0.4rem;">
+            <span class="text-primary fw-bold fs-4">300.00 DA</span>
+            <span class="fs-3">French Toast</span>
+            <p class="opacity-75">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+
+        <div class="d-flex mb-5" style="gap: 2rem;">
+          <div class="d-flex flex-column" style="gap: 0.4rem;">
+            <span class="text-primary fw-bold fs-4">700.00 DA</span>
+            <span class="fs-3">Poisson Thon</span>
+            <p class="opacity-75">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+
+          <div class="d-flex flex-column" style="gap: 0.4rem;">
+            <span class="text-primary fw-bold fs-4">1200.00 DA</span>
+            <span class="fs-3">Couscous</span>
+            <p class="opacity-75">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+
+        <div class="d-flex mb-5" style="gap: 2rem;">
+          <div class="d-flex flex-column" style="gap: 0.4rem;">
+            <span class="text-primary fw-bold fs-4">200.00 DA</span>
+            <span class="fs-3">Soupe Entrée</span>
+            <p class="opacity-75">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+
+          <div class="d-flex flex-column" style="gap: 0.4rem;">
+            <span class="text-primary fw-bold fs-4">300.00 DA</span>
+            <span class="fs-3">French Toast</span>
+            <p class="opacity-75">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+          
+      </div>
+  </div>
+</section>
+
+<section class="section py-5" style="background-image: url('images/background_text_black2.png')">
     <div class="container">
         <h2 class="section-title hotel-font text-center" data-aos="slide-up">
             Chambres & Suites
         </h2>
 
+        <hr class="section-break-1" />
+
         <p class="section-text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
 
-        <div class="container d-flex justify-items-center w-100" style="gap: 2rem;">
-            <div class="section-item" data-aos="fade-in">
+        <div class="container d-flex justify-items-center w-100" style="gap: 3rem;">
+          <div>
+              <div class="section-item rectangle-shadow2" data-aos="fade-in">
                 <a href="">
-                    <img src="images/room1.jpg" alt="" width="400" class="mb-4">
-                </a>
-                
-                <div class="text-center">
-                    <h4 class="fw-bold">Chambre à Coucher</h4>
-                    <p class="text-primary text-uppercase" style="font-size: 20px;">9000 DA / Par Nuit</p>
-                </div>
+                    <img src="images/room1.jpg" alt="" width="400" class=" mb-4">
+                </a> 
             </div>
 
-            <div class="section-item" data-aos="fade-in">
-                <a href="">
-                    <img src="images/room2.jpg" alt="" width="400" class="mb-4">
-                </a>
-                
-                <div class="text-center">
-                    <h4 class="fw-bold">Chambre Famille</h4>
-                    <p class="text-primary text-uppercase" style="font-size: 20px;">13000 DA / Par Nuit</p>
-                </div>
+            <div class="text-center mt-3">
+                <h4 class="fw-bold">Chambre à Coucher</h4>
+                <p class="text-primary text-uppercase" style="font-size: 20px;">9.000 DA / Par Nuit</p>
             </div>
+          </div>
+            
+          <div>
+            <div class="section-item rectangle-shadow2" data-aos="fade-in">
+              <a href="">
+                  <img src="images/room2.jpg" alt="" width="400" class=" mb-4">
+              </a> 
+          </div>
 
-            <div class="section-item">
-                <a href="">
-                    <img src="images/room3.jpg" alt="" width="400" class="mb-4">
-                </a>
-                
-                <div class="text-center" data-aos="fade-in">
-                    <h4 class="fw-bold">Chambre Royale</h4>
-                    <p class="text-primary text-uppercase" style="font-size: 20px;">25000 DA / Par Nuit</p>
-                </div>
-            </div>
+          <div class="text-center mt-3">
+              <h4 class="fw-bold">Chambre Famille</h4>
+              <p class="text-primary text-uppercase" style="font-size: 20px;">9.000 DA / Par Nuit</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-item rectangle-shadow2" data-aos="fade-in">
+            <a href="">
+                <img src="images/room3.jpg" alt="" width="400" class=" mb-4">
+            </a> 
+        </div>
+
+        <div class="text-center mt-3">
+            <h4 class="fw-bold">Chambre King</h4>
+            <p class="text-primary text-uppercase" style="font-size: 20px;">9.000 DA / Par Nuit</p>
+        </div>
+      </div>
 
         </div>
     </div>
 </section>
 
+<section class="section py-5 pb-5 bg-primary-light" style="padding-bottom: 20rem; background-image: url('images/background_black.png')">
+  <div class="container">
+      <h2 class="section-title-white hotel-font text-center" data-aos="fade-in">
+          Services
+      </h2>
+
+     
+      <div class="d-flex align-items-center text-white" style="padding: 0 8rem; padding-bottom: 6rem; margin-top: 5rem;">
+          <div class="p-5" data-aos="fade-in">
+              <h3 class="section-subtitle">Titre Section</h3>
+              
+              <div class="section-small-text text-white">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellendus nemo qui totam possimus nisi, accusantium maiores dolore distinctio architecto.</p>
+  
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores non quia rem eos neque facere error nisi, veritatis temporibus. Odit dicta quaerat eius aliquam voluptatem labore dolorum suscipit optio nam. Perferendis ducimus doloremque sit at beatae mollitia, sapiente laborum repellat.</p>
+
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores non quia rem eos neque facere error nisi, veritatis temporibus. Odit dicta quaerat eius aliquam voluptatem labore dolorum suscipit optio nam. Perferendis ducimus doloremque sit at beatae mollitia, sapiente laborum repellat.</p>
+
+                  <div class="mt-4">
+                      <a href="" class="btn btn-primary bg-darkgray-btn me-2">Découvrir les Chambres</a>
+                     
+                  </div>
+
+                  
+              </div>
+              
+          </div>
+
+          <div class="image-rectangle-white" data-aos="fade-in">
+            <img src="images/section3.jpg" alt="">
+          </div>
+
+      </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="row g-0">
+      <div class="col-md-4">
+        <img src="images/gallery1.webp" alt="" class="img-fluid w-100">
+      </div>
+
+      <div class="col-md-4">
+        <img src="images/gallery2.webp" alt="" class="img-fluid w-100">
+      </div>
+
+      <div class="col-md-4">
+        <img src="images/gallery3.webp" alt="" class="img-fluid w-100">
+      </div>
+  </div>
+</section>
 
 
-
-
+<div style="height: 200px;"></div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
