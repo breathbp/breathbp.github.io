@@ -360,12 +360,12 @@ transform: translateX(-50%);
   margin-right: 15px;
 }
 .footer-social-icon i {
-  height: 64px;
-  width: 64px;
+  height: 56px;
+  width: 56px;
   text-align: center;
-  line-height: 68px;
+  line-height: 60px;
   border-radius: 3px;
-  font-size: 24px;
+  font-size: 20px;
 }
 .facebook-bg{
   background: #3B5998;
