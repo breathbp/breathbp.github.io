@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/iziModal.css">
     <title>BeeSlider</title>
 </head>
@@ -20,10 +24,10 @@ background-size: contain;">
         style="background-color: rgb(255 255 255 / 14%); width: 100vw; position: fixed; z-index: 4; opacity: 0; backdrop-filter: blur(10px);">
         <a href="#"
             style="font-family: 'Great Vibes', cursive; color: white; font-size: 2rem; margin: 0; padding: 20px;">
-            Hotel Akid
+            Akid Hotel
         </a>
         <div class="d-flex align-items-center" style="margin-right: 10px;">
-            <button type="button" class="btn btn-outline-warning trigger"
+            <button type="button" class="btn btn-reservation trigger"
                 style="font-family: 'Great Vibes'; font-size: 1.5rem;">Réservation</button>
         </div>
 
@@ -59,60 +63,55 @@ background-size: contain;">
     <div id="modal">
         <!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
         <!-- Modal content -->
-        <div style="width: 100%;
-        background-color: beige;
-        color: rgb(153, 99, 29);
-        font-family: 'Great Vibes', cursive;
-        font-size: 3.5rem;
-        padding: 12px; display: flex; justify-content: space-between; align-items: center;">
-            Réservation de chambres
-            <button id="closeReservation" class="btn" style="height: 60px;font-size: 30px;background-color: #cf89ac; color: white;">Fermer</button>
-        </div>
-        <div class="p-5">
-            <div class="row">
-                <div class="input-group mb-3 col">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">CheckIn</span>
-                    </div>
-                    <input type="date" class="form-control" placeholder="Username" aria-label="Username"
-                        aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3 col">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">CheckOut</span>
-                    </div>
-                    <input type="date" class="form-control" placeholder="Username" aria-label="Username"
-                        aria-describedby="basic-addon1">
-                </div>
+        <div style="position: relative;">
+            <div style="position: absolute; top: 85px;right: 60px; font-family: 'Great Vibes', cursive; z-index: -1;    font-size: 20rem;
+            /* opacity: 0.2; */
+            color: #f1ece4;">
+                Akid
             </div>
+            <div style="width: 100%;background-color: beige;color: rgb(153, 99, 29);font-family: 'Great Vibes', cursive;font-size: 3.5rem;
+            padding: 12px; display: flex; justify-content: space-between; align-items: center;">
+                Réservation de chambres
+                <button id="closeReservation" class="btn"
+                    style="height: 60px;font-size: 30px;background-color: #cf89ac; color: white;">Fermer</button>
+            </div>
+            <div class="p-5">
+                <div class="d-flex">
+                    <div class="form-group mb-3 ">
+                        <span class="bp-form-label" id="basic-addon1">Check-In</span>
+                        <input type="date" class="form-input" placeholder="Username" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
 
-            <div class="row">
-                <div class="input-group mb-3 col">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Nbr chambres</span>
+                    <div class="form-group mb-3 ">
+                        <span class="bp-form-label" id="basic-addon1">Check-Out</span>
+                        <input type="date" class="form-input" placeholder="Username" aria-label="Username"
+                            aria-describedby="basic-addon1">
                     </div>
-                    <input type="number" class="form-control" placeholder="Username" aria-label="Username"
-                        aria-describedby="basic-addon1">
+
                 </div>
-                <div class="input-group mb-3 col">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Nbr personne</span>
+
+                <div class="d-flex">
+                    <div class="form-group mb-3">
+                        <span class="bp-form-label" id="basic-addon1">Nbr de chambres</span>
+                        <input type="number" class="form-input" placeholder="Nbre de chambres" style="width: 200px;">
                     </div>
-                    <input type="number" class="form-control" placeholder="Username" aria-label="Username"
-                        aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3 col">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Nbr adultes</span>
+
+                    <div class="form-group mb-3">
+                        <span class="bp-form-label" id="basic-addon1">Nbr de personnes</span>
+                        <input type="number" class="form-input" placeholder="Nbre de personnes" style="width: 200px;">
                     </div>
-                    <input type="number" class="form-control" placeholder="Username" aria-label="Username"
-                        aria-describedby="basic-addon1">
+
+
+
                 </div>
+
             </div>
-            
-        </div>
-        <div class="d-flex justify-content-end m-3">
-            <button id="closeReservation" class="btn" style="height: 60px;font-size: 30px;font-family: 'Great Vibes', cursive;    background-color: #d7b14c; color: white;">Envoyer le formulaire</button>
+            <div class="d-flex justify-content-end m-3">
+                <button id="closeReservation" class="btn"
+                    style="height: 60px;font-size: 30px;font-family: 'Great Vibes', cursive;    background-color: #d7b14c; color: white;">Envoyer
+                    le formulaire</button>
+            </div>
         </div>
     </div>
 
@@ -126,8 +125,10 @@ background-size: contain;">
     <script>
         $("#modal").iziModal({
             background: 'null',
-            transitionIn: 'fadeInUp',
-            transitionOut : 'fadeOutDown',
+            transitionIn: 'fadeIn',
+            transitionOut: 'fadeOut',
+            radius: 0,
+            // bodyOverflow: true,
         });
 
 
@@ -138,7 +139,7 @@ background-size: contain;">
             // $('#modal').iziModal('open', { zindex: 99999 });
             $('#modal').iziModal('open');
         });
-        $(document).on('click','#closeReservation',function(){
+        $(document).on('click', '#closeReservation', function () {
             $('#modal').iziModal('close');
         })
         //AUTOMATIC SLIDE SHOW

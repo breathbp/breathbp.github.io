@@ -444,15 +444,15 @@ html.iziModal-isAttached{
 /* ANIMATIONS */
 
 .iziModal.fadeOut, .iziModal-overlay.fadeOut, .iziModal-navigate.fadeOut, .iziModal .fadeOut{
-    -webkit-animation: iziM-fadeOut 0.5s;
-    -moz-animation: iziM-fadeOut 0.5s;
-    animation: iziM-fadeOut 0.5s;
+    -webkit-animation: iziM-fadeOut 1.5s;
+    -moz-animation: iziM-fadeOut 1.5s;
+    animation: iziM-fadeOut 1.5s;
     animation-fill-mode: forwards;
 }
 .iziModal.fadeIn, .iziModal-overlay.fadeIn, .iziModal-navigate.fadeIn, .iziModal .fadeIn {
-    -webkit-animation: iziM-fadeIn 0.5s;
-    -moz-animation: iziM-fadeIn 0.5s;
-    animation: iziM-fadeIn 0.5s;
+    -webkit-animation: iziM-fadeIn 1.5s;
+    -moz-animation: iziM-fadeIn 1.5s;
+    animation: iziM-fadeIn 1.5s;
 }
 .iziModal.comingIn, .iziModal-overlay.comingIn {
     -webkit-animation: iziM-comingIn 0.5s ease;
