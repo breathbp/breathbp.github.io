@@ -17,15 +17,15 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
-    integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>BeeSlider</title>
 </head>
 
 <body style="background-image: url(assets/images/akidhotel.png); background-position: center;
 background-size: contain;">
     <div class="d-flex justify-content-between" id="nav-bar"
-        style="background-color: rgb(255 255 255 / 14%); width: 100vw; position: fixed; z-index: 4; opacity: 0; backdrop-filter: blur(10px);">
+        style="background-color: rgb(255 255 255 / 14%); width: 100%; position: fixed; z-index: 4; opacity: 1; backdrop-filter: blur(10px);">
         <a href="#"
             style="font-family: 'palaceFont', cursive; color: white; font-size: 2rem; margin: 0; padding: 20px;">
             Akid Hotel
@@ -36,24 +36,17 @@ background-size: contain;">
             left: 50%;
             transform: translateX(-50%);
             background-color: #ffffff00;
-            border-radius: 50%; display: none;">
+            border-radius: 50%;top: 10px;">
         <div class="d-flex align-items-center" style="margin-right: 10px;">
             <button type="button" class="btn btn-reservation trigger"
                 style="font-family: 'palaceFont'; font-size: 1.5rem;">Réservation</button>
         </div>
 
     </div>
-    <!-- <div class="intro-logo-div" id="logo-div"> -->
-
-    <img class="intro-logo" id="logo-div" src="assets/images/logo.webp" alt="logo">
-    <!-- </div> -->
-    <div class="intro-container" id="introDiv"
+    <!-- <div class="intro-container" id="introDiv"
         style="width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: 2;">
-        <video autoplay muted onended="introEnd()" preload="auto">
-            <source src="/assets/images/vid2.mp4" />
-        </video>
-        <!-- <video id="intro" src="assets/images/vid2.mp4"  autoplay onended="introEnd()"></video> -->
-    </div>
+        <video id="intro" src="assets/images/vid2.mp4"  autoplay onended="introEnd()"></video>
+    </div> -->
 
 
 
@@ -66,9 +59,13 @@ background-size: contain;">
             <img class="beeSlides beeslide-move-right" src="assets/images/chambres/12.jpg" loading="lazy">
             <img class="beeSlides beeslide-move-right" src="assets/images/chambres/14.jpg" loading="lazy">
             <!-- <div class="beeSlides beeslide-move-right" style="background-color: black; color: aliceblue; font-size: 65px; display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;"><div style="background-color: black; color: aliceblue; font-size: 65px; display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;">Hello</div></div> -->
-            <button class="beeslide-button beeslide-black beeslide-left" onclick="plusDivs(this,-1)">&#10094;</button>
-            <button class="beeslide-button beeslide-black beeslide-right" onclick="plusDivs(this,1)">&#10095;</button>
+            <!-- <button class="beeslide-button beeslide-black beeslide-left" onclick="plusDivs(this,-1)">&#10094;</button>
+            <button class="beeslide-button beeslide-black beeslide-right" onclick="plusDivs(this,1)">&#10095;</button> -->
         </div>
+    </div>
+
+    <div style="background-color: black; height: 100vh; width: 100%;">
+
     </div>
     <!-- Modal structure -->
     <div id="modal">
@@ -151,7 +148,7 @@ background-size: contain;">
                             </select>
                         </div>
                     </div>
-
+                    
                     <div class="d-flex">
                         <!-- <span>Chambre 1</span> -->
 
@@ -196,8 +193,6 @@ background-size: contain;">
                 $(this).next('input').val(i).trigger('change');
             });
         });
-
-
         $("#modal").iziModal({
             background: 'null',
             transitionIn: 'fadeIn',
@@ -217,6 +212,7 @@ background-size: contain;">
         $(document).on('click', '#closeReservation', function () {
             $('#modal').iziModal('close');
         })
+
         //AUTOMATIC SLIDE SHOW
         let slidePos = 0;
         showSlides();
@@ -294,8 +290,9 @@ background-size: contain;">
                 // Animation complete.
                 $(this).css('z-index', '2');
                 $('#content-div').removeClass('d-none');
-                $('#navbar-logo').show();
+                // $('#navbar-logo').show();
             });
+
         };
 
 

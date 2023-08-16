@@ -1,7 +1,36 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@font-face {
+  font-family: palaceFont ;
+  src: url('fonts/PalaceScriptMT.ttf');
+  size-adjust: 200%;
+}
+
 .intro-logo{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* width: 100vw; */
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
   /* position: absolute; */
     /* width: 25%; */
-    height: 75%;
+    /* height: 75%; */
     /* max-height: 80vh; */
     /* top: 50%;
     left: 50%;
@@ -9,9 +38,9 @@
     transition: all 0.5s ease;
     animation: fadeout 10s linear;
     /* transform-origin: center center; */
-    backdrop-filter: blur(5px); 
+    /* backdrop-filter: blur(5px);  */
     border-radius: 50%; 
-    padding: 10px;
+    /* padding: 10px; */
     /* border: 6px white solid; */
 }
 @keyframes fadeout {
@@ -43,12 +72,13 @@ a{
   text-decoration: none;
 }
 .form-input{
-  padding: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
     border: 1px #d7b14c solid;
     color: #99631d;
     border-radius: 5px;
     font-size: 20px;
     font-family: 'Architects Daughter', cursive;
+    text-align: center;
 }
 .form-input::placeholder{
   font-family: 'Architects Daughter', cursive;
@@ -59,7 +89,9 @@ a{
 .form-group{
   padding: 5px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    flex-direction: column;
+
 }
 .bp-form-label{
   margin-right: 10px;
@@ -88,4 +120,52 @@ a{
   background-color: #d7b14c;
   border-color: #d7b14c;
 
+}
+.bp-btn-close{
+  height: 60px;
+    font-size: 30px;
+    font-family: 'Great vibes';
+    /* background-color: #cf89ac; */
+    color: #99631d;
+    transition: all 1s ease;
+    padding: 10px 20px 10px 15px;
+    text-align: center;
+}
+.bp-btn-close:hover{
+border: 1px #99631d solid;
+}
+.background-text-div{
+  position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    font-family: 'Great Vibes', cursive;
+    z-index: -1;
+    font-size: 20rem;
+    opacity: 0.05;
+    color: #f1ece4;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.increment-input{
+  background-color: #f5f5dc; 
+  color: #99631d;
+  border: 2px #99631d solid;
+  /* border-radius: 0 5px 5px 0; */
+  width: 25px;
+}
+.decrement-input{
+  background-color: #f5f5dc; 
+  color: #99631d;
+  border: 2px #99631d solid;
+  /* border-radius: 5px 0 0 5px; */
+  width: 25px;
+}
+.bp-btn-submit{
+  height: 60px;
+  font-size: 30px;
+  font-family: 'palaceFont', cursive;    
+  background-color: #d7b14c; 
+  color: white;
 }
