@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 :root {
   --primary: #B3913C;
@@ -42,6 +43,12 @@ body
 {
   font-family: "Gilda Display", Arial, sans-serif;
 }
+
+.josefin-font
+{
+  font-family: "Josefin Sans", Arial, sans-serif;
+}
+
 
 .tangerine-font
 {
@@ -889,7 +896,7 @@ h3.section-sub-title strong {
   transition: 0.4s ease-out;
   cursor: pointer;
   overflow: hidden;
-  filter: brightness(0.4);
+  filter: brightness(0.35);
 }
 
 
@@ -978,5 +985,58 @@ h3.section-sub-title strong {
 .room-div img:hover
 {
   transform: scale(1.1);
-  filter: brightness(0.8);
+  filter: brightness(0.7);
+}
+
+.card img
+{
+  transition: 0.4s ease-out;
+  cursor: pointer;
+  
+}
+
+
+
+.room-title {
+  position: relative;
+  line-height: 1.2em;
+}
+.room-title:before {
+  position: absolute;
+  left: 0;
+  top: 2.5rem;
+  height: 0;
+  width: 70px;
+  content: '';
+  border-top: 1px solid lightgray;
+
+  transition: 0.8s ease;
+}
+
+.room-div:hover .room-title:before
+{
+  width: 100%;
+}
+
+.card-corps
+{
+  position: absolute;
+
+  margin: 0 1.5rem;
+  padding: 1.5rem;
+  background-color: white;
+  top: 80%;
+
+  transition: 0.6s;
+  height: 30%;
+}
+
+.card:hover .card-corps
+{
+  top: 65%;
+}
+
+.card:hover img
+{
+  filter: brightness(0.7);
 }
