@@ -3,11 +3,16 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
     autoplay: true,
+    slidesPerView: 1.5,
+    spaceBetween: 32,
+    /*effect: 'coverflow',
+    coverflowEffect: {
+      depth: 200,
+    },*/
+
+    centeredSlides: true,
   
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
+   
   
     // Navigation arrows
     navigation: {
@@ -15,17 +20,14 @@ const swiper = new Swiper('.swiper', {
       prevEl: '.swiper-button-prev',
     },
   
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+    
   });
 
   AOS.init({
     duration: 1200,
   });
 
-  document.addEventListener("DOMContentLoaded", function(){
+  /*document.addEventListener("DOMContentLoaded", function(){
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
           document.getElementById('navbar_top').classList.add('fixed-top');
@@ -66,4 +68,4 @@ const swiper = new Swiper('.swiper', {
       top: 0,
       behavior: "smooth"
     });
-  }
+  }*/
