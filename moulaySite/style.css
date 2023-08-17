@@ -877,3 +877,106 @@ h3.section-sub-title strong {
   border: 2px solid var(--primary);
   cursor: pointer;
 }
+
+.room-div {
+  position: relative;
+  
+  
+  }
+
+.room-div img
+{
+  transition: 0.4s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+  filter: brightness(0.4);
+}
+
+
+.room-div .button-room {
+  
+  /*transform: translate(-50%,-50%);*/
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  
+  color: var(--primary);
+  font-size: 14px;
+  text-transform: uppercase;
+  
+  border: 1px solid var(--primary);
+  border-radius: 0;
+  transition: 0.3s ease;
+  /*backdrop-filter: invert();*/
+  }
+
+  .room-text-pos
+  {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    padding: 0 1.5rem;
+    cursor: pointer;
+  }
+
+  
+  .room-buttons-pos
+  {
+    position: absolute;
+    top: 87%;
+    left: 0%;
+    padding: 0 1.5rem;
+  }
+
+  .room-buttons-pos2
+  {
+    position: absolute;
+    top: 82%;
+    left: 0%;
+    padding: 0 1.5rem;
+  }
+
+  .room-div .socials {
+   
+    /*transform: translate(-50%,-50%);*/
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+    
+   
+    color: var(--primary);
+    font-size: 16px;
+    
+    cursor: pointer;
+    border-radius: 0;
+    transition: 0.3s ease;
+    }
+    .room-div .socials i
+    {
+      transition: 0.3s ease;
+      height: 36px; width: 36px;
+      border: 1px solid var(--primary);
+      border-radius: 0;
+
+      color: var(--primary) !important;
+      display: flex; justify-content: center; align-items: center;
+    }
+   
+
+    .room-div .socials i:hover
+    {
+      color: #333 !important;
+      background-color: var(--primary);
+    }
+
+  .room-div .button-room:hover
+  {
+    background-color: var(--primary);
+    color: #333;
+  }
+
+.room-div img:hover
+{
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
