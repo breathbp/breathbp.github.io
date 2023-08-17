@@ -50,7 +50,7 @@ background-size: contain;">
     <div class="intro-container" id="introDiv"
         style="width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: 2;">
         <video autoplay muted onended="introEnd()" preload="auto">
-            <source src="/assets/images/vid2.mp4" />
+            <source src="assets/images/vid2.mp4" />
         </video>
         <!-- <video id="intro" src="assets/images/vid2.mp4"  autoplay onended="introEnd()"></video> -->
     </div>
@@ -66,8 +66,8 @@ background-size: contain;">
             <img class="beeSlides beeslide-move-right" src="assets/images/chambres/12.jpg" loading="lazy">
             <img class="beeSlides beeslide-move-right" src="assets/images/chambres/14.jpg" loading="lazy">
             <!-- <div class="beeSlides beeslide-move-right" style="background-color: black; color: aliceblue; font-size: 65px; display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;"><div style="background-color: black; color: aliceblue; font-size: 65px; display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;">Hello</div></div> -->
-            <button class="beeslide-button beeslide-black beeslide-left" onclick="plusDivs(this,-1)">&#10094;</button>
-            <button class="beeslide-button beeslide-black beeslide-right" onclick="plusDivs(this,1)">&#10095;</button>
+            <button class="beeslide-button beeslide-black beeslide-left" onclick="plusDivs(this,-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="beeslide-button beeslide-black beeslide-right" onclick="plusDivs(this,1)"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </div>
     <!-- Modal structure -->
@@ -102,13 +102,13 @@ background-size: contain;">
                         <div class="form-group mb-3">
                             <span class="bp-form-label" id="basic-addon1">Nbr d'adultes</span>
                             <div class="d-flex">
-                                <button class="decrement-input"><i class="fa-solid fa-minus"></i></button>
+                                <button type="button" class="decrement-input"><i class="fa-solid fa-minus"></i></button>
 
-                                <input type="number" class="form-input" placeholder="Nbre de personnes"
+                                <input type="number" class="form-input input-number" placeholder="Nbre de personnes"
                                     style="width: 50px; text-align: center; border: 2px 0px #99631d solid; border-radius: unset;"
                                     value="1" min="1">
 
-                                <button type="button" class="increment-input"><i
+                                <button type="button" type="button" class="increment-input"><i
                                         class="fa-solid fa-plus"></i></i></button>
                             </div>
                         </div>
@@ -116,9 +116,9 @@ background-size: contain;">
                         <div class="form-group mb-3">
                             <span class="bp-form-label" id="basic-addon1">Nbr d'enfants'</span>
                             <div class="d-flex">
-                                <button class="decrement-input"><i class="fa-solid fa-minus"></i></button>
+                                <button type="button" class="decrement-input"><i class="fa-solid fa-minus"></i></button>
 
-                                <input type="number" class="form-input" placeholder="Nbre d'enfants"
+                                <input type="number" class="form-input input-number" placeholder="Nbre d'enfants"
                                     style="width: 50px; text-align: center; border: 2px 0px #99631d solid; border-radius: unset;"
                                     value="0" min="0">
 
@@ -128,23 +128,23 @@ background-size: contain;">
                         </div>
                     </div>
 
-                    <div class="d-flex" style="overflow-x: scroll;">
+                    <div class="d-flex" style="overflow-x: scroll;" id="chamber-type-div">
                         <div class="form-group mb-3">
                             <span class="bp-form-label">Nbr de chambres</span>
                             <div class="d-flex">
-                                <button class="decrement-input"><i class="fa-solid fa-minus"></i></button>
+                                <button type="button" class="decrement-input"><i class="fa-solid fa-minus"></i></button>
 
                                 <input type="number" class="form-input" placeholder="Nbre de personnes" id="roomCount"
                                     style="width: 50px; text-align: center; border: 2px 0px #99631d solid; border-radius: unset;"
-                                    value="1" min="1">
+                                    value="1" min="1" max="5">
 
                                 <button type="button" class="increment-input"><i
                                         class="fa-solid fa-plus"></i></i></button>
                             </div>
                         </div>
 
-                        <div class="form-group mb-3 chamber-type" id="chamberType">
-                            <span class="bp-form-label" id="basic-addon1">Type de chambre 1</span>
+                        <div class="form-group mb-3 chamber-type" id="chamberType1">
+                            <span class="bp-form-label">Type de chambre 1</span>
                             <select class="form-input">
                                 <option value="1">Simple</option>
                                 <option value="2">Suite</option>
@@ -177,24 +177,72 @@ background-size: contain;">
         $(document).ready(function () {
 
             $(document).on('change', '#roomCount', function () {
-                // $('.chamber-type').remove();
+                $(this).val(chechInput(this));
+                const nbElements = $('.chamber-type').length;
                 const count = $(this).val();
-                for (let index = 1; index < count; index++) {
-                    // console.log($(this));
-                    $('#chamberType').clone().appendTo($(this).parent().parent().parent());
+                for (let index = 1; index <= count; index++) {
+                    let tmpIndex = "#chamberType"+index;
+                    if (!$(tmpIndex).length) {
+                        var element = '<div class="form-group mb-3 chamber-type" id="chamberType'+index+'"><span class="bp-form-label">Type de chambre '+index+'</span><select class="form-input"><option value="1">Simple</option><option value="2">Suite</option></select></div>';
+                    $('#chamber-type-div').append(element);
+                    }
                 }
+                if (count<nbElements) {
+                    for (let index = parseInt(count)+1; index <= nbElements; index++) {
+                    let tmpIndex = "#chamberType"+index;
+                    if ($(tmpIndex).length) {
+                        $(tmpIndex).remove();
+                    }
+                }}
             });
 
             $(document).on('click', '.increment-input', function () {
+                const max = $(this).prev('input').attr('max');
                 let i = $(this).prev('input').val();
-                i++;
-                $(this).prev('input').val(i).trigger('change');
+                if (max!=undefined) {
+                    if (parseInt(i)<parseInt(max)) {
+                        i++;
+                    $(this).prev('input').val(i).trigger('change');   
+                }
+                }else{
+                    i++;
+                    $(this).prev('input').val(i).trigger('change');   
+                }
+                
             });
             $(document).on('click', '.decrement-input', function () {
+                const min = $(this).next('input').attr('min');
                 let i = $(this).next('input').val();
-                i--;
-                $(this).next('input').val(i).trigger('change');
+                if (parseInt(i)>parseInt(min)) {
+                    i--;
+                    $(this).next('input').val(i).trigger('change');
+                }
+                
             });
+
+            $(document).on('change','.input-number',function(){
+                const min = $(this).attr('min');
+                const max = $(this).attr('max');
+                const val = $(this).val();
+                if (parseInt(val)<min) {
+                    $(this).val(min);
+                }
+                if (parseInt(val)>max) {
+                    $(this).val(max);
+                }
+            });
+            function chechInput(element) {
+                const min = $(element).attr('min');
+                const max = $(element).attr('max');
+                const val = $(element).val();
+                if (parseInt(val)<min) {
+                    return min;
+                }
+                if (parseInt(val)>max) {
+                    return max;
+                }
+                return val;
+            }
         });
 
 
