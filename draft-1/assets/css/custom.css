@@ -191,3 +191,6 @@ border: 1px #99631d solid;
   background-color: #d7b14c; 
   color: white;
 }
+.left-input{
+  text-align: start !important;
+}

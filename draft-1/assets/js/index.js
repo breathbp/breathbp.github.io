@@ -182,6 +182,22 @@ function showSlides() {
         // $('#modal').iziModal('open', { zindex: 99999 });
         $('#modal2').iziModal('open');
     });
+
+    $("#modal3").iziModal({
+        background: 'null',
+        transitionIn: 'fadeIn',
+        transitionOut: 'fadeOut',
+        radius: 0,
+    });
+
+    $(document).on('click', '.btn-confirm-devis', function (event) {
+        event.preventDefault();
+        $('#modal2').iziModal('close');
+        $('#modal3').iziModal('setWidth', '1000px');
+        $('#modal3').iziModal('setZindex', 99999);
+        // $('#modal').iziModal('open', { zindex: 99999 });
+        $('#modal3').iziModal('open');
+    });
 ///////////////////////////////////////////////////////////////    
 });
 
