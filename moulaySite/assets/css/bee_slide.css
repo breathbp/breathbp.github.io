@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+}
+.beeslide-container{
+    width: 100vw; 
+    height: 100vh; 
+    position: relative;
+    overflow: hidden;
+    /* background-color: #000; */
+}
+.beeSlides{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.beeslide-right{
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%,-50%);
+}
+.beeslide-left{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%,-50%);
+}
+.beeslide-button{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    
+}
+.beeslide-black{
+    color: #d7b14c!important;
+    /* background-color: #d7b14c!important; */
+    background-color: #00000000 !important;
+    font-size: 2rem;
+    margin: 20px;
+}
+.beeslide-move-left{
+    position: relative;
+    animation: moveLeft 10s linear;
+}
+@keyframes moveLeft {
+    0% {
+        /* left: -300px; */
+        /* transform: translateX(-300px); */
+        opacity: 0;
+        scale: 1.4;
+    }
+    50% {
+        opacity: 1;
+        scale: 1.2;
+    }
+
+    75% {
+        opacity: 1;
+    }
+    100% {
+        /* left: -300px; */
+        /* transform: translateX(300px); */
+        opacity: 0;
+        scale: 1;
+    }   
+}
+.beeslide-move-right{
+    position: relative;
+    animation: moveRight 10s linear;
+}
+@keyframes moveRight {
+    0% {
+        /* left: -300px; */
+        /* transform: translateX(-300px); */
+        opacity: 0;
+        scale: 1.4;
+    }
+    50% {
+        opacity: 1;
+        scale: 1.2;
+    }
+
+    75% {
+        opacity: 1;
+        scale: 1.1;
+    }
+    100% {
+        /* left: -300px; */
+        /* transform: translateX(300px); */
+        opacity: 0;
+        scale: 1;
+    }   
+}
