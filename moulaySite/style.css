@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
 
 :root {
   --primary: #B3913C;
@@ -109,7 +110,7 @@ transform: translateX(-50%);
 
 .section img
 {
-  border-radius: 2px;
+  /*border-radius: 2px;*/
   /*box-shadow: 10px 10px 5px #ddd;
       -moz-box-shadow: 10px 10px 5px #ddd;
       -webkit-box-shadow: 10px 10px 5px #ddd;
@@ -607,6 +608,11 @@ ul {
 .px-8
 {
   padding: 0 7rem;
+}
+
+@media(min-width: 1500px)
+{
+ 
 }
 
 .small-font
@@ -1133,6 +1139,18 @@ h3.section-sub-title strong {
   z-index: 10;
 }
 
+.negative-margin-2
+{
+  margin-right: -12rem;
+  z-index: 10;
+}
+
+.negative-margin-3
+{
+  margin-left: -12rem;
+  z-index: 10;
+}
+
 .card
 {
   border: 2px solid var(--primary);
@@ -1147,4 +1165,64 @@ h3.section-sub-title strong {
 .swiper-button-prev, .swiper-button-next
 {
   color: var(--primary);
+}
+
+.text-14
+{
+  font-size: 14px;
+}
+
+.text-15
+{
+  font-size: 15px;
+}
+
+.color-666
+{
+  color: #666;
+}
+
+.font-barlow
+{
+  font-family: 'Barlow', sans-serif;
+}
+
+.gap-one
+{
+  gap: 8px;
+}
+
+.gap-two
+{
+  gap: 12px;
+}
+
+.gap-three
+{
+  gap: 16px;
+}
+
+.bg-color-222
+{
+  background-color: #222;
+}
+
+.leading-text-1
+{
+  line-height: 1.8;
+}
+
+.border-dashed-primary
+{
+  border-bottom: 1px dashed var(--primary);
+}
+
+.gray-color
+{
+  color:#adadad !important;
+}
+
+.bg-whitedore
+{
+  background-color: #F8F5F0;
 }
