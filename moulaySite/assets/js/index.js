@@ -59,6 +59,7 @@ function introEnd() {
         opacity: 1,
     }, 3000, function () {
         // Animation complete.
+        showSlides();
         $(this).css('z-index', '2');
         $('#content-div').removeClass('d-none');
         $('#navbar-logo').show();
@@ -67,11 +68,11 @@ function introEnd() {
             opacity: 1,
             bottom: '0px',
         },1000,function(){
-            $('#title-line').animate({ width:'550px',},1500,function(){
-                $('#lower-title').animate({ opacity:1,top: '20px'},1500);
-            })
-            
+            $('#title-line').show().animate({ width:'550px',},1500,function(){
+                $('#lower-title').show().animate({ opacity:1,top: '20px'},1500);
+            })    
         });
+        // showSlides();
     });
     window.onscroll = function(e) {
         console.log($(document).scrollTop());
@@ -81,13 +82,28 @@ function introEnd() {
             $('#nav-bar').css('overflow','unset');
         }
     };
-};
-/////////////////////////////////////////////////////////////////////////ON READY////////////////////////////////////////////////
-$(document).ready(function () {
+    function animateTitle(){
+        $('#lower-title').animate({ opacity:0,top: '100px'},500);
+        $('#title-line').animate({ width:'0px',},500,function(){$('#title-line').hide();})
+        $('#top-title').animate({opacity: 0, bottom: '100px',},500, function(){
+            $('#top-title').animate({
+                opacity: 1,
+                bottom: '0px',
+            },1000,function(){
+                $('#title-line').show().animate({ width:'550px',},1500,function(){
+                    $('#lower-title').animate({ opacity:1,top: '20px'},1500);
+                })    
+            });
+        });
+        
+    }
     let slidePos = 0;
-showSlides();
 
 function showSlides() {
+    if (slidePos!=0) {
+        animateTitle();    
+    }
+    
     let i;
     let slides = document.getElementsByClassName("beeSlides");
     for (i = 0; i < slides.length; i++) {
@@ -95,10 +111,16 @@ function showSlides() {
     }
     slidePos++;
     if (slidePos > slides.length) { slidePos = 1 }
+    console.log(slides[slidePos - 1]);
     slides[slidePos - 1].style.display = "block";
     setTimeout(showSlides, 10000);
 }
 
+};
+/////////////////////////////////////////////////////////////////////////ON READY////////////////////////////////////////////////
+$(document).ready(function () {
+    
+    
     $(document).on('change', '#roomCount', function () {
         $(this).val(chechInput(this));
         const nbElements = $('.chamber-type').length;
