@@ -63,6 +63,15 @@ function introEnd() {
         $('#content-div').removeClass('d-none');
         $('#navbar-logo').show();
         $('#logo-div').hide();
+        $('#top-title').animate({
+            opacity: 1,
+            bottom: '0px',
+        },1000,function(){
+            $('#title-line').animate({ width:'550px',},1500,function(){
+                $('#lower-title').animate({ opacity:1,top: '20px'},1500);
+            })
+            
+        });
     });
     window.onscroll = function(e) {
         console.log($(document).scrollTop());

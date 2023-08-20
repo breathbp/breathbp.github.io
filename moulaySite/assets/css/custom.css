@@ -194,3 +194,35 @@ border: 1px #99631d solid;
 .left-input{
   text-align: start !important;
 }
+.top-title{
+  font-size: 3rem;
+  opacity: 0;
+  text-align: center;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  /* animation: title-appear 4s ease; */
+}
+.lower-title{
+  /* border-top: 2px white solid; */
+  position: absolute;
+  opacity: 0;
+  top: 100px;
+  text-align: center;
+}
+@keyframes title-appear {
+  0%   {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100%  {
+    opacity: 1;
+  }
+}
+.title-line{
+  border: 2px white solid;
+  margin-bottom: 10px;
+  width: 0px;
+}
