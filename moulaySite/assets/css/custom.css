@@ -243,11 +243,14 @@ opacity: 0;
   overflow: hidden;
   }
 .gallery-frame{
-  padding: 46px 77px;
+  padding: 63px 100px;
   background-color: #d7b14c;
   background-image: url('../../assets/images/frame.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 80vh;
+  height: 90vh;
   background-position: center;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
 }

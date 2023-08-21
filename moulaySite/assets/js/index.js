@@ -246,6 +246,30 @@ $(document).ready(function () {
         // $('#modal').iziModal('open', { zindex: 99999 });
         $('#modal3').iziModal('open');
     });
+
+    ////////////////////////SUBMIT RESERVATION FORM//////////////////////////////
+    //add click listner
+    $(document).on('click','#closeReservation',function(){
+        //define url
+        const url = '/reservation/submit';
+        //get data from form by id
+        let form = $('#reservation-form')[0];
+        //create formdata with reservation inputs
+        const data = new FormData(form);
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: data,
+            success: function (result) {// In case of request success
+                if (result['status'] == 'success') {
+                } else {
+                }
+            },
+            error: function (e) {// In case of request failure
+                console.log(e);
+            }
+        });
+    });
 ///////////////////////////////////////////////////////////////    
 });
 //AUTOMATIC SLIDE SHOW
