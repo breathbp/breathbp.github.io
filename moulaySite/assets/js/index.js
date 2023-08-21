@@ -79,15 +79,15 @@ function introEnd() {
         
         if ($(document).scrollTop()>550) {
             $('#nav-bar').addClass('hidden-logo');
-        } else{
-            $('#nav-bar').removeClass('hidden-logo');
-        }
-        if (this.oldScroll > this.scrollY) {
-                console.log('up');
+            if (this.oldScroll > this.scrollY) {
                 $('#nav-bar').removeClass('hidden-bar');
         }else{
             $('#nav-bar').addClass('hidden-bar');
         }
+        } else{
+            $('#nav-bar').removeClass('hidden-logo');
+        }
+        
         this.oldScroll = this.scrollY;
     };
     function animateTitle(){
