@@ -1313,3 +1313,16 @@ h3.section-sub-title strong {
 {
   background-color: #f9f9f9;
 }
+
+.gap-3rem
+{
+  gap: 3rem;
+}
+
+@media(max-width: 768px)
+{
+  .gap-3rem
+  {
+    gap: 0;
+  }
+}
