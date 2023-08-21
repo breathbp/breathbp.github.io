@@ -242,3 +242,12 @@ opacity: 0;
 #nav-bar.hidden-logo{
   overflow: hidden;
   }
+.gallery-frame{
+  padding: 46px 77px;
+  background-color: #d7b14c;
+  background-image: url('../../assets/images/frame.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 80vh;
+  background-position: center;
+}
