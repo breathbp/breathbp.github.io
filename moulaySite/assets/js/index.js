@@ -39,13 +39,14 @@ function introEnd() {
     });
 
     $('#logo-div').animate({
-        height: '124px',
-        top: '62px',
+        height: '90px',
+        top: '45px',
         // width: '150px',
     }, 2500,"linear", function () {
             // $('.intro-container').addClass('d-none');
         // $('#logo-div').hide();
         //$('#navbar-logo').show();
+        $('#reservation-button-video').hide();
         $('#nav-bar').removeClass('hidden-bar');
     });
 
