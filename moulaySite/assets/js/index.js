@@ -250,7 +250,7 @@ $(document).ready(function () {
 
     ////////////////////////SUBMIT RESERVATION FORM//////////////////////////////
     //add click listner
-    $(document).on('click','#closeReservation',function(){
+    $(document).on('click','#submitReservation',function(){
         //define url
         const url = '/reservation/submit';
         //get data from form by id
