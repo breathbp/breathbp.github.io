@@ -81,7 +81,7 @@ function introEnd() {
             // $('#nav-bar').css('overflow','hidden');
             $('#nav-bar').addClass('hidden-logo');
         } else{
-            $('#nav-bar').removeClass('hidden-logo');
+            $('#nav-bar').removegiClass('hidden-logo');
         }
         // console.log(this.oldScroll > this.scrollY);
         if (this.oldScroll > this.scrollY) {
