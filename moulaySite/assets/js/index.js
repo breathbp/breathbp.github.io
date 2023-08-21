@@ -78,21 +78,15 @@ function introEnd() {
     window.onscroll = function(e) {
         
         if ($(document).scrollTop()>550) {
-            // $('#nav-bar').css('overflow','hidden');
             $('#nav-bar').addClass('hidden-logo');
         } else{
-            $('#nav-bar').removegiClass('hidden-logo');
+            $('#nav-bar').removeClass('hidden-logo');
         }
-        // console.log(this.oldScroll > this.scrollY);
         if (this.oldScroll > this.scrollY) {
                 console.log('up');
                 $('#nav-bar').removeClass('hidden-bar');
-                // $('#nav-bar').animate({opacity: 1,},500);   
         }else{
             $('#nav-bar').addClass('hidden-bar');
-            // $('#nav-bar').animate({opacity: 0,},200,function(){
-                        // $('#nav-bar').hide();
-                    // });
         }
         this.oldScroll = this.scrollY;
     };
