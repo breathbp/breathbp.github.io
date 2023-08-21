@@ -3,8 +3,13 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
     autoplay: true,
-    slidesPerView: 1.5,
-    spaceBetween: 32,
+    slidesPerView: 1,
+    speed:2000, 
+    // spaceBetween: 32,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
     /*effect: 'coverflow',
     coverflowEffect: {
       depth: 200,
