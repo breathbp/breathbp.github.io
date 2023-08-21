@@ -245,7 +245,7 @@ opacity: 0;
   }
 .gallery-frame{
   padding: 63px 65px;
-  background-color: #d7b14c;
+  /* background-color: #d7b14c; */
   background-image: url('../../assets/images/frame.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -271,3 +271,14 @@ opacity: 0;
     color: #7F682B;
     font-family: 'Great vibes';
   }
+  .swiper-button-next::after,.swiper-button-prev::after {
+    content: "";
+ }
+ .swiper-button-prev{
+  left: 45px;
+  /* border: 1px black solid; */
+ }
+ .swiper-button-next{
+right: 45px;
+/* border: 1px black solid; */
+ }
