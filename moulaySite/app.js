@@ -69,3 +69,24 @@ const swiper = new Swiper('.swiper', {
       behavior: "smooth"
     });
   }*/
+
+$(document).on('click', '.feature-tourisme', function(e) {
+  const $this = $(this);
+  const feature_id = $this.attr('data-feature-id');
+
+  $("#ft").fadeTo(300, 0.10, function() {
+      $("#ft").css('background-image', "url('images/sc" + feature_id + ".jpg')");
+  }).fadeTo(300,1);
+
+});
+
+
+$(document).on('click', '.feature-tourisme-1n', function(e) {
+  const $this = $(this);
+  const feature_id = $this.attr('data-feature-id');
+
+  $("#ft2").fadeTo(300, 0.10, function() {
+      $("#ft2").css('background-image', "url('images/place" + feature_id + ".jpg')");
+  }).fadeTo(300,1);
+
+});

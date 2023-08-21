@@ -1202,6 +1202,16 @@ h3.section-sub-title strong {
   gap: 16px;
 }
 
+.gap-four
+{
+  gap: 24px;
+}
+
+.icon-tourisme
+{
+  height: 48px; width: 48px;
+}
+
 .bg-color-222
 {
   background-color: #222;
@@ -1225,4 +1235,21 @@ h3.section-sub-title strong {
 .bg-whitedore
 {
   background-color: #F8F5F0;
+}
+
+.feature-tourisme, .feature-tourisme-1n
+{
+  transition: 0.2s;
+}
+
+.feature-tourisme-1n:hover
+{
+  border: 1px solid var(--primary) !important;
+  cursor: pointer;
+}
+
+.feature-tourisme:hover
+{
+  border: 1px solid var(--primary) !important;
+  cursor: pointer;
 }
