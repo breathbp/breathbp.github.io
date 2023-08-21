@@ -1253,3 +1253,17 @@ h3.section-sub-title strong {
   border: 1px solid var(--primary) !important;
   cursor: pointer;
 }
+
+.variable-height
+{
+  width: 100% !important;
+}
+
+@media(min-width: 1600px)
+{
+  .variable-height
+  {
+    padding: 2rem;
+    width: 80% !important;
+  }
+}
