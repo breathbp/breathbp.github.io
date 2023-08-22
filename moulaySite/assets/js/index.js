@@ -1,7 +1,7 @@
 
 /////////////////////////////////
 
-
+window.scrollTo(0, 0);
 var slideIndex = 1;
 // showDivs(slideIndex);
 
@@ -32,44 +32,87 @@ function showDivs(n, t) {
 function introEnd() {
     $('#introDiv').animate({
         opacity: 0,
-    }, 2500, function () {
+    }, 2200, function () {
         $('.intro-container').addClass('d-none');
-
+        // $(this).addClass('d-none');
 
     });
 
     $('#logo-div').animate({
-
-        height: '150px',
-        top: '75px',
-        width: '150px',
-    }, 2500, function () {
+        height: '90px',
+        top: '45px',
+        // width: '150px',
+    }, 2500,"linear", function () {
+            // $('.intro-container').addClass('d-none');
         // $('#logo-div').hide();
         //$('#navbar-logo').show();
+        $('#reservation-button-video').hide();
+        $('#nav-bar').removeClass('hidden-bar');
     });
 
-    $('#nav-bar').animate({
-        opacity: 1,
-    }, 2500, function () {
-         $('#logo-div').hide();
-        // $('#navbar-logo').show();
-    });
+    // $('#nav-bar').animate({
+    //     opacity: 1,
+    // }, 2500, function () {
+    //     //  $('#logo-div').hide();
+    //     // $('#navbar-logo').show();
+    // });
 
     $('#slider').animate({
         opacity: 1,
     }, 3000, function () {
         // Animation complete.
+        showSlides();
         $(this).css('z-index', '2');
         $('#content-div').removeClass('d-none');
         $('#navbar-logo').show();
+        $('#logo-div').hide();
+        $('#top-title').animate({
+            opacity: 1,
+            bottom: '0px',
+        },1000,function(){
+            $('#title-line').show().animate({ width:'550px',},500,function(){
+                $('#lower-title').show().animate({ opacity:1,top: '20px'},1500);
+            })    
+        });
+        // showSlides();
     });
-};
-/////////////////////////////////////////////////////////////////////////ON READY////////////////////////////////////////////////
-$(document).ready(function () {
+    window.onscroll = function(e) {
+        
+        if ($(document).scrollTop()>550) {
+            $('#nav-bar').addClass('hidden-logo');
+            if (this.oldScroll > this.scrollY) {
+                $('#nav-bar').removeClass('hidden-bar');
+        }else{
+            $('#nav-bar').addClass('hidden-bar');
+        }
+        } else{
+            $('#nav-bar').removeClass('hidden-logo');
+        }
+        
+        this.oldScroll = this.scrollY;
+    };
+    function animateTitle(){
+        $('#lower-title').animate({ opacity:0,top: '100px'},500);
+        $('#title-line').animate({ width:'0px',},500,function(){$('#title-line').hide();})
+        $('#top-title').animate({opacity: 0, bottom: '100px',},500, function(){
+            $('#top-title').animate({
+                opacity: 1,
+                bottom: '0px',
+            },1000,function(){
+                $('#title-line').show().animate({ width:'550px',},500,function(){
+                    $('#lower-title').animate({ opacity:1,top: '20px'},1500);
+                })    
+            });
+        });
+        
+    }
     let slidePos = 0;
-showSlides();
 
 function showSlides() {
+    if (slidePos!=0) {
+        animateTitle();    
+    }
+    
     let i;
     let slides = document.getElementsByClassName("beeSlides");
     for (i = 0; i < slides.length; i++) {
@@ -77,10 +120,16 @@ function showSlides() {
     }
     slidePos++;
     if (slidePos > slides.length) { slidePos = 1 }
+    console.log(slides[slidePos - 1]);
     slides[slidePos - 1].style.display = "block";
     setTimeout(showSlides, 10000);
 }
 
+};
+/////////////////////////////////////////////////////////////////////////ON READY////////////////////////////////////////////////
+$(document).ready(function () {
+    
+    
     $(document).on('change', '#roomCount', function () {
         $(this).val(chechInput(this));
         const nbElements = $('.chamber-type').length;
@@ -198,14 +247,32 @@ function showSlides() {
         // $('#modal').iziModal('open', { zindex: 99999 });
         $('#modal3').iziModal('open');
     });
+
+    ////////////////////////SUBMIT RESERVATION FORM//////////////////////////////
+    //add click listner
+    $(document).on('click','#submitReservation',function(){
+        //define url
+        const url = '/reservation/submit';
+        //get data from form by id
+        let form = $('#reservation-form')[0];
+        //create formdata with reservation inputs
+        const data = new FormData(form);
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: data,
+            success: function (result) {// In case of request success
+                if (result['status'] == 'success') {
+                } else {
+                }
+            },
+            error: function (e) {// In case of request failure
+                console.log(e);
+            }
+        });
+    });
 ///////////////////////////////////////////////////////////////    
 });
-
-
-
-
-
-
 //AUTOMATIC SLIDE SHOW
 
 
