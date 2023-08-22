@@ -83,6 +83,10 @@ $(document).on('click', '.feature-tourisme', function(e) {
       $("#ft").css('background-image', "url('images/sc" + feature_id + ".jpg')");
   }).fadeTo(300,1);
 
+  $("#ft-responsive").fadeTo(300, 0.10, function() {
+      $("#ft-responsive").attr('src', "images/sc" + feature_id + ".jpg");
+  }).fadeTo(300,1);
+
 });
 
 
@@ -94,4 +98,7 @@ $(document).on('click', '.feature-tourisme-1n', function(e) {
       $("#ft2").css('background-image', "url('images/place" + feature_id + ".jpg')");
   }).fadeTo(300,1);
 
+  $("#ft2-responsive").fadeTo(300, 0.10, function() {
+    $("#ft2-responsive").attr('src', "images/place" + feature_id + ".jpg");
+  }).fadeTo(300,1);
 });

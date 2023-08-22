@@ -1253,6 +1253,24 @@ h3.section-sub-title strong {
   height: 48px; width: 48px;
 }
 
+@media(max-width: 768px)
+{
+  .icon-tourisme
+  {
+    height: 32px; width: 32px;
+  }
+
+  .icon-tourisme-size
+  {
+    font-size: 22px !important;
+  }
+}
+
+.icon-tourisme-size
+{
+  font-size: 28px;
+}
+
 .bg-color-222
 {
   background-color: #222;
@@ -1325,4 +1343,19 @@ h3.section-sub-title strong {
   {
     gap: 0;
   }
+
+  .gap-four
+  {
+    gap: 0;
+  }
+
+  .width-20
+  {
+    width: 20% !important;
+  }
+}
+
+.width-20
+{
+  width: 100%;
 }
