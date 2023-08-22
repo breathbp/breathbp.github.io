@@ -904,7 +904,7 @@ h3.section-sub-title strong {
  
   .footer .inner {
       display: grid;
-      grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+      grid-template-columns: repeat(2, 1fr);
   }
   .start-learning {
       position: unset;
@@ -931,6 +931,7 @@ h3.section-sub-title strong {
   .column.is-logo {
       order: 4;
   }
+  
 } 
 
 .feature
@@ -1283,6 +1284,11 @@ h3.section-sub-title strong {
 .color-666
 {
   color: #666;
+}
+
+.color-999
+{
+  color: #999;
 }
 
 .font-barlow
