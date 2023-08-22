@@ -282,3 +282,45 @@ opacity: 0;
 right: 45px;
 /* border: 1px black solid; */
  }
+ .bp-offcanvas{
+  background-color: rgb(32, 22, 7);
+  box-shadow:inset 0px 0px 0px 10px #ac9165;
+  width: 40vw !important;
+ }
+ .menu-list{
+  text-align: end;
+  list-style-type: none;
+  font-family: great vibes;
+  font-size: 2rem;
+  /* background-image: url(../images/hotel/h_\(2\).webp); */
+ }
+ .menu-list-item{
+transition: all 0.5s ease;
+ }
+
+ .menu-list-item:hover{
+color: #ac9165;
+letter-spacing: 2px;
+ }
+ .menu-image-div{
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 45%;
+  display: flex;
+  border: 4px #ac9165 solid;
+/* justify-content: end; */
+ }
+ .menu-image-div img{
+width:100%;
+object-fit: cover;
+height: auto;
+ }
+ .menu-close{
+background-color: #ac9165;
+position: fixed;
+right: 20px;
+top: 20px;
+font-size: 2rem;
+color: white;
+
+ }
