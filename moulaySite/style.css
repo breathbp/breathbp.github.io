@@ -219,6 +219,20 @@ transform: translateX(-50%);
   opacity: 0.85;
 }
 
+@media(max-width: 768px)
+{
+  .image-rectangle:after {
+    content: '';
+    position: absolute;
+    right: 0.8rem !important;
+    bottom: -1rem !important;
+    border: 2px solid var(--primary);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+}
+
 .image-rectangle {
   position: relative;
   display: inline-block;
@@ -314,6 +328,15 @@ transform: translateX(-50%);
     
     
     filter: drop-shadow(20px 20px 0px var(--primary));
+}
+
+@media(max-width: 768px)
+{
+  .rectangle-shadow
+  {
+    filter: drop-shadow(10px 10px 0px var(--primary));
+  }
+
 }
 
 .rectangle-shadow2 {
@@ -956,7 +979,7 @@ h3.section-sub-title strong {
   /*backdrop-filter: invert();*/
   }
 
-  .room-text-pos
+  .room-text-pos, .room-text-pos3
   {
     position: absolute;
     top: 5%;
@@ -980,6 +1003,34 @@ h3.section-sub-title strong {
     top: 82%;
     left: 0%;
     padding: 0 1.5rem;
+  }
+
+  @media(max-width: 768px)
+  {
+    .room-text-pos
+    {
+      position: absolute;
+      top: 5%;
+      left: 0%;
+      padding: 0 1.5rem;
+      cursor: pointer;
+    }
+  
+    .room-buttons-pos2
+    {
+      position: absolute;
+      top: 70%;
+      left: 0%;
+      padding: 0 1.5rem;
+    }
+
+    .room-text-pos3
+    {
+      position: absolute;
+      top: 10%;
+      left: 0%;
+      padding: 0 1.5rem;
+    }
   }
 
   .room-div .socials {
@@ -1123,6 +1174,17 @@ h3.section-sub-title strong {
 
 
 .section-circle:hover
+{
+  transform: scale(1.1);
+}
+
+.scale-on-hover
+{
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.scale-on-hover:hover
 {
   transform: scale(1.1);
 }
