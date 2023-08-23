@@ -46,9 +46,16 @@
 
     </div>
   </div>
-<div id="reservation-button-video" style="position: fixed; z-index: 9999; top: 20px; left: 20px;">
-  <button type="button" class="btn btn-reservation trigger"
-        style="font-family: 'palaceFont'; font-size: 1.5rem;">Réservation</button>
+<div id="reservation-button-video" style="position: fixed; z-index: 9999; top: 10px; right: 10px;">
+  <div class="d-flex align-items-center " style="margin-right: 10px;">
+    <button type="button" class="btn btn-reservation trigger"
+      style="font-family: 'palaceFont'; font-size: 1.5rem;">Réservation</button>
+      <button type="button" class="btn btn-gold" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+      style="font-family: 'palaceFont'; font-size: 1.5rem; margin-left: 5px;"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  
+  <!-- <button type="button" class="btn btn-reservation trigger"
+        style="font-family: 'palaceFont'; font-size: 1.5rem;">Réservation</button> -->
 </div>
   <div class="d-flex justify-content-between hidden-bar" id="nav-bar">
     <a href="#" style="font-family: 'palaceFont', cursive; color: white; font-size: 2rem; margin: 0; padding: 20px; display: grid;">
@@ -60,7 +67,7 @@
             transform: translateX(-50%);
             background-color: #ffffff00;
              display: none;">
-    <div class="d-flex align-items-center" style="margin-right: 10px;">
+    <div class="d-flex align-items-center onvideo-buttons" style="margin-right: 10px;">
       <button type="button" class="btn btn-reservation trigger"
         style="font-family: 'palaceFont'; font-size: 1.5rem;">Réservation</button>
         <button type="button" class="btn btn-gold" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
@@ -1109,26 +1116,70 @@ background-size: cover; padding: 12rem 0;">
         <img src="assets/images/akidback.svg" alt="background" style="width: 95%;">
       </div>
       <div>
-        <div class="d-flex">
-          <div class="form-group mb-3 ">
+        <div class="d-flex justify-content-center">
+          <div class="form-group mb-1 ">
             <span class="bp-form-label">Nom</span>
             <input type="text" class="form-input left-input" placeholder="">
           </div>
-          <div class="form-group mb-3 ">
+          <div class="form-group mb-1 ">
             <span class="bp-form-label">Prénom</span>
             <input type="text" class="form-input left-input" placeholder="">
           </div>
         </div>
-        <div class="d-flex">
-          <div class="form-group mb-3 ">
+        <div class="d-flex justify-content-center">
+          <div class="form-group mb-1 ">
             <span class="bp-form-label">E-mail</span>
-            <input type="email" class="form-input left-input" placeholder="">
+            <input type="email" class="form-input left-input" placeholder="user@provider.com">
           </div>
-          <div class="form-group mb-3 ">
+          <div class="form-group mb-1 ">
             <span class="bp-form-label">N° mobile</span>
             <input type="tel" class="form-input left-input" placeholder="">
           </div>
         </div>
+<button type="button" id="addUserDocument">+</button>
+<div id="userDocumentDiv">
+  <div class="d-flex justify-content-center userDocument" id="userDocument">
+
+    <div class="form-group mb-1 chamber-type" id="chamberType1">
+      <span class="bp-form-label">Type de document</span>
+      <select class="form-input">
+        <option value="1">Simple</option>
+        <option value="2">Suite</option>
+      </select>
+    </div>
+    <div class="form-group mb-1 ">
+      <span class="bp-form-label">Upload</span>
+      <div class="d-flex" style="gap: 10px;">
+        <input type="file" class="form-input left-input" placeholder="">
+        <button class="btn btn-danger removeDocument d-none">X</button>
+      </div>
+      
+    </div>
+
+    <!-- <div class="form-group mb-1 ">
+      <span class="bp-form-label">N° document</span>
+      <input type="text" class="form-input left-input" placeholder="">
+    </div>
+    <div class="form-group mb-1 ">
+      <span class="bp-form-label">N° IN</span>
+      <input type="text" class="form-input left-input" placeholder="" style="width: 100px;">
+    </div>
+    <div class="form-group mb-1 ">
+      <span class="bp-form-label">Date de délévrance</span>
+      <input type="date" class="form-input left-input" placeholder="">
+    </div>
+    <div class="form-group mb-1 ">
+      <span class="bp-form-label">Délivré par</span>
+      <input type="text" class="form-input left-input" placeholder="">
+    </div> -->
+    
+  </div>
+</div>
+        
+
+        
+        
+
         <div class="d-flex justify-content-end m-3">
           <button id="closeReservation" class="btn btn-gold bp-btn-submit">Confirmer</button>
         </div>
