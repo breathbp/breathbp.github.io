@@ -661,6 +661,11 @@ ul {
   padding-top: 6rem; padding-bottom: 6rem !important;
 }
 
+.py-medium
+{
+  padding-top: 4rem; padding-bottom: 4rem !important;
+}
+
 .py-8
 {
   padding-top: 8rem; padding-bottom: 8rem !important;
