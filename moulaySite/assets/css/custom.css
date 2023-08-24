@@ -290,7 +290,7 @@ right: 45px;
  }
  .bp-offcanvas{
   background-color: rgb(32, 22, 7);
-  box-shadow:inset 0px 0px 0px 10px #ac9165;
+  box-shadow:inset 0px 0px 0px 2px #ac9165;
   width: 40vw !important;
  }
  .menu-list{
@@ -313,7 +313,7 @@ letter-spacing: 2px;
   margin-right: 20px;
   width: 45%;
   display: flex;
-  border: 4px #ac9165 solid;
+  border: 2px #ac9165 solid;
 /* justify-content: end; */
  }
  .menu-image-div img{
