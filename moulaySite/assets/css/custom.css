@@ -257,6 +257,24 @@ opacity: 0;
   margin-left: 30px;
   margin-right: 30px;
 }
+@media only screen and (max-width: 700px) {
+  .gallery-frame{
+    /* padding: unset; */
+    background-color: unset;
+    background-image: unset;
+    padding: 0px 10px;
+    width: 100%;
+    height: 100%;
+    /* background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 90vh;
+    width: 70%;
+    background-position: center;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px; */
+  }
+}
 .swiper img {
   width: 100% !important;
   height: 100% !important;
@@ -266,11 +284,13 @@ opacity: 0;
     font-family: 'palaceFont';
     font-size: 5rem;
     color: #b3913c;
+    padding: 1rem;
   }
   .gallery-text{
     font-size: 1.5rem;
     color: #7F682B;
     font-family: 'Great vibes';
+    padding: 2rem;
   }
   .swiper-button-next::after,.swiper-button-prev::after {
     content: "";
