@@ -290,7 +290,7 @@ right: 45px;
  }
  .bp-offcanvas{
   background-color: rgb(32, 22, 7);
-  box-shadow:inset 0px 0px 0px 10px #ac9165;
+  box-shadow:inset 0px 0px 0px 5px #ac9165;
   width: 40vw !important;
  }
  .menu-list{
