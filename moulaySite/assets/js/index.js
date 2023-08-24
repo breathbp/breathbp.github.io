@@ -1,6 +1,6 @@
 
 /////////////////////////////////
-
+disableScroll();
 window.scrollTo(0, 0);
 var slideIndex = 1;
 // showDivs(slideIndex);
@@ -72,6 +72,7 @@ function introEnd() {
         }, 1000, function () {
             $('#title-line').show().animate({ width: '550px', }, 500, function () {
                 $('#lower-title').show().animate({ opacity: 1, top: '20px' }, 1500);
+                enableScroll();
             })
         });
         // showSlides();
@@ -282,12 +283,70 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.removeDocument', function () {
-        if ($('.userDocument').length>1) {
-            $(this).parent().parent().parent().remove();   
+        if ($('.userDocument').length > 1) {
+            $(this).parent().parent().parent().remove();
         }
-    })
+    });
+
+    $(document).on('click', '#submitForm2', function () {
+        const formElement = document.getElementById('form2');
+
+        const data = new FormData(formElement);
+        const dataArray = [...data.entries()];
+
+        const dataObject = {};
+
+        for (let pair of dataArray) {
+            let key = pair[0];
+            let value = pair[1];
+
+            if (key == 'roomClasses') {
+                if (!dataObject[key]) {
+                    dataObject[key] = [];
+                }
+
+                dataObject[key].push(value);
+            }
+            else {
+                dataObject[key] = value;
+            }
+        }
+
+        const uri = 'createReservation';
+        $.ajax({
+            url: uri,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            data: JSON.stringify(dataObject),
+            success: function (response) {
+                const responseData = response.json();
+                const responseObject = JSON.parse(JSON.stringify(responseData));
+                formElement.innerHTML = responseObject.message;
+            }
+        });
+    });
 
 });
 //AUTOMATIC SLIDE SHOW
+
+function disableScroll() {
+    // Get the current page scroll position
+    scrollTop =
+        window.scrollY || document.documentElement.scrollTop;
+    scrollLeft =
+        window.scrollX || document.documentElement.scrollLeft,
+
+        // if any scroll is attempted,
+        // set this to the previous value
+        window.onscroll = function () {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+}
+
+function enableScroll() {
+    window.onscroll = function () { };
+}
 
 
