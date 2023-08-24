@@ -1228,44 +1228,44 @@ h3.section-sub-title strong {
   .negative-margin
   {
     margin-right: 0 !important;
-    z-index: 10;
+    z-index: 3;
   }
 
   .negative-margin-2
   {
     margin-right: 0 !important;
-    z-index: 10;
+    z-index: 3;
   }
 
   .negative-margin-4
   {
     margin-left: 0 !important;
-    z-index: 10;
+    z-index: 3;
   }
 }
 
 .negative-margin
 {
   margin-right: -6rem;
-  z-index: 10;
+  z-index: 3;
 }
 
 .negative-margin-2
 {
   margin-right: -12rem;
-  z-index: 10;
+  z-index: 3;
 }
 
 .negative-margin-3
 {
   margin-left: -12rem;
-  z-index: 10;
+  z-index: 3;
 }
 
 .negative-margin-4
 {
   margin-left: -14rem;
-  z-index: 10;
+  z-index: 3;
 }
 
 .card
