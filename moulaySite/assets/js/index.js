@@ -1,6 +1,6 @@
 
 /////////////////////////////////
-
+disableScroll();
 window.scrollTo(0, 0);
 var slideIndex = 1;
 // showDivs(slideIndex);
@@ -72,6 +72,7 @@ function introEnd() {
         }, 1000, function () {
             $('#title-line').show().animate({ width: '550px', }, 500, function () {
                 $('#lower-title').show().animate({ opacity: 1, top: '20px' }, 1500);
+                enableScroll();
             })
         });
         // showSlides();
@@ -289,5 +290,23 @@ $(document).ready(function () {
 
 });
 //AUTOMATIC SLIDE SHOW
+
+function disableScroll() {
+    // Get the current page scroll position
+    scrollTop =
+    window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft =
+    window.pageXOffset || document.documentElement.scrollLeft,
+  
+        // if any scroll is attempted,
+        // set this to the previous value
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+}
+  
+function enableScroll() {
+    window.onscroll = function() {};
+}
 
 

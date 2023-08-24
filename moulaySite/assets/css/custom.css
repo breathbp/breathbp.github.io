@@ -211,6 +211,7 @@ border: 1px #99631d solid;
   opacity: 0;
   top: 100px;
   text-align: center;
+  font-size: 1.9rem;;
 }
 @keyframes title-appear {
   0%   {
@@ -315,14 +316,22 @@ width:100%;
 object-fit: cover;
 height: auto;
  }
- .menu-close{
-background-color: #ac9165;
-position: fixed;
-right: 20px;
-top: 20px;
-font-size: 2rem;
-color: white;
- }
+ .menu-close {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  transition: all 0.5s ease;
+}
+.menu-close:hover {
+  color: #d7b14c;
+}
  .onvideo-buttons{
   position: fixed; 
   z-index: 9999;
