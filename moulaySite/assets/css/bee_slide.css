@@ -1,32 +1,40 @@
-body{
+body {
     margin: 0;
 }
-.beeslide-container{
-    width: 100vw; 
-    height: 100vh; 
+
+.beeslide-container {
+    width: 100vw;
+    height: 100vh;
     position: relative;
     overflow: hidden;
+    /* object-fit: cover; */
     /* background-color: #000; */
 }
-.beeSlides{
+
+.beeSlides {
     width: 100%;
-    height: 100%;
+    height: 100% !important;
     object-fit: cover;
     display: none;
 }
-.beeslide-right{
+.beeSlides img{
+
+}
+.beeslide-right {
     position: absolute;
     top: 50%;
     right: 0%;
-    transform: translate(0%,-50%);
+    transform: translate(0%, -50%);
 }
-.beeslide-left{
+
+.beeslide-left {
     position: absolute;
     top: 50%;
     left: 0%;
-    transform: translate(0%,-50%);
+    transform: translate(0%, -50%);
 }
-.beeslide-button{
+
+.beeslide-button {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -43,19 +51,22 @@ body{
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
-    
+
 }
-.beeslide-black{
-    color: #d7b14c!important;
+
+.beeslide-black {
+    color: #d7b14c !important;
     /* background-color: #d7b14c!important; */
     background-color: #00000000 !important;
     font-size: 2rem;
     margin: 20px;
 }
-.beeslide-move-left{
+
+.beeslide-move-left {
     position: relative;
     animation: moveLeft 10s linear;
 }
+
 @keyframes moveLeft {
     0% {
         /* left: -300px; */
@@ -63,6 +74,7 @@ body{
         opacity: 0;
         scale: 1.4;
     }
+
     50% {
         opacity: 1;
         scale: 1.2;
@@ -71,17 +83,20 @@ body{
     75% {
         opacity: 1;
     }
+
     100% {
         /* left: -300px; */
         /* transform: translateX(300px); */
         opacity: 0;
         scale: 1;
-    }   
+    }
 }
-.beeslide-move-right{
+
+.beeslide-move-right {
     position: relative;
     animation: moveRight 10s linear;
 }
+
 @keyframes moveRight {
     0% {
         /* left: -300px; */
@@ -89,6 +104,7 @@ body{
         opacity: 0;
         scale: 1.4;
     }
+
     50% {
         opacity: 1;
         scale: 1.2;
@@ -98,10 +114,23 @@ body{
         opacity: 1;
         scale: 1.1;
     }
+
     100% {
         /* left: -300px; */
         /* transform: translateX(300px); */
         opacity: 0;
         scale: 1;
-    }   
+    }
+}
+
+#slider {
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url(assets/assets/images/akidhotel.png);
+    background-position: center;
+    background-size: contain;
 }
