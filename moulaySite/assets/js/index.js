@@ -1,6 +1,6 @@
 
 /////////////////////////////////
-disableScroll();
+//disableScroll();
 window.scrollTo(0, 0);
 var slideIndex = 1;
 // showDivs(slideIndex);
