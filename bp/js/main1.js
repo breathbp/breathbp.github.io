@@ -7,9 +7,9 @@
     --------------------*/
     $(window).on('load', function () {
         $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow")
-        .queue(function(next) {
-            if ( $('.hero__slider').length ) {
+        // $("#preloder").delay(200).fadeOut("slow")
+        // .queue(function(next) {
+        //     if ( $('.hero__slider').length ) {
                 $('.hero__slider').trigger('play.owl.autoplay');
                 $('#logoIntroVideo').get(0).play();
                 const $owlDots = $('.owl-dots .owl-dot');
@@ -19,10 +19,10 @@
                     $hint.append($(owlDot).clone());
                     $(owlDot).replaceWith($hint);
                 });
-            }
+        //     }
             
             next();
-        });
+        // });
         
         /*------------------
             Portfolio filter
