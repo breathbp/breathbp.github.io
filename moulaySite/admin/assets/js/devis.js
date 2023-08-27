@@ -12,7 +12,7 @@ $(document).ready(function () {
                 line += '<td><input class="w-100 lineInput" type="text" name="quantity[]" value="0"></td>'
                 line += '<td><input class="w-100 lineInput" type="text" name="unitedPrice[]" value="0"></td>'
                 line += '<td><input class="w-100 lineInput" type="text" name="discount[]" value="0"></td>'
-                line += '<td><input class="w-100 lineInput" type="text" name="priceBeforeDiscount[]" value="0"></td>'
+                line += '<td><input class="w-100 lineInput" type="text" name="priceAfterDiscount[]" value="0"></td>'
                 line += '<td><input class="w-100 lineInput sTotal" type="text" name="sTotal[]" value="0"></td>'
                 line += '<td class="d-flex" style="gap: 5px;">'
                 // line += '<button class="btn btn-sm btn-primary addLigne" title="Ajouter une ligne">+</button>'
@@ -33,19 +33,32 @@ $(document).ready(function () {
         $('.sTotal').each(function(index, element){
             sum+= parseInt($(element).val());
         });
-        $('#mst').html(sum + ' DA')
+        $('#mst').html(sum + ' DA');
+        const totalDiscount = $("#totalDiscount").val();
+        const totalAfterDiscount = parseFloat(sum) - parseFloat(totalDiscount);
+        $('#totalAfterDiscount').html(totalAfterDiscount + ' DA');
+        const mTva = parseFloat($("#tva").val()) * totalAfterDiscount /100;
+        $("#mTva").html(mTva + ' DA');
+        const mTtc = mTva + totalAfterDiscount;
+        $("#mTtc").html(mTtc + ' DA');
+
     };
     $(document).on('keyup change',".lineInput",function(){
-        console.log('input');
         calculateLine($(this).parent().parent());
-    })
+    });
+    $(document).on('keyup change',"#totalDiscount",function(){
+    calculate();
+    });
+    $(document).on('keyup change',"#tva",function(){
+        calculate();
+        });
     function calculateLine(element){
         const qte = $(element).find("input[name='quantity[]'").val();
         const pu = $(element).find(("input[name='unitedPrice[]'")).val();
         const remise = $(element).find(("input[name='discount[]'")).val();
-        const priceBeforeDiscount = parseFloat(qte) * parseFloat(pu);
-        const sTotal = priceBeforeDiscount - parseFloat(remise);
-        $(element).find("input[name='priceBeforeDiscount[]'").val(priceBeforeDiscount);
+        const priceAfterDiscount = parseFloat(pu) - parseFloat(remise);
+        const sTotal = priceAfterDiscount * parseFloat(qte);
+        $(element).find("input[name='priceAfterDiscount[]'").val(priceAfterDiscount);
         $(element).find("input[name='sTotal[]'").val(sTotal);
         calculate()
         // const pu = $(this).find();

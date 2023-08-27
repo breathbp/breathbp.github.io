@@ -211,7 +211,7 @@
                                     <td><input class="w-100 lineInput" type="number" name="quantity[]" value="0"></td>
                                     <td><input class="w-100 lineInput" type="number" name="unitedPrice[]" value="0"></td>
                                     <td><input class="w-100 lineInput" type="number" name="discount[]" value="0"></td>
-                                    <td><input class="w-100 lineInput" type="number" name="priceBeforeDiscount[]" value="0"></td>
+                                    <td><input class="w-100 lineInput" type="number" name="priceAfterDiscount[]" value="0"></td>
                                     <td><input class="w-100 lineInput sTotal" type="number" name="sTotal[]" value="0"></td>
                                     <td class="d-flex" style="gap: 5px;">
                                         <button class="btn btn-danger deleteLigne" title="Supprimer cette ligne">Supprimer</button>
@@ -225,16 +225,18 @@
                         <table class="table mx-2" style="width: 33vw;">
                             <tbody>
                                 <tr>
-                                    <td>S. total avant remise</td>
-                                    <td id="mst"> 1000 DA</td>
+                                    <td>Total avant remise</td>
+                                    <td id="mst"> 0 DA</td>
                                 </tr>
                                 <tr>
-                                    <td>Montant remise</td>
-                                    <td> 1000 DA</td>
+                                    <td>Remise globale</td>
+                                    <td>
+                                        <input type="number" id="totalDiscount" value="0" class="globalInput">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>S. total aprés remise</td>
-                                    <td> 1000 DA</td>
+                                    <td>Total aprés remise</td>
+                                    <td id="totalAfterDiscount"> 0 DA</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -242,12 +244,15 @@
                         <table class="table mx-2" style="width: 33vw;">
                             <tbody>
                                 <tr>
-                                    <td>TVA <input type="text" value="19%" style="width: 50px;"></td>
-                                    <td><input type="text" value="0 DA"></td>
+                                    <td>TVA <input type="text" value="19%" style="width: 50px;" id="tva"></td>
+                                    <td id="mTva">
+                                        <!-- <input type="text" value="0 DA"> -->
+                                        0 DA
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Montant TTC</td>
-                                    <td> 10 000 DA</td>
+                                    <td id="mTtc"> 0 DA</td>
                                 </tr>
                             </tbody>
                         </table>
