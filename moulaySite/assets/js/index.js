@@ -71,7 +71,7 @@ function introEnd() {
             bottom: '0px',
         }, 1000, function () {
             $('#title-line').show().animate({ width: '550px', }, 500, function () {
-                $('#lower-title').show().animate({ opacity: 1, top: '20px' }, 1500);
+                $('#lower-title').show().animate({ opacity: 1, top: '50px' }, 1500);
                 enableScroll();
             })
         });
