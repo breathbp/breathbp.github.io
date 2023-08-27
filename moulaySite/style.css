@@ -1434,6 +1434,18 @@ h3.section-sub-title strong {
   {
     width: 20% !important;
   }
+
+  .footer-start
+  {
+    max-width: 100%;
+    margin: 0 !important;
+    margin-bottom: 3rem !important;
+  }
+
+  .section-title-footer
+  {
+    font-size: 28px;
+  }
 }
 
 .width-20
