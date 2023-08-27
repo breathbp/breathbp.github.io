@@ -63,4 +63,43 @@ $(document).ready(function () {
         calculate()
         // const pu = $(this).find();
     }
+    $(document).on('click','.submitForm',function(){
+        const formElement = document.getElementById('tableForm');
+
+        const data = new FormData(formElement);
+        const dataArray = [...data.entries()];
+
+        const dataObject = {};
+
+        for (let pair of dataArray) {
+            let key = pair[0];
+            let value = pair[1];
+
+            if (key == 'roomClasses') {
+                if (!dataObject[key]) {
+                    dataObject[key] = [];
+                }
+
+                dataObject[key].push(value);
+            }
+            else {
+                dataObject[key] = value;
+            }
+        }
+
+        const uri = 'createReservation';
+        $.ajax({
+            url: uri,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            data: JSON.stringify(dataObject),
+            success: function (response) {
+                const responseData = response.json();
+                const responseObject = JSON.parse(JSON.stringify(responseData));
+                formElement.innerHTML = responseObject.message;
+            }
+        });
+    });
 });
