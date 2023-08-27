@@ -10,8 +10,8 @@
         // $("#preloder").delay(200).fadeOut("slow")
         // .queue(function(next) {
         //     if ( $('.hero__slider').length ) {
-                $('.hero__slider').trigger('play.owl.autoplay');
-                $('#logoIntroVideo').get(0).play();
+                // $('.hero__slider').trigger('play.owl.autoplay');
+                // $('#logoIntroVideo').get(0).play();
                 const $owlDots = $('.owl-dots .owl-dot');
                 const sliderTitles = ['Home', 'Slogan', 'Informatique', 'Télécommunication', 'Électricité Industrielle', 'Énergie', 'Automatisme', 'Systèmes Anti-Incendie', 'Vidéo Surveillance', 'Internet des Objets', 'Recherche et développement'];
                 $.each($owlDots, function (i, owlDot) {
@@ -74,7 +74,7 @@
         // smartSpeed: 8000,
         autoplayTimeout: 8500,
         autoHeight: false,
-        autoplay: false,
+        autoplay: true,
     });
 
     var dot = $('.hero__slider .owl-dot');
