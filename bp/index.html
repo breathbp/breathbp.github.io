@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Breath Partner">
+    <meta name="keywords" content="Breath Partner, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Breath Partner</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/card.css" type="text/css">
+    <link href="css/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/domaines-list.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"
+    integrity="sha512-gnj0WGxmbeTgYXck9CyFjrdkEFcZE4xwnJb/nG3bcl5OlWHJ9ixRkJK0MDPtCytnO3IBIh0Omqawv0UPpl0LoA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/card.css" type="text/css">
+    <link rel="stylesheet" href="css/style1.css" type="text/css">
+</head>
+
+<body>
+
+    <div id="goBackToTopBtn" class="hide">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+
+    <audio class="d-none" id="introAudio" loop>
+        <source src="audio/breathartner.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="homeHref" class="anchor"></div>
+
+    <!-- Page Preloder -->
+    <!-- <div id="preloder" style="background-color: white; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <div class="mb-3 animate__animated animate__flash animate__infinite animate__slow" style="animation-duration: 4s;">
+            <img src="img/logo.png" alt="" height="150">
+        </div>
+        <div id="loadingBarContainer" style="width: 400px; height: 40px; display: flex; border: black solid 1px; box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);"></div>
+        <p class="text-center mt-3" style="font-weight: bold;">Veuillez patienter quelques instants</p>
+    </div> -->
+
+    <div id="preloder" style="background-color: white; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <div class="mb-3 animate__animated animate__flash animate__infinite animate__slow" style="animation-duration: 4s;">
+            <img src="img/logo.png" alt="" height="150">
+        </div>
+        <div>
+            <div id="loadingBarContainer" style="width: 150px; position: relative"></div>
+        </div>
+        <div>
+            <p class="text-center mt-3" style="font-weight: bold; font-family: 'Quicksand', sans-serif; color: black">Veuillez patienter quelques instants</p>
+        </div>
+    </div>
+
+    <script src="js/pbjs/progressbar.min.js"></script>
+    <script>
+        const loadingBarContainer = document.getElementById('loadingBarContainer');
+        let progressBarCircle = null;
+        const rand = Math.floor(Math.random() * (90 - 83 + 1) + 83);
+        var bar = new ProgressBar.Circle(loadingBarContainer, {
+            color: '#0a1971',
+            strokeWidth: 9,
+            trailWidth: 1,
+            easing: 'easeInOut',
+            duration: 15000,
+            text: {
+                autoStyleContainer: false
+            },
+            from: { color: '#7bd2f6', width: 9 },
+            to: { color: '#0a1971', width: 9 },
+            step: function(state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value + "%");
+                }
+                const match = circle.text.textContent.match(/\d+/);
+                if (match && match[0] && match[0] >= rand) {
+                    circle.stop();
+                }
+                progressBarCircle = circle;
+            }
+        });
+        
+        bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+        bar.text.style.fontSize = '2rem';
+
+        /* var bar = new ProgressBar.Line(loadingBarContainer, {
+            strokeWidth: 3,
+            easing: 'easeInOut',
+            duration: 40000,
+            color: '#0a1971',
+            trailColor: '#fff',
+            trailWidth: 3,
+            svgStyle: {width: '400px', height: '40px'}
+        }); */
+
+        bar.animate(1.0);  
+
+    </script>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container-95">
+            <div class="row">
+                <div class="col-lg-auto">
+                    <div class="header__logo">
+                        <a href="index.html"><img src="img/logo.png" height="50" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-auto ml-auto">
+                    <div class="header__nav__option">
+                        <nav class="header__nav__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a class="go-to-section" href="#homeHref">HOME</a></li>
+                                <li><a class="go-to-section" href="#aboutHref">A PROPOS</a></li>
+                                <li><a class="go-to-section" href="#valeursHref">NOS VALEURS</a></li>
+                                <li><a class="go-to-section" href="#strongpointsHref">POINTS FORTS</a></li>
+                                <li><a class="go-to-section" href="#activitiesHref">DOMAINES D’ACTIVITÉS</a></li>
+                                <li><a class="go-to-section" href="#realisationsHref">RÉALISATIONS</a></li>
+                                <li><a class="go-to-section" href="#visionHref">VISION</a></li>
+                                <li><a class="go-to-section" href="#equipeHref">ÉQUIPE</a></li>
+                                <li><a class="go-to-section" href="#contactHref">CONTACT</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- <div class="header__nav__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="hero__slider owl-carousel">
+
+            <!-- <div class="hero__item set-bg" data-setbg="https://beezniss.com:3000/video/1"> -->
+
+            <div class="hero__item set-bg">
+                <video muted loop class="introVideo" id="logoIntroVideo">
+                    <source src="https://beezniss.com:3000/video/1_new" type="video/mp4">
+                </video>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mt-3 d-flex">
+                                <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                        class="fa fa-pause"></i> </button>
+                                <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                        class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first">
+                <div class="black-layout"></div>
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/2_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <h2 class="our-solution-text">Technology Solution Integrator</h2>
+                                <div class="mt-3 d-flex">
+                                    <a href="#activitiesHref" class="primary-btn go-to-section">NOS SERVICES</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <h2 class="our-solution-text mt-5 white">La solution qui vous convient</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first">
+                <div class="black-layout"></div>
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/3_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <h2>Informatique</h2>
+                                <p class="color-white">
+                                    La science du traitement automatisé de l'information. Un passage incontournable pour
+                                    gagner du temps, sécuriser et fiabiliser vos données et surtout avoir un outil
+                                    d'aide à la décision.
+                                </p>
+                                <div class="mt-3 d-flex">
+                                    <a href="javascript:void(0);" data-section-id="informatiqueActivitySection"
+                                        class="primary-btn consult-service-btn"> <i class="fa fa-arrow-right mr-2"></i>
+                                        CONSULTER</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first">
+                <div class="black-layout"></div>
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/4_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <h2>Télécommunication</h2>
+                                <p class="color-white">
+                                    La science de la transmission des données à distance. Communiquer via les différents
+                                    outils et les nouvelles plateformes vous aide à gagner du temps et à améliorer vos
+                                    moyens de communication.
+                                </p>
+                                <div class="mt-3 d-flex">
+                                    <a href="javascript:void(0);" data-section-id="telecomActivitySection"
+                                        class="primary-btn consult-service-btn"> <i class="fa fa-arrow-right mr-2"></i>
+                                        CONSULTER</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first">
+                <div class="black-layout"></div>
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/5_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <h2>Électricité Industrielle</h2>
+                                <p class="color-white">
+                                    Indispensable pour le fonctionnement des équipements et des machines électriques sur
+                                    des sites de production, au niveau de l'industrie, ou sur tout autre site ou
+                                    complexe.
+                                </p>
+                                <div class="mt-3 d-flex">
+                                    <a href="javascript:void(0);" data-section-id="electricityActivitySection"
+                                        class="primary-btn consult-service-btn"> <i class="fa fa-arrow-right mr-2"></i>
+                                        CONSULTER</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first">
+                <div class="black-layout"></div>
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/6_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <h2>Énergie</h2>
+                                <p class="color-white">
+                                    L'énergie existe sous plusieurs formes dont les énergies renouvelables. L'énergie
+                                    solaire qui est inépuisable est l'une des sources les plus rentables et fiables mais
+                                    aussi la moins polluante.
+                                </p>
+                                <div class="mt-3 d-flex">
+                                    <a href="javascript:void(0);" data-section-id="energyActivitySection"
+                                        class="primary-btn consult-service-btn"> <i class="fa fa-arrow-right mr-2"></i>
+                                        CONSULTER</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first">
+                <div class="black-layout"></div>
+
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/7_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <h2>Automatisme</h2>
+                                <p class="color-white">
+                                    Un sous-ensemble de machines simples ou complexes destinées à remplacer les tâches de l'être
+                                    humain, permettant ainsi de réduire les charges patronales, d'assurer une
+                                    précision, une rigueur et de réduire la dépendance en termes de main-dŒuvre.
+                                </p>
+                                <div class="mt-3 d-flex">
+                                    <a href="javascript:void(0);" data-section-id="automatismeActivitySection"
+                                        class="primary-btn consult-service-btn"> <i class="fa fa-arrow-right mr-2"></i>
+                                        CONSULTER</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first" style="padding-top: 100px">
+                <div class="black-layout"></div>
+
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/8_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <div class="d-flex align-items-center mb-5" style="margin-top: 0">
+                                    <h2 class="mb-0 mr-3" style="font-size: 36px; color: #25a9e0">PARTENAIRE DE :</h2>
+                                    <a href="bonpet.html" target="_blank"
+                                        class="animate__animated animate__pulse animate__infinite" title="Click here">
+                                        <img src="img/bonpet.jpg" style="width: 100px; border-radius: 50%;"
+                                            class="bonbetBtn">
+                                    </a>
+                                </div>
+                                <h2>Systèmes Anti-Incendie</h2>
+                                <p class="color-white">
+                                    Un système indispensable pour assurer l'extinction du feu ou limiter sa propagation
+                                    et par conséquent protéger des vies humaines, des équipements sensibles, des sites
+                                    industriels, administratifs, hospitaliers etc.
+                                </p>
+                                <div class="mt-3 d-flex">
+                                    <a href="javascript:void(0);" data-section-id="antiIncendieActivitySection"
+                                        class="primary-btn consult-service-btn"> <i class="fa fa-arrow-right mr-2"></i>
+                                        CONSULTER</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first">
+                <div class="black-layout"></div>
+
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/9_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <h2>Vidéo Surveillance</h2>
+                                <p class="color-white">
+                                    Outil incontournable pour assurer la sécurité, le contrôle et la surveillance à
+                                    distance des sites sensibles, des chaînes de production, d'usine, de banque etc.
+                                </p>
+                                <div class="mt-3 d-flex">
+                                    <a href="javascript:void(0);" data-section-id="videoSurveillanceActivitySection"
+                                        class="primary-btn consult-service-btn"> <i class="fa fa-arrow-right mr-2"></i>
+                                        CONSULTER</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first">
+                <div class="black-layout"></div>
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/11_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <h2>Internet des Objets</h2>
+                                <p class="color-white">
+                                    L’Internet des objets connecte des milliards d’objets et des milliards d’êtres
+                                    humains. Il peut maintenant être considéré comme l’un des outils les plus puissants
+                                    pour créer, modifier et partager un nombre incalculable d’informations. En effet,
+                                    l’IoT a pour ambition de faire dialoguer les objets entre eux et avec les individus.
+                                </p>
+                                <div class="mt-3 d-flex">
+                                    <a href="javascript:void(0);" data-section-id="iotActivitySection"
+                                        class="primary-btn consult-service-btn"> <i class="fa fa-arrow-right mr-2"></i>
+                                        CONSULTER</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__item set-bg not-first">
+                <div class="black-layout"></div>
+                <video autoplay muted loop class="introVideo">
+                    <source src="https://beezniss.com:3000/video/10_new" type="video/mp4">
+                </video>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="hero__text">
+                                <h2>Recherche et développement</h2>
+                                <p class="color-white">
+                                    Nous nous projetons dans un futur proche en formant une équipe de chercheurs dans
+                                    différents domaines technologiques, ainsi que la possibilité de parrainer et de
+                                    soutenir des projets de recherche universitaire. Nous créons nos propres solutions
+                                    innovantes en terme de développement et de recherche pour converger vers les besoins
+                                    du marché.
+                                </p>
+                                <div class="mt-3 d-flex">
+                                    <a href="javascript:void(0);" data-section-id="rechercheActivitySection"
+                                        class="primary-btn consult-service-btn"> <i class="fa fa-arrow-right mr-2"></i>
+                                        CONSULTER</a>
+                                    <button type="button" class="rounded-icon-btn ml-3 pause-home-slider-btn"> <i
+                                            class="fa fa-pause"></i> </button>
+                                    <button type="button" class="rounded-icon-btn ml-3 audio-home-slider-btn"> <i
+                                            class="fa fa-volume-up" style="font-size: 22px" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Section Begin -->
+
+    <div id="aboutHref" class="anchor"></div>
+
+    <section class="about spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about__pic h-100">
+                        <div class="row h-100">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="about__pic__item about__pic__item--large set-bg h-100"
+                                    data-setbg="img/about/1_new.webp">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 h-100">
+                                <div class="row h-100">
+                                    <div class="col-lg-12 half-item-container">
+                                        <div class="about__pic__item first-half-item set-bg h-100"
+                                            data-setbg="img/about/2_new.webp"></div>
+                                    </div>
+                                    <div class="col-lg-12 half-item-container">
+                                        <div class="about__pic__item second-half-item set-bg h-100"
+                                            data-setbg="img/about/3_new.webp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about__text">
+                        <div class="section-title">
+                            <h2>Qui sommes nous?</h2>
+                        </div>
+
+                        <div class="about__text__desc">
+                            <p>Breath Partner est une jeune entreprise crée en Mars 2019 suite à des besoins constatés
+                                sur le marché Algérien mais aussi Africain. Elle est née d'une véritable passion pour
+                                les nouvelles technologies. Aujourd’hui nous sommes fiers et sûrs de nos capacités à
+                                nous placer parmi les leaders de ce domaine dans un futur proche.</p>
+                            <p>C’est parce que nous croyons vraiment à nos capacités et à nos talents que nous avons pu
+                                créer une équipe capable de satisfaire les besoins des clients et de s’adapter
+                                facilement aux changements du marché.</p>
+                            <p>Notre savoir faire et nos compétences reposent sur : notre détermination, notre
+                                dynamisme, nos experts, nos mécanismes, nos compétences terrain et des personnels
+                                expérimentés et motivés. Quelque soit votre projet, B.P. vous accompagne, identifie
+                                l'ensemble de vos besoins et vous propose des solutions personnalisées, fiables,
+                                complètes, compétitives et répondants à vos attentes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <div id="valeursHref" class="anchor"></div>
+
+    <section class="our-values">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title2">
+                        <h2>Nos Valeurs</h2>
+                    </div>
+
+                    <div class="d-flex justify-content-center align-items-center my-5">
+                        <div data-aos="fade-in" data-aos-delay="3000">
+                            <img src="img/values/values111.png" alt="">
+                        </div>
+
+                        <div data-aos="fade-in" data-aos-delay="1000">
+                            <img src="img/values/confiance3.png" alt="Confiance">
+                        </div>
+
+                        <div data-aos="fade-in" data-aos-delay="2000">
+                            <img src="img/values/values222.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+        </div>
+    </section>
+
+    <div id="strongpointsHref" class="anchor"></div>
+
+    <section class="strong-points">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Nos Points Forts</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card-pf">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <h3>Expertise</h3>
+                        <p>Grande expérience dans le management des projets en sous-traitance et en freelance
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card-pf">
+                        <i class="fa fa-folder-open" aria-hidden="true"></i>
+
+                        <h3>Flexibilité</h3>
+                        <p>Gestion Multi Projet
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card-pf">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+
+                        <h3>Grand Réseau</h3>
+                        <p>Réseaux d’experts et de compétences dans les domaines technologiques
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card-pf">
+                        <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                        <h3>Largesse d'Esprit</h3>
+                        <p>Des Idées Innovantes
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card-pf">
+                        <i class="fa fa-industry" aria-hidden="true"></i>
+                        <h3>Gestion</h3>
+                        <p>Des Solutions sur mesure
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card-pf">
+                        <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+                        <h3>Des Possibilités</h3>
+                        <p>Des Outils Performants
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card-pf">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                        <h3>Distribution</h3>
+                        <p>Un Réseau de fournisseurs de différentes marques et de qualités
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card-pf">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        <h3>Médiation</h3>
+                        <p>Grandes Capacités de Négociation
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card-pf">
+                        <i class="fa fa-code-fork" aria-hidden="true"></i>
+                        <h3>Ingéniosité</h3>
+                        <p>Grandes Capacités de Développement de nos produits
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="activitiesHref" class="anchor"></div>
+
+    <section class="about spad activities-section" style="padding-top: 50px">
+
+        <div class="activity-section hide" id="informatiqueActivitySection">
+
+            <!-- Breadcrumb Begin -->
+            <div class="breadcrumb__text pt-5 d-flex px-5">
+                <div class="arrow-left-icon-container">
+                    <img src="img/icons/arrow-left.png" width="60" alt="">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="mx-auto title">
+                        <video muted loop autoplay>
+                            <source src="https://beezniss.com:3000/video/3_new" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="mx-auto py-4">
+                        <h2 class="color-primary text-center">Informatique</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb End -->
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines de compétence et d’expertise</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box red">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Consulting, Reporting . analyse et conception</li>
+                            <li class="list-group-item">Big data</li>
+                            <li class="list-group-item">Business intelligence</li>
+                            <li class="list-group-item">Administration des bases de données (SQL Server, Oracle, MySQL,
+                                etc...)</li>
+                            <li class="list-group-item">Sécurité Informatique</li>
+                            <li class="list-group-item">Création des moteurs de recherche</li>
+                            <li class="list-group-item">Création de compagnes publicitaires ciblées sur les réseaux
+                                sociaux</li>
+                            <li class="list-group-item">Installation et implémentation des réseaux et des serveurs</li>
+                            <li class="list-group-item">Implémentations des outils de développement.</li>
+                            <li class="list-group-item"></li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/informatique-1.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box blue">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Développement, Urbanisation, Sécurisation et mise en place des
+                                systèmes d’information</li>
+                            <li class="list-group-item">Machine Learning</li>
+                            <li class="list-group-item">Développement et mise en place des solutions informatiques multi
+                                plateformes et multi langages de programmation (Java, C#, PHP, Delphi, etc.….)</li>
+                            <li class="list-group-item">Installation et administration des serveurs de messagerie,
+                                serveurs virtuels, serveurs d’antivirus et solutions de sauvegarde (backup)</li>
+                            <li class="list-group-item">Développement des applications et plateformes web, Sites web
+                                vitrine / e-commerce / Blogs</li>
+                            <li class="list-group-item">Hébergement et référencement des sites web (SEO)</li>
+                            <li class="list-group-item">Identité visuelle, Logo design, Charte graphique</li>
+                            <li class="list-group-item">Configuration des réseaux d’entreprises (TCP/IP, ROUTER, SWITCH,
+                                VPN, WAN/LAN … ETC)</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/informatique-2.webp" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines d'application</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box cyan">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Informatique : Développement, diagnostic,…ext</li>
+                            <li class="list-group-item">Blocs administratifs: Bâtiments administratifs, sièges sociaux,
+                                Salle de conférence, théâtres….ext</li>
+                            <li class="list-group-item">Agriculture: Gestion des fermes par des outils informatiques,
+                                Sites d’élevage industriel ..Ext</li>
+                            <li class="list-group-item">Commerce: E-commerce, Gestion de stock, management des achats et
+                                ventes, gestion de supermarché, gestion multi stock, creation de sites WEB pour la vente
+                                en ligne</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/informatique-3.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box orange">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Industries : Sites pétroliers, sites industrielles, usine, site
+                                de production..ext</li>
+                            <li class="list-group-item">Médecine: Pharmacies, hôpitaux, gestion de stock…ext</li>
+                            <li class="list-group-item">Tourisme: gestion des chaines hôtelières, réservations, ..Ext
+                            </li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/informatique-4.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-section hide" id="telecomActivitySection">
+
+            <!-- Breadcrumb Begin -->
+            <div class="breadcrumb__text pt-5 d-flex px-5">
+                <div class="arrow-left-icon-container">
+                    <img src="img/icons/arrow-left.png" width="60" alt="">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="mx-auto title">
+                        <video muted loop autoplay>
+                            <source src="https://beezniss.com:3000/video/4_new" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="mx-auto py-4">
+                        <h2 class="color-primary text-center">Télécommunication</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb End -->
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines de compétence et d’expertise</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box red">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Etude, dimensionnement et optimisation des réseaux radio
+                                électrique toutes générations confondues</li>
+                            <li class="list-group-item">Déploiement de la fibre optique</li>
+                            <li class="list-group-item">Consulting & outsourcing</li>
+                            <li class="list-group-item">Fourniture des outils de prédiction radio et transmission</li>
+                            <li class="list-group-item">Project management</li>
+                            <li class="list-group-item">Audit</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/telecom-1.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box blue">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Etude, dimensionnement et optimisation des réseaux transmission
+                                PDH et SDH</li>
+                            <li class="list-group-item">Installation des standards téléphoniques</li>
+                            <li class="list-group-item">Etude Benchmarking</li>
+                            <li class="list-group-item">Assurer des formations télécom</li>
+                            <li class="list-group-item">Fourniture des baie d’énergie de type télécom</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/telecom-2.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines d'application</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box cyan">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Industries : Sites industrielles, usine, site de production</li>
+                            <li class="list-group-item">Blocs administratifs: Bâtiments administratifs, sièges sociaux,
+                                hôpitaux, Salle de conférence, théâtres….ext</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/telecom-3.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box orange">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Télécommunication : Sites télécom, centrales télécom, stations
+                                d’interconnexion</li>
+                            <li class="list-group-item">Réseau électrique : Lignes de distribution électrique haute
+                                tension, moyenne tension, et basse tension</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/telecom-4.webp" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="activity-section hide" id="electricityActivitySection">
+
+            <!-- Breadcrumb Begin -->
+            <div class="breadcrumb__text pt-5 d-flex px-5">
+                <div class="arrow-left-icon-container">
+                    <img src="img/icons/arrow-left.png" width="60" alt="">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="mx-auto title">
+                        <video muted loop autoplay>
+                            <source src="https://beezniss.com:3000/video/5_new" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="mx-auto py-4">
+                        <h2 class="color-primary text-center">Electricité Industrielle</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb End -->
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines de compétence et d’expertise</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box red">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Elaboration des schémas nécessaires pour les nouvelles
+                                installations</li>
+                            <li class="list-group-item">Etude, dimensionnement, conception et réalisation des
+                                installations électriques, armoires électriques, machines électriques et machines
+                                industrielles différentes puissances</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/electricity-1.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box blue">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Diagnostique, analyse et réparation des défauts sur des systèmes
+                                existants</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/electricity-2.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines d'application</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box cyan">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Industries : Sites industrielles, usine, site de production</li>
+                            <li class="list-group-item">Blocs administratifs: Bâtiments administratifs, sièges sociaux,
+                                hôpitaux, Salle de conférence, théâtres….ext</li>
+                            <li class="list-group-item">Médecine: Scanner, radio, IRM…ext</li>
+                            <li class="list-group-item">Machines électrique: Broyeur, machines industrielles, moteurs
+                                électriques de grande, moyenne et faible puissance</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/electricity-3.webp" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box orange">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Télécommunication : Sites télécom, centrales télécom, stations
+                                d’interconnexion</li>
+                            <li class="list-group-item">Atelier de rectification mécanique: Fraiseuse, tour, …ext</li>
+                            <li class="list-group-item">Transport électrique : Lignes de distribution électrique haute
+                                tension, moyenne tension, et basse tension</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/electricity-4.webp" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="activity-section hide" id="energyActivitySection">
+
+            <!-- Breadcrumb Begin -->
+            <div class="breadcrumb__text pt-5 d-flex px-5">
+                <div class="arrow-left-icon-container">
+                    <img src="img/icons/arrow-left.png" width="60" alt="">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="mx-auto title">
+                        <video muted loop autoplay>
+                            <source src="https://beezniss.com:3000/video/6_new" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="mx-auto py-4">
+                        <h2 class="color-primary text-center">Energie</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb End -->
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines de compétence et d’expertise</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box red">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Etude, dimensionnement, conception et installation des solutions
+                                énergétique</li>
+                            <li class="list-group-item">Maintenance préventives et curatives</li>
+                            <li class="list-group-item">Etablissement des cahiers des charges</li>
+                            <li class="list-group-item">Audits</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/energy-1.webp" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box blue">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Fourniture et Installation de :
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"> - Redresseurs</li>
+                                    <li class="list-group-item"> - onduleurs et convertisseurs</li>
+                                    <li class="list-group-item"> - Groupes électrogènes différentes puissances</li>
+                                    <li class="list-group-item"> - Transformateurs électriques différentes puissance
+                                    </li>
+                                    <li class="list-group-item"> - Panneaux solaires</li>
+                                    <li class="list-group-item"> - Baie d’énergie électrique</li>
+                                    <li class="list-group-item"> - Batterie industrielle</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">Diagnostique, analyse et réparation des défauts sur des systèmes
+                                existants</li>
+                            <li class="list-group-item">Consulting et outsourcing</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/energy-2.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines d'application</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box cyan">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Industries : Sites industrielles, usine, site de production</li>
+                            <li class="list-group-item">Blocs administratifs: Bâtiments administratifs, sièges sociaux,
+                                Salle de conférence, théâtres….ext</li>
+                            <li class="list-group-item">Sites sensibles ou stratégique</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/energy-3.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box orange">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Télécommunication : Sites télécom, centrales télécom, stations
+                                d’interconnexion</li>
+                            <li class="list-group-item">Médecine: Pharmacies, hôpitaux, gestion de stock…ext</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/energy-4.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-section hide" id="automatismeActivitySection">
+
+            <!-- Breadcrumb Begin -->
+            <div class="breadcrumb__text pt-5 d-flex px-5">
+                <div class="arrow-left-icon-container">
+                    <img src="img/icons/arrow-left.png" width="60" alt="">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="mx-auto title">
+                        <video muted loop autoplay>
+                            <source src="https://beezniss.com:3000/video/7_new" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="mx-auto py-4">
+                        <h2 class="color-primary text-center">Automatisme</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb End -->
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines de compétence et d’expertise</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box red">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Etude, dimensionnement, conception et réalisation des solutions
+                                automatisées mécaniques et électriques</li>
+                            <li class="list-group-item">Maintenance préventives et curatives</li>
+                            <li class="list-group-item">Diagnostique et Analyse des défauts sur des systèmes existants
+                            </li>
+                            <li class="list-group-item">Consulting et outsourcing</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/automatisme-1.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box blue">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Fournitures des automates et composants électriques nécessaires
+                                pour la réalisation des solutions</li>
+                            <li class="list-group-item">Programmations ou reprogrammations des automates</li>
+                            <li class="list-group-item">Etablissement des cahiers des charges</li>
+                            <li class="list-group-item">Audits</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/automatisme-2.webp" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines d'application</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box cyan">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Industries : Sites industrielles, usine, site de production</li>
+                            <li class="list-group-item">Ferme agricole</li>
+                            <li class="list-group-item">Blocs administratifs: Bâtiments administratifs, sièges sociaux,
+                                hôpitaux, Salle de conférence, théâtres….ext</li>
+                            <li class="list-group-item">Réseau électrique : Lignes de distribution électrique haute
+                                tension, moyenne tension, et basse tension</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/automatisme-3.png" style="width: 100px;" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box orange">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Sites d’élevage industriel</li>
+                            <li class="list-group-item">Télécommunication : Sites télécom, centrales télécom, stations
+                                d’interconnexion</li>
+                            <li class="list-group-item">Médecine: Scanner, radio, IRM…ext</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/automatisme-4.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-section hide" id="antiIncendieActivitySection">
+
+            <!-- Breadcrumb Begin -->
+            <div class="breadcrumb__text pt-5 d-flex px-5">
+                <div class="arrow-left-icon-container">
+                    <img src="img/icons/arrow-left.png" width="60" alt="">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-start align-items-start">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="p-2 animate__animated animate__pulse animate__infinite"
+                                style="border:rgba(0, 0, 0, .3) solid 1px; border-radius: 50%">
+                                <a href="bonpet.html" target="_blank" title="Click here">
+                                    <img src="img/bonpet.jpg" style="width: 100px; border-radius: 50%;"
+                                        class="bonbetBtn">
+                                </a>
+                            </div>
+                            <div class="mx-auto mt-3">
+                                <a href="bonpet.html" target="_blank" class="primary-btn consult-service-btn"> <i
+                                        class="fa fa-arrow-right mr-2"></i> Consulter</a>
+                            </div>
+                        </div>
+                        <div class="mx-auto title">
+                            <video muted loop autoplay>
+                                <source src="https://beezniss.com:3000/video/8_new" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="mx-auto py-4">
+                        <h2 class="color-primary text-center">Systèmes Anti-Incendie</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb End -->
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines de compétence et d’expertise</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box red">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Étude, dimensionnement, et installation des systèmes anti incendie</li>
+                            <li class="list-group-item">Elaboration des schémas nécessaires pour les nouvelles installations</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/antiinsendie-1.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box blue">
+                        <ul class="list-group list-group-flush">
+                           <li class="list-group-item">Diagnostiquer, Analyses et réparation des défauts sur des systèmes existants</li>
+                            <li class="list-group-item">Audits</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/antiinsendie-2.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines d'application</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box cyan">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Industries : Sites industrielles, usine, site de production</li>
+                            <li class="list-group-item">Blocs administratifs: Bâtiments administratifs, sièges sociaux,
+                                hôpitaux, Salle de conférence, théâtres….ext</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/antiinsendie-3.jpg" style="width: 100px;" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box orange">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Télécommunication : Sites télécom, centrales télécom, stations
+                                d’interconnexion</li>
+                            <li class="list-group-item">Sites individuels : maisons, salle des fêtes, …ext</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/antiinsendie-4.svg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-section hide" id="videoSurveillanceActivitySection">
+
+            <!-- Breadcrumb Begin -->
+            <div class="breadcrumb__text pt-5 d-flex px-5">
+                <div class="arrow-left-icon-container">
+                    <img src="img/icons/arrow-left.png" width="60" alt="">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="mx-auto title">
+                        <video muted loop autoplay>
+                            <source src="https://beezniss.com:3000/video/9_new" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="mx-auto py-4">
+                        <h2 class="color-primary text-center">Vidéosurveillance</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb End -->
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines de compétence et d’expertise</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box red">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Etude, dimensionnement, et installation des systèmes de
+                                surveillance et télésurveillance des caméras et des accès.</li>
+                            <li class="list-group-item">Diagnostiquer, analyses et réparation des défauts sur des
+                                systèmes existants</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/videosurveillance-1.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="box blue">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Elaboration des schémas nécessaires pour les nouvelles
+                                installations</li>
+                            <li class="list-group-item">Audits</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/videosurveillance-2.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="py-5 container-fluid">
+
+                <div class="section-title d-flex justify-content-center">
+                    <h2 class="text-center d-inline full-line color-black">Domaines d'application</h2>
+                </div>
+
+                <div class="row1-container">
+
+                    <div class="box cyan">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Industries : Sites industrielles, usine, site de production</li>
+                            <li class="list-group-item">Blocs administratifs: Bâtiments administratifs, sièges sociaux,
+                                hôpitaux, Salle de conférence, théâtres….ext</li>
+                            <li class="list-group-item">Parking</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/videosurveillance-3.png" style="width: 100px;"
+                                alt="">
+                        </div>
+                    </div>
+
+                    <div class="box orange">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Télécommunication : Sites télécom, centrales télécom, stations
+                                d’interconnexion</li>
+                            <li class="list-group-item">Sites individuels : maisons, salle des fêtes, …ext</li>
+                        </ul>
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/videosurveillance-4.webp" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="activity-section hide" id="iotActivitySection">
+
+            <!-- Breadcrumb Begin -->
+            <div class="breadcrumb__text pt-5 d-flex px-5">
+                <div class="arrow-left-icon-container">
+                    <img src="img/icons/arrow-left.png" width="60" alt="">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="mx-auto title">
+                        <video muted loop autoplay>
+                            <source src="https://beezniss.com:3000/video/11_new" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="mx-auto py-4">
+                        <h2 class="color-primary text-center">Internet des Objects</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb End -->
+
+            <div class="py-5 container-fluid">
+
+                <div class="row1-container">
+
+                    <div class="box blue">
+
+                        <p>L’Internet des objets connecte des milliards d’objets et des milliards d’êtres humains. Il
+                            peut maintenant être considéré comme l’un des outils les plus puissants pour créer, modifier
+                            et partager un nombre incalculable d’informations. En effet, l’IoT a pour ambition de faire
+                            dialoguer les objets entre eux et avec les individus.</p>
+
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/iot-1.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="activity-section hide" id="rechercheActivitySection">
+
+            <!-- Breadcrumb Begin -->
+            <div class="breadcrumb__text pt-5 d-flex px-5">
+                <div class="arrow-left-icon-container">
+                    <img src="img/icons/arrow-left.png" width="60" alt="">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="mx-auto title">
+                        <video muted loop autoplay>
+                            <source src="https://beezniss.com:3000/video/10_new" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="mx-auto py-4">
+                        <h2 class="color-primary text-center">Recherche & Développement</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb End -->
+
+            <div class="py-5 container-fluid">
+
+                <div class="row1-container">
+
+                    <div class="box blue">
+
+                        <p>Nous nous projetons dans un futur proche en formant une équipe de chercheurs dans différents
+                            domaines technologiques, ainsi que la possibilité de parrainer et de soutenir des projets de
+                            recherche universitaire. Nous créons nos propres solutions innovantes en terme de
+                            développement et de recherche pour converger vers les besoins du marché</p>
+
+                        <div class="box-img mt-4 animate__animated animate__shakeY animate__infinite">
+                            <img src="img/icons/domaines-activities/recherche-1.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="hero__text py-5">
+            <h2 style="position: initial; opacity: 1; text-align: center;">Domaines d'activités</h2>
+        </div>
+        <div class="hexGrid-container">
+            <ul id="hexGrid">
+                <li class="hex">
+                    <div class="hexIn">
+                        <div class="hexLink" data-section-id="informatiqueActivitySection">
+                            <div class='img'>
+                                <video muted loop class="activities-video">
+                                    <source src="https://beezniss.com:3000/video/3_new" type="video/mp4">
+                                </video>
+                                <div class="layer black-layer"></div>
+                                <div class="activity-title-container">
+                                    <h4>Informatique</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="hex">
+                    <div class="hexIn">
+                        <div class="hexLink" data-section-id="telecomActivitySection">
+                            <div class='img'>
+                                <video muted loop class="activities-video">
+                                    <source src="https://beezniss.com:3000/video/4_new" type="video/mp4">
+                                </video>
+                                <div class="layer black-layer"></div>
+                                <div class="activity-title-container">
+                                    <h4>Télécommunication</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="hex">
+                    <div class="hexIn">
+                        <div class="hexLink" data-section-id="electricityActivitySection">
+                            <div class='img'>
+                                <video muted loop class="activities-video">
+                                    <source src="https://beezniss.com:3000/video/5_new" type="video/mp4">
+                                </video>
+                                <div class="layer black-layer"></div>
+                                <div class="activity-title-container">
+                                    <h4>Electricité Industrielle</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="hex">
+                    <div class="hexIn">
+                        <div class="hexLink" data-section-id="energyActivitySection">
+                            <div class='img'>
+                                <video muted loop class="activities-video">
+                                    <source src="https://beezniss.com:3000/video/6_new" type="video/mp4">
+                                </video>
+                                <div class="layer black-layer"></div>
+                                <div class="activity-title-container">
+                                    <h4>Energie</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="hex">
+                    <div class="hexIn">
+                        <div class="hexLink" data-section-id="automatismeActivitySection">
+                            <div class='img'>
+                                <video muted loop class="activities-video">
+                                    <source src="https://beezniss.com:3000/video/7_new" type="video/mp4">
+                                </video>
+                                <div class="layer black-layer"></div>
+                                <div class="activity-title-container">
+                                    <h4>Automatisme</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="hex">
+                    <div class="hexIn">
+                        <div class="hexLink" data-section-id="antiIncendieActivitySection">
+                            <div class='img'>
+                                <video muted loop class="activities-video">
+                                    <source src="https://beezniss.com:3000/video/8_new" type="video/mp4">
+                                </video>
+                                <div class="layer black-layer"></div>
+                                <div class="activity-title-container">
+                                    <h4>Systèmes Anti-Incendie</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="hex">
+                    <div class="hexIn">
+                        <div class="hexLink" data-section-id="videoSurveillanceActivitySection">
+                            <div class='img'>
+                                <video muted loop class="activities-video">
+                                    <source src="https://beezniss.com:3000/video/9_new" type="video/mp4">
+                                </video>
+                                <div class="layer black-layer"></div>
+                                <div class="activity-title-container">
+                                    <h4>Vidéosurveillance</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="hex">
+                    <div class="hexIn">
+                        <div class="hexLink" data-section-id="iotActivitySection">
+                            <div class='img'>
+                                <video muted loop class="activities-video">
+                                    <source src="https://beezniss.com:3000/video/11_new" type="video/mp4">
+                                </video>
+                                <div class="layer black-layer"></div>
+                                <div class="activity-title-container">
+                                    <h4>Internet des Objets</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="hex">
+                    <div class="hexIn">
+                        <div class="hexLink" data-section-id="rechercheActivitySection">
+                            <div class='img'>
+                                <video muted loop class="activities-video">
+                                    <source src="https://beezniss.com:3000/video/10_new" type="video/mp4">
+                                </video>
+                                <div class="layer black-layer"></div>
+                                <div class="activity-title-container">
+                                    <h4>Recherche & Développement</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </section>
+
+
+    <!-- <section class="about spad">
+
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12">
+        
+                    <div class="card card-nav-tabs">
+                        <div class="card-header card-header-primary">
+                            <div class="nav-tabs-navigation">
+                                <div class="nav-tabs-wrapper">
+                                    <ul class="nav nav-tabs" data-tabs="tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#profile" data-toggle="tab">
+                                                <i class="material-icons">face</i>
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#messages" data-toggle="tab">
+                                                <i class="material-icons">chat</i>
+                                                Messages
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#settings" data-toggle="tab">
+                                                <i class="material-icons">build</i>
+                                                Settings
+                                            </a>
+        
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><div class="card-body ">
+                            <div class="tab-content text-center">
+                                <div class="tab-pane active" id="profile">
+                                    <p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>
+                                </div>
+                                <div class="tab-pane" id="messages">
+                                    <p> I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
+                                </div>
+                                <div class="tab-pane" id="settings">
+                                    <p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
+                                </div>
+                            </div>
+                        </div></div>
+        
+                </div>
+
+            </div>
+        </div>
+    </section>   -->
+
+    <!--NOS REALISATION-->
+    <div id="realisationsHref" class="anchor"></div>
+    <div id="realisation" style="padding: 20px; margin-bottom: 50px;">
+        <div class="team_title">
+            <h2 style="position: initial; margin-top: 70px; text-align: center;">Nos réalisations</h2>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <div class="realisation_card d-flex">
+                <img src="img/realisation/catering_new.webp" alt="" srcset="">
+                <p>Solution complète gestion des Stocks (multi-Sites)- Restauration et suivi des contrats (entreprises
+                    multi CATERING)</p>
+            </div>
+
+            <div class="realisation_card d-flex">
+
+                <p>Solution complète gestion des Stock (multi-Dépôts)- production-Commerciale-Comptabilité (Usines de
+                    Fabrication)</p>
+                <img src="img/realisation/stock_new.webp" alt="" srcset="">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <div class="realisation_card d-flex">
+                <img src="img/realisation/grh_new.webp" alt="" srcset="">
+                <p>Solution GRH et Paie complète</p>
+            </div>
+            <div class="realisation_card d-flex">
+
+                <p>Logiciel Gestion des stocks et commercial destiné aux commerçants (version mobile intégrée)</p>
+                <img src="img/realisation/mobilestock_new.webp" alt="" srcset="">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <div class="realisation_card d-flex">
+                <img src="img/realisation/ship_new.webp" alt="" srcset="">
+                <p>Solution complète gestion de la Livraison directe (DD) et Indirecte (DI) et système de vente mobile
+                </p>
+            </div>
+
+            <div class="realisation_card d-flex">
+
+                <p>Conception et réalisation d'un SI pour l'affectation automatique des projets de Sonelgaz</p>
+                <img src="img/realisation/projects_new.webp" alt="" srcset="">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <div class="realisation_card d-flex">
+                <img src="img/realisation/gmao_new.webp" alt="" srcset="">
+                <p>Conception et réalisation d'une GMAO répartie pour l'EMBAG</p>
+            </div>
+
+            <div class="realisation_card d-flex">
+
+                <p>Logiciel de production pour une usine de production de mobiliers de bureau.</p>
+                <img src="img/realisation/carpenter_new.webp" alt="" srcset="">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <div class="realisation_card d-flex">
+                <img src="img/realisation/laboratory_new.webp" alt="" srcset="">
+                <p>Développement et mise en place d’une solution web pour les laboratoires de contrôle de qualité et de
+                    conformité</p>
+            </div>
+
+            <div class="realisation_card d-flex">
+                <p>Application Web de gestion d’une imprimerie</p>
+                <img src="img/realisation/printer_press_new.webp" alt="" srcset="">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <div class="realisation_card d-flex">
+                <img src="img/realisation/web_new.webp" alt="" srcset="">
+                <p>Création plusieurs site web de vitrine</p>
+            </div>
+
+            <div class="realisation_card d-flex">
+                <p class="right_p">Installation et maintenance (préventive & curative) des groupes électrogènes (+300)
+                </p>
+                <img src="img/realisation/group_new.webp" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+
+    <div id="visionHref" class="anchor"></div>
+
+    <section class="about spad">
+        <div class="hero__text pt-0" style="padding-top: 70px">
+            <h2 class="color-primary" style="position: initial; opacity: 1; text-align: center;">Notre vision</h2>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-10 ml-auto col-xl-12 mr-auto">
+                    <p>Notre objectif est d’être leader du marché Algérien du fait que les secteurs cibles présentent de
+                        grands potentiels de développement à court, moyen et à long terme. Cette perspective est basée
+                        sur le fait que nous disposons de compétences et d’experts en sous-traitance et en freelance qui
+                        ont fait leurs preuves.</p>
+                    <p>Notre expertise en management de projet nous permet de réduire les charges directes et indirectes
+                        et cela en ayant un minimum de ressources humaines et matérielles ainsi qu’administratives
+                        nécessaires à la réalisation des différents projets. A moyen terme, notre objectif sera de
+                        conquérir le Maghreb Arabe, l’Afrique, l’Europe de l’Est et les pays du Golfe. En bref d’aller
+                        vers les pays qui souhaitent développer leur méthode de management et d’ouvrir de nouvelles
+                        fenêtres sur les technologies nouvelles en ayant recours à des fournisseurs de services tel que
+                        notre entreprise.</p>
+                    <p>C’est parce que nous croyons vivement en les compétences Algériennes qu’aujourd’hui on se permet
+                        de viser loin.</p>
+                    <p>Notre vision est basée sur quatre principaux axes</p>
+                    <div class="tab-card card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs justify-content-center" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active nav-link-first" data-toggle="tab" href="#zoneActionTab"
+                                        role="tab">
+                                        <!-- <i class="now-ui-icons objects_umbrella-13"></i>  -->
+                                        <i class="fa fa-wrench mr-2" aria-hidden="true"></i>
+                                        Zone d’action
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-second" data-toggle="tab" href="#commercialeTab"
+                                        role="tab">
+                                        <!-- <i class="now-ui-icons shopping_cart-simple"></i>  -->
+                                        <i class="fa fa-briefcase mr-2" aria-hidden="true"></i>
+                                        Commerciale
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-third" data-toggle="tab" href="#rechercheDevTab"
+                                        role="tab">
+                                        <!-- <i class="now-ui-icons shopping_shop"></i>  -->
+                                        <i class="fa fa-search mr-2" aria-hidden="true"></i>
+                                        Recherche et développement
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-fourth" data-toggle="tab" href="#techniqueTab"
+                                        role="tab">
+                                        <!-- <i class="now-ui-icons ui-2_settings-90"></i>  -->
+                                        <i class="fa fa-book mr-2" aria-hidden="true"></i>
+                                        Technique
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="zoneActionTab" role="tabpanel">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Se positionner sur le marché Algérien</li>
+                                        <li class="list-group-item">Viser le Maghreb Arabe</li>
+                                        <li class="list-group-item">Aller vers des pays Africains</li>
+                                        <li class="list-group-item">Attaquer le marché européen</li>
+                                        <li class="list-group-item">être une des références internationales en terme de
+                                            solutions technologiques</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" id="commercialeTab" role="tabpanel">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Toujours faire en sorte d’assurer un équilibre entre
+                                            la qualité et le prix</li>
+                                        <li class="list-group-item">Anticiper sur les besoins des clients et du marché
+                                        </li>
+                                        <li class="list-group-item">Assurer une écoute et proximité continue</li>
+                                        <li class="list-group-item">Assurer un service après vente fiable et durable
+                                        </li>
+                                        <li class="list-group-item">Faire en sorte que les exigences du client soient
+                                            une priorité</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" id="rechercheDevTab" role="tabpanel">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Former une équipe de chercheurs dans différentes
+                                            secteurs technologiques</li>
+                                        <li class="list-group-item">Faire en sorte de reproduire les meilleures
+                                            solutions innovantes à travers le monde</li>
+                                        <li class="list-group-item">Créer nos propres solutions innovantes</li>
+                                        <li class="list-group-item">Parrainer des projets universitaires</li>
+                                        <li class="list-group-item">Participer à la convergence des solutions
+                                            universitaires vers les besoins du marché</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" id="techniqueTab" role="tabpanel">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Assurer la qualité souhaitée par les clients</li>
+                                        <li class="list-group-item">Etre dans les délais contractuelles prévus pour la
+                                            livraison des différents projets et services</li>
+                                        <li class="list-group-item">Mise en place des outils, des moyens et des
+                                            mécanismes nécessaires pour la réalisation des différents projets</li>
+                                        <li class="list-group-item">Partage du savoir faire avec les différents
+                                            établissements concernés.</li>
+                                        <li class="list-group-item">Création d’une cellule intelligence artificielle
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <div id="equipeHref" class="anchor"></div>
+
+    <!--NOTRE EQUIPE-->
+    <div id="Team" style="background-color: rgba(200,200,200, .2); padding: 30px;">
+        <div class="team_title">
+            <h2 style="position: initial; margin-top: 70px; text-align: center;">Notre équipe</h2>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <div class="a-box">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/seba_croped_new.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>Mehdi SEBA</h3>
+                    <h1>breath partner</h1>
+                        <p>
+                            General director
+                        </p>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:mehdi.seba@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between my-5" style="margin-left: 30px; margin-right: 30px;">
+            <div class="a-box">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/avatar_new.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>lyes K</h3>
+                    <h1>computer science</h1>
+                        <p>
+                            Project director
+                        </p>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:ilyes.k@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="a-box">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/mekri_new.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>Ibrahim MEKRI</h3>
+                    <h1>electrical power</h1>
+                    <div>
+                        <p>
+                        General Manager
+                        </p>
+                    </div>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:ibrahim.mekri@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="a-box">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/avatar_new.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>Nabil TERBECHE</h3>
+                    <h1>telecommunication</h1>
+                        <p>
+                        Project director
+                        </p>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:nabil.terbeche@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="a-box">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/avatar_new.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>T. AMMAR</h3>
+                    <h1>
+                        research & development</h1>
+                        <p>
+                            Project director
+                        </p>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:t.ammar@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="a-box">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/choucha_new.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>Ali CHOUCHA</h3>
+                    <h1>FIRE PROTECTION</h1>
+                        <p>
+                        Project Manager
+                        </p>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:ali.choucha@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="d-flex justify-content-center my-5">
+            <div class="a-box" style="margin-left: 20px; margin-right: 20px;">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/said_new.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>Said BOUKHARI</h3>
+                    <h1>automation</h1>
+                        <p>
+                        Team leader
+                        </p>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:said.boukhari@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="a-box" style="margin-left: 20px; margin-right: 20px;">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/avatar_new.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>Mohamed KACHOUR</h3>
+                    <h1>video surveillance</h1>
+                        <p>
+                        Team leader
+                        </p>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:mohamed.kachour@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="a-box" style="margin-left: 20px; margin-right: 20px;">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/youcef.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>Youcef NEHAL</h3>
+                    <h1>marketing</h1>
+                        <p>
+                        Manager
+                        </p>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:youcef.nehal@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="a-box">
+                <div class="img-container">
+                    <div class="img-inner">
+                        <div class="inner-skew">
+                            <img src="img/team/benali.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h3>Laïd BENALI</h3>
+                    <h1>Purchasing</h1>
+                        <p>
+                        Manager
+                        </p>
+                    <div class="card-body d-flex justify-content-center">
+                        <a href="tel:07777777" class="link_card"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <a href="mailto:laid.benali@breathpartner.net" class="link_card"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="link_card"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--END 'NOTRE EQUIPE'-->
+
+    <!-- Contact Widget Section Begin -->
+
+    <div id="contactHref" class="anchor"></div>
+
+    <div class="hero__text" style="border-top: 3px rgb(0, 25, 112) solid; padding-top: 70px">
+        <h2 class="color-primary" style="position: initial; opacity: 1; text-align: center;">Contactez-Nous</h2>
+    </div>
+    <section class="contact-widget spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-md-6 col-md-3">
+                    <div class="contact__widget__item">
+                        <div class="contact__widget__item__icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="contact__widget__item__text">
+                            <h4>Adresse</h4>
+                            <p>N 39 bloc B2 projet 75/3000 Ilot 475 N G1 SUF 04, Bir El Djir</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-md-6 col-md-3">
+                    <div class="contact__widget__item">
+                        <div class="contact__widget__item__icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="contact__widget__item__text">
+                            <h4>Numéro de Téléphone</h4>
+                            <p>+213 44 65 28 36</p>
+                            <p>+213 6 60 00 97 97</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-md-6 col-md-3">
+                    <div class="contact__widget__item">
+                        <div class="contact__widget__item__icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="contact__widget__item__text">
+                            <h4>Email</h4>
+                            <p>contact@breathpartner.net</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Widget Section End -->
+
+    <!-- Call To Action Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12953.284077395967!2d-0.5433034!3d35.7429137!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7e7d18afa6dfbb%3A0x84a01d68bfaf73e6!2sBreath%20Partner%20Technology%20Company!5e0!3m2!1sen!2sdz!4v1678056924105!5m2!1sen!2sdz"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__form">
+                        <h3>Envoyer un message</h3>
+                        <form action="#">
+                            <input type="text" placeholder="Nom">
+                            <input type="text" placeholder="Email">
+                            <textarea placeholder="Message"></textarea>
+                            <button type="submit" class="site-btn">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call To Action Section End -->
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__logo">
+                            <a href="#"><img src="img/logo.png" height="60" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__copyright">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="footer__copyright__text">Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            All rights reserved | Breath Partner</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <!-- <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script> -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/main1.js"></script>
+</body>
+
+</html>
