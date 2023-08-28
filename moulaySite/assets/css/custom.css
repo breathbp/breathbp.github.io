@@ -456,4 +456,8 @@ a {
   font-size: 1.5rem;
   text-decoration: underline;
   font-weight: bold;
+  text-align: center;
+}
+.bp-table td{
+  font-size: 14px;;
 }

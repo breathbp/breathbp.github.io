@@ -340,8 +340,8 @@ $(document).ready(function () {
             margin:       2,
             filename:     'devis_final.pdf',
             image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 4 },
-            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            html2canvas:  { scale: 3 },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
         };
         // Choose the element that our invoice is rendered in.
         html2pdf().set(opt).from(page).save();
