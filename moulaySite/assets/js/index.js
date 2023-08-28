@@ -209,13 +209,13 @@ $(document).ready(function () {
 
     $(document).on('click', '.trigger', function (event) {
         event.preventDefault();
-        $('#modal').iziModal('setWidth', '1000px');
-        $('#modal').iziModal('setZindex', 99999);
+        $('#modal4').iziModal('setWidth', '1000px');
+        $('#modal4').iziModal('setZindex', 99999);
         // $('#modal').iziModal('open', { zindex: 99999 });
-        $('#modal').iziModal('open');
+        $('#modal4').iziModal('open');
     });
     $(document).on('click', '#closeReservation', function () {
-        $('#modal').iziModal('close');
+        $('#modal4').iziModal('close');
     })
 
     $("#modal2").iziModal({
@@ -235,6 +235,12 @@ $(document).ready(function () {
     });
 
     $("#modal3").iziModal({
+        background: 'null',
+        transitionIn: 'fadeIn',
+        transitionOut: 'fadeOut',
+        radius: 0,
+    });
+    $("#modal4").iziModal({
         background: 'null',
         transitionIn: 'fadeIn',
         transitionOut: 'fadeOut',
@@ -327,6 +333,22 @@ $(document).ready(function () {
             }
         });
     });
+
+    function generatePDF() {
+        const page = document.getElementById('pdfBody');
+        var opt = {
+            margin:       2,
+            filename:     'devis_final.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 4 },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        // Choose the element that our invoice is rendered in.
+        html2pdf().set(opt).from(page).save();
+        };
+        $(document).on('click','.generatePdf',function(){
+            generatePDF();
+        });
 
 });
 //AUTOMATIC SLIDE SHOW

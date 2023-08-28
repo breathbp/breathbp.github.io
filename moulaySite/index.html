@@ -19,6 +19,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
@@ -1126,47 +1127,47 @@ background-size: cover; padding: 12rem 0;">
       </div>
       <div>
         <form id="form2">
-        <div class="d-flex justify-content-center">
-          <div class="form-group mb-1 ">
-            <span class="bp-form-label">Nom</span>
-            <input type="text" class="form-input left-input" placeholder="">
-          </div>
-          <div class="form-group mb-1 ">
-            <span class="bp-form-label">Prénom</span>
-            <input type="text" class="form-input left-input" placeholder="">
-          </div>
-        </div>
-        <div class="d-flex justify-content-center">
-          <div class="form-group mb-1 ">
-            <span class="bp-form-label">E-mail</span>
-            <input type="email" class="form-input left-input" placeholder="user@provider.com">
-          </div>
-          <div class="form-group mb-1 ">
-            <span class="bp-form-label">N° mobile</span>
-            <input type="tel" class="form-input left-input" placeholder="">
-          </div>
-        </div>
-        <button type="button" id="addUserDocument">+</button>
-        <div id="userDocumentDiv" style="height: 300px; overflow-y: scroll;">
-          <div class="d-flex justify-content-center userDocument" id="userDocument">
-
-            <div class="form-group mb-1 chamber-type" id="chamberType1">
-              <span class="bp-form-label">Type de document</span>
-              <select class="form-input">
-                <option value="1">CIN</option>
-                <option value="2">Livret de famille</option>
-                <option value="2">Passport</option>
-              </select>
+          <div class="d-flex justify-content-center">
+            <div class="form-group mb-1 ">
+              <span class="bp-form-label">Nom</span>
+              <input type="text" class="form-input left-input" placeholder="">
             </div>
             <div class="form-group mb-1 ">
-              <span class="bp-form-label">Upload</span>
-              <div class="d-flex" style="gap: 10px;">
-                <input type="file" class="form-input left-input" placeholder="">
-                <button class="btn btn-danger removeDocument d-none">X</button>
-              </div>
+              <span class="bp-form-label">Prénom</span>
+              <input type="text" class="form-input left-input" placeholder="">
             </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="form-group mb-1 ">
+              <span class="bp-form-label">E-mail</span>
+              <input type="email" class="form-input left-input" placeholder="user@provider.com">
+            </div>
+            <div class="form-group mb-1 ">
+              <span class="bp-form-label">N° mobile</span>
+              <input type="tel" class="form-input left-input" placeholder="">
+            </div>
+          </div>
+          <button type="button" id="addUserDocument">+</button>
+          <div id="userDocumentDiv" style="height: 300px; overflow-y: scroll;">
+            <div class="d-flex justify-content-center userDocument" id="userDocument">
 
-            <!-- <div class="form-group mb-1 ">
+              <div class="form-group mb-1 chamber-type" id="chamberType1">
+                <span class="bp-form-label">Type de document</span>
+                <select class="form-input">
+                  <option value="1">CIN</option>
+                  <option value="2">Livret de famille</option>
+                  <option value="2">Passport</option>
+                </select>
+              </div>
+              <div class="form-group mb-1 ">
+                <span class="bp-form-label">Upload</span>
+                <div class="d-flex" style="gap: 10px;">
+                  <input type="file" class="form-input left-input" placeholder="">
+                  <button class="btn btn-danger removeDocument d-none">X</button>
+                </div>
+              </div>
+
+              <!-- <div class="form-group mb-1 ">
                   <span class="bp-form-label">N° document</span>
                   <input type="text" class="form-input left-input" placeholder="">
                 </div>
@@ -1183,22 +1184,126 @@ background-size: cover; padding: 12rem 0;">
                   <input type="text" class="form-input left-input" placeholder="">
                 </div> -->
 
+            </div>
+
           </div>
 
-        </div>
 
 
 
 
-
-        <div class="d-flex justify-content-end m-3">
-          <button type="button" id="submitForm2" class="btn btn-gold bp-btn-submit">Envoyer</button>
-        </div>
-      </form>
+          <div class="d-flex justify-content-end m-3">
+            <button type="button" id="submitForm2" class="btn btn-gold bp-btn-submit">Envoyer</button>
+          </div>
+        </form>
       </div>
 
     </div>
   </div>
+
+  <div id="modal4">
+    <!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
+    <!-- Modal content -->
+    <div id="reservation-modal-content">
+      <div style="width: 100%;background-color: beige;color: rgb(153, 99, 29);font-family: 'palaceFont', cursive;font-size: 3rem;
+      padding: 12px; display: flex; justify-content: space-between; align-items: center;">
+        Confirmation
+        <button id="closeReservation" class="btn bp-btn-close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="position: relative;">
+        <div class="background-text-div">
+          <img src="assets/assets/images/akidback.svg" alt="background" style="width: 95%;">
+        </div>
+        <div class="client-info-div">
+          <div id="pdfBody">
+            <div class="client-info-line">Nom: <span>Boumediene</span></div>
+            <div class="client-info-line">Prénom: <span>Mohamed</span></div>
+            <div class="client-info-line">Mobile: <span>+213 655 55 55 55</span></div>
+            <div class="client-info-line">Email: <span>test@test.com</span></div>
+            <div class="devis-title">Devis final</div>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col"># Item</th>
+                  <th scope="col">Désignation</th>
+                  <th># de jours</th>
+                  <th scope="col">Unité</th>
+                  <th scope="col">Qte</th>
+                  <th scope="col">P.U</th>
+                  <th scope="col">Remise</th>
+                  <th scope="col">P.A.R</th>
+                  <th scope="col">S.T</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Réservation de chambre simple 1 adulte</td>
+                  <td>7 jrs</td>
+                  <td>Un</td>
+                  <td>1</td>
+                  <td>6000 DA</td>
+                  <td>6000 DA</td>
+                  <td>1200 DA</td>
+                  <td>4800 DA</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Réservation de suite 2 adultes</td>
+                  <td>7 jrs</td>
+                  <td>Un</td>
+                  <td>1</td>
+                  <td>6000 DA</td>
+                  <td>12 000 DA</td>
+                  <td>2000 DA</td>
+                  <td>10 000 DA</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+              <div>
+                <img src="assets/images/qr.png" alt="">
+              </div>
+              <table class="table" style="width: 50%;">
+                <tbody>
+                  <tr>
+                    <td>Total AV.R</td>
+                    <td><strong>18 000 DA</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Remise globale</td>
+                    <td><strong>3 200 DA</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Total AP.R</td>
+                    <td><strong>14 800 DA</strong></td>
+                  </tr>
+                  <tr>
+                    <td>TVA 19%</td>
+                    <td><strong>2 812 DA</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>TTC</strong></td>
+                    <td><strong>17 612 DA</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-gold generatePdf mx-1"><i class="fa-solid fa-file-arrow-down"></i> PDF</button>
+            <button type="button" class="btn btn-gold mx-1" id="closeReservation"> Fermer</button>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
     integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
