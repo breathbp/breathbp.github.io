@@ -25,14 +25,14 @@ $(document).on('click','.deleteReservation',function(){
 $(document).on('click','#positiveButton',function(){
     const reservation_code = $('#deleteReservationCode').val();
     const uri = '';
-    const data = {resrvationCode : reservation_code};
+    const dataObject = {resrvationCode : reservation_code};
     $.post({
         url : uri,
-        data: data,
+        data: JSON.stringify(dataObject),
         headers: {
             'Content-Type': 'application/json'
         },
-        success: function(){
+        success: function(response){
             //traitement
             // $('#deleteModal').modal('hide');
         },
