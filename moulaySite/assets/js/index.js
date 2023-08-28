@@ -337,10 +337,10 @@ $(document).ready(function () {
     function generatePDF() {
         const page = document.getElementById('pdfBody');
         var opt = {
-            margin:       2,
+            margin:       4,
             filename:     'devis_final.pdf',
             image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 3 },
+            html2canvas:  { scale: 1 },
             jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
         };
         // Choose the element that our invoice is rendered in.

@@ -461,3 +461,10 @@ a {
 .bp-table td{
   font-size: 14px;;
 }
+.qr-code-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
