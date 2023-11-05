@@ -209,10 +209,10 @@ $(document).ready(function () {
 
     $(document).on('click', '.trigger', function (event) {
         event.preventDefault();
-        $('#modal4').iziModal('setWidth', '1000px');
-        $('#modal4').iziModal('setZindex', 99999);
+        $('#modal1').iziModal('setWidth', '1000px');
+        $('#modal').iziModal('setZindex', 99999);
         // $('#modal').iziModal('open', { zindex: 99999 });
-        $('#modal4').iziModal('open');
+        $('#modal').iziModal('open');
     });
     $(document).on('click', '#closeReservation', function () {
         $('#modal4').iziModal('close');
