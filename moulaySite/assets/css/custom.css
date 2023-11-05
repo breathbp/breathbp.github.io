@@ -24,6 +24,7 @@ input[type=number] {
   transform: translate(-50%, -50%);
   /* width: 100vw; */
   height: 70vh;
+  /*width: 100%;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,8 +258,8 @@ a {
 
 #nav-bar {
   background-color: rgb(0, 0, 0);
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   height: 65px;
   position: fixed;
   z-index: 4;
@@ -330,7 +331,46 @@ a {
 .bp-offcanvas {
   background-color: rgb(32, 22, 7);
   box-shadow: inset 0px 0px 0px 2px #ac9165;
-  width: 40vw !important;
+  width: 45vw !important;
+}
+
+@media(max-width: 768px)
+{
+  .bp-offcanvas {
+    width: 90vw !important;
+    text-align: center;
+    opacity: 0.8;
+  }
+
+  .menu-image-div
+  {
+    display: none !important;
+  }
+
+  .menu-list
+  {
+    text-align: center !important;
+  }
+
+  .btn-reservation
+  {
+    font-size: 1rem !important;
+  }
+
+  .btn-gold
+  {
+    font-size: 1rem !important;
+  }
+}
+
+.btn-reservation
+{
+  font-size: 1.5rem;
+}
+
+.btn-gold
+{
+  font-size: 1.5rem !important;
 }
 
 .menu-list {
