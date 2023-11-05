@@ -7,7 +7,7 @@
   <title>Akid Hôtel Home Page</title>
 
   <!-- custom CSS should come after Bootstrap CSS -->
-  <link rel="stylesheet" href="./custom.css">
+  <link rel="stylesheet" href="assets/css/custom2.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
@@ -18,27 +18,25 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/custom.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
-  <div class="offcanvas offcanvas-end bp-offcanvas" tabindex="-1" id="offcanvasRight"
+  <div class="offcanvas offcanvas-end bp-offcanvas w-100" tabindex="-1" id="offcanvasRight"
     aria-labelledby="offcanvasRightLabel" style="z-index: 999999;">
     <div class="offcanvas-header mt-2" style="justify-content: center;">
       <h5 id="offcanvasRightLabel" style="font-family: 'Great vibes'; font-size: 3rem; color: white;">Menu</h5>
       <button type="button" class="menu-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
     </div>
     <div class="offcanvas-body">
-      <div class="d-flex justify-content-end">
+      <div class="d-flex justify-content-center justify-content-md-end">
         <ul class="mx-3 menu-list">
           <li><a href="index.html" class="menu-list-item">Page d'accueil</a></li>
-          <li><a href="tourisme.html" class="menu-list-item">La ville d'oran</a></li>
-          <li><a href="chambres.html" class="menu-list-item">Chambres & suits</a></li>
+          <li><a href="tourisme.html" class="menu-list-item">La ville d'Oran</a></li>
+          <li><a href="chambres.html" class="menu-list-item">Chambres & Suites</a></li>
           <li><a href="restaurants.html" class="menu-list-item">Restaurant</a></li>
-          <li><a href="#" class="menu-list-item">Salle de détente</a></li>
           <li><a href="cafeteria.html" class="menu-list-item">Cafétéria</a></li>
-          <li><a href="#" class="menu-list-item">Evenements</a></li>
         </ul>
         <div class="menu-image-div">
           <img src="assets/images/hotel/h_(1).webp" alt="">
@@ -51,9 +49,9 @@
   <div id="reservation-button-video" style="position: fixed; z-index: 9999; top: 10px; right: 10px;">
     <div class="d-flex align-items-center " style="margin-right: 10px;">
       <button type="button" class="btn btn-reservation trigger"
-        style="font-family: 'palaceFont'; font-size: 1.5rem;">Réservation</button>
+        style="font-family: 'palaceFont';">Réserver</button>
       <button type="button" class="btn btn-gold" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-        aria-controls="offcanvasRight" style="font-family: 'palaceFont'; font-size: 1.5rem; margin-left: 5px;"><i
+        aria-controls="offcanvasRight" style="font-family: 'palaceFont'; margin-left: 5px;"><i
           class="fa-solid fa-bars"></i></button>
     </div>
 
@@ -61,11 +59,11 @@
         style="font-family: 'palaceFont'; font-size: 1.5rem;">Réservation</button> -->
   </div>
   <div class="d-flex justify-content-between hidden-bar" id="nav-bar">
-    <a href="#"
+    <a href="index.html"
       style="font-family: 'palaceFont', cursive; color: white; font-size: 2rem; margin: 0; padding: 20px; display: grid;">
       <img src="assets/images/hotel-name.png" alt="" style="width: 30%;">
     </a>
-    <img class="" id="navbar-logo" src="assets/images/akid_hotel_logo.png" alt="logo" style="height: 90px;
+    <img class="img-fluid d-none d-md-block" id="navbar-logo" src="assets/images/akid_hotel_logo.png" alt="logo" style="height: 90px;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -73,9 +71,9 @@
              display: none;">
     <div class="d-flex align-items-center onvideo-buttons" style="margin-right: 10px;">
       <button type="button" class="btn btn-reservation trigger"
-        style="font-family: 'palaceFont'; font-size: 1.5rem;">Réservation</button>
+        style="font-family: 'palaceFont'; ">Réserver</button>
       <button type="button" class="btn btn-gold" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-        aria-controls="offcanvasRight" style="font-family: 'palaceFont'; font-size: 1.5rem; margin-left: 5px;"><i
+        aria-controls="offcanvasRight" style="font-family: 'palaceFont'; margin-left: 5px;"><i
           class="fa-solid fa-bars"></i></button>
     </div>
 
@@ -96,20 +94,26 @@
 
   <div id="slider">
     <div class="beeslide-container">
+      
+
       <div class="beeSlides beeslide-move-right" style="position: relative;">
-        <img src="assets/images/hotel/h_(1).webp">
+        <img src="assets/images/imagesNew/hotel/h_(1).webp">
       </div>
       <div class="beeSlides beeslide-move-right" style="position: relative;">
-        <img src="assets/images/hotel/h_(2).webp">
+        <img src="assets/images/imagesNew/hotel/h_(2).webp">
       </div>
       <div class="beeSlides beeslide-move-right" style="position: relative;">
-        <img src="assets/images/hotel/h_(3).webp">
+        <img src="assets/images/imagesNew/room_05.jpg">
       </div>
       <div class="beeSlides beeslide-move-right" style="position: relative;">
-        <img src="assets/images/hotel/h_(4).webp">
+        <img src="assets/images/imagesNew/hotel/h_(4).webp">
       </div>
       <div class="beeSlides beeslide-move-right" style="position: relative;">
-        <img src="assets/images/hotel/h_(5).webp">
+        <img src="assets/images/imagesNew/hotel/h_(5).webp">
+      </div>
+
+      <div class="beeSlides beeslide-move-right" style="position: relative;">
+        <img src="assets/images/imagesNew/home_sc.jpg">
       </div>
 
       <!-- <img class="beeSlides beeslide-move-right" src="assets/assets/images/hotel/h_(2).jpg" loading="lazy">
@@ -118,7 +122,7 @@
       <img class="beeSlides beeslide-move-right" src="assets/assets/images/hotel/h_(5).jpg" loading="lazy"> -->
       <!-- <img class="beeSlides beeslide-move-right" src="assets/assets/images/hotel/h_(2).jpg" loading="lazy"> -->
       <!-- <div class="beeSlides beeslide-move-right" style="background-color: black; color: aliceblue; font-size: 65px; display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;"><div style="background-color: black; color: aliceblue; font-size: 65px; display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;">Hello</div></div> -->
-      <button class="beeslide-button beeslide-black beeslide-left" onclick="plusDivs(this,-1)">
+      <button class="d-none d-md-block beeslide-button beeslide-black beeslide-left" onclick="plusDivs(this,-1)">
         <!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In  -->
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="991.9px" height="389.3px" viewBox="0 0 991.9 389.3"
@@ -156,7 +160,7 @@
 
 
       </button>
-      <button class="beeslide-button beeslide-black beeslide-right" onclick="plusDivs(this,1)">
+      <button class="d-none d-md-block beeslide-button beeslide-black beeslide-right" onclick="plusDivs(this,1)">
         <!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In  -->
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="992px" height="389.3px" viewBox="0 0 992 389.3"
@@ -249,13 +253,16 @@
         </div>
 
         <div class="col-md-6 order-0 order-md-1 mb-5 mb-md-0">
-          <div class="d-flex ms-0 ms-md-5" style="gap: 1.5rem;">
-            <div class="image-1 image-rectangle mt-5 mt-md-6" data-aos="slide-up" data-aos-delay="100">
-              <img src="assets/images/section_1_img2.jpg" alt="" class="img-fluid">
+          <div class="row">
+            <div class="col-md-6 mt-5 mt-md-5 image-rectangle">
+              <video width="100%" height="95%" muted playsinline loop autoplay>
+                <source src="assets/images/imagesNew/video_apropos.mp4" type="video/mp4">
+                <source src="assets/images/imagesNew/video_apropos.mkv" type="video/mkv">
+              </video>
             </div>
 
-            <div class="image-2 rectangle-shadow" data-aos="slide-up" data-aos-delay="400">
-              <img src="assets/images/section1_image3.jpg" alt="" class="img-fluid">
+            <div class="col-md-6 rectangle-shadow">
+              <img src="assets/images/imagesNew/section_1_img2.jpg" alt="Image Exemple" class=" img-fluid">
             </div>
           </div>
 
@@ -333,12 +340,12 @@ background-size: cover;">
       <div class="row mb-0 mb-md-4" data-aos="fade-in">
         <div class="col-md-4 mb-4 mb-md-0">
           <div class="card  rounded-0 overflow-hidden room-div">
-            <img src="assets/images/room_01.webp" class="card-img-top rounded-0 overflow-hidden" alt="...">
+            <img src="assets/images/imagesNew/room_01.webp" class="card-img-top rounded-0 overflow-hidden" alt="...">
             <div class="d-flex flex-column room-text-pos w-100 text-white">
 
 
               <p class="title-font fs-6 mb-2 fw-bold">À partir de 10.000 DA</p>
-              <p class="title-font fs-4 room-title">Chambre Double</p>
+              <p class="title-font fs-4 room-title">Chambre Grand Lit</p>
             </div>
 
             <div class="d-flex justify-content-between align-items-center room-buttons-pos w-100">
@@ -361,12 +368,12 @@ background-size: cover;">
 
         <div class="col-md-4 mb-4 mb-md-0">
           <div class="card rounded-0 overflow-hidden room-div">
-            <img src="assets/images/room_2.jpg" class="card-img-top rounded-0 overflow-hidden" alt="...">
+            <img src="assets/images/imagesNew/room_02.webp" class="card-img-top rounded-0 overflow-hidden" alt="...">
             <div class="d-flex flex-column room-text-pos w-100 text-white">
 
 
               <p class="title-font fs-6 mb-2 fw-bold">À partir de 15.000 DA</p>
-              <p class="title-font fs-4 room-title">Chambre Familiale</p>
+              <p class="title-font fs-4 room-title">Chambre Twin</p>
             </div>
 
             <div class="d-flex justify-content-between align-items-center room-buttons-pos w-100">
@@ -389,12 +396,12 @@ background-size: cover;">
 
         <div class="col-md-4 mb-4 mb-md-0">
           <div class="card rounded-0 overflow-hidden room-div">
-            <img src="assets/images/3.jpg" class="card-img-top rounded-0 overflow-hidden" alt="...">
+            <img src="assets/images/imagesNew/room_03.webp" class="card-img-top rounded-0 overflow-hidden" alt="...">
             <div class="d-flex flex-column room-text-pos w-100 text-white">
 
 
 
-              <p class="title-font fs-4 room-title">Chambre King</p>
+              <p class="title-font fs-4 room-title">Chambre Triple</p>
             </div>
 
             <div class="d-flex justify-content-between align-items-center room-buttons-pos w-100">
@@ -421,10 +428,10 @@ background-size: cover;">
           <div class="card  rounded-0 overflow-hidden room-div">
 
 
-            <img src="assets/images/room_4.jpg" class="card-img-top rounded-0 overflow-hidden" alt="...">
+            <img src="assets/images/imagesNew/room_4.jpg" class="card-img-top rounded-0 overflow-hidden" alt="...">
             <div class="d-flex flex-column room-text-pos3 w-100 text-white">
               <p class="title-font fs-6 mb-2 fw-bold">À partir de 30.000 DA</p>
-              <p class="title-font fs-4 room-title">Chambre Deluxe</p>
+              <p class="title-font fs-4 room-title">Suite Junior</p>
             </div>
 
             <div class="d-flex justify-content-between align-items-center room-buttons-pos2 w-100">
@@ -450,12 +457,12 @@ background-size: cover;">
 
 
 
-            <img src="assets/images/room_5.jpg" class="card-img-top rounded-0 overflow-hidden" alt="...">
+            <img src="assets/images/imagesNew/room_05.jpg" class="card-img-top rounded-0 overflow-hidden" alt="...">
             <div class="d-flex flex-column room-text-pos3 w-100 text-white">
 
 
               <p class="title-font fs-6 mb-2 fw-bold">À partir de 40.000 DA</p>
-              <p class="title-font fs-4 room-title">Chambre Gold</p>
+              <p class="title-font fs-4 room-title">Suite VIP</p>
             </div>
 
             <div class="d-flex justify-content-between align-items-center room-buttons-pos2 w-100">
@@ -481,13 +488,13 @@ background-size: cover;">
     </div>
   </section>
 
-  <section class="section" style="background-image: url('assets/images/restaurant_parallax4.jpg'); background-attachment: fixed;
-background-position: center;
+  <section class="section" style="background-image: url('assets/images/imagesNew/restaurant_parallax4.jpg'); background-attachment: fixed;
+background-position: top;
 background-repeat: no-repeat;
 background-size: cover; padding: 12rem 0;">
     <div class="container">
       <div class="d-flex justify-content-center align-items-center ">
-        <a href="" class="d-flex justify-content-center align-items-center title-font fw-bold scale-on-hover">
+        <a href="restaurants.html" class="d-flex justify-content-center align-items-center title-font fw-bold scale-on-hover">
           <img src="assets/images/cadre_restaurant.png" alt="" width="160">
         </a>
 
@@ -513,12 +520,12 @@ background-size: cover; padding: 12rem 0;">
 
         <div class="d-none d-md-flex align-items-stretch w-50 " data-aos="slide-right">
           <div class="">
-            <img src="assets/images/detente2.jpg" alt="" class="img-fluid h-100">
+            <img src="assets/images/imagesNew/detente2.jpg" alt="" class="img-fluid h-100">
           </div>
 
           <div
             class="d-none bg-primary text-white d-md-flex align-items-center justify-content-center p-4 padding-white negative-margin font-barlow">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, illum!
+            Détendez-vous dans notre salon orné de décorations agréables.
           </div>
         </div>
 
@@ -526,12 +533,12 @@ background-size: cover; padding: 12rem 0;">
 
 
         <div class="">
-          <img src="assets/images/detente.jpg" alt="" class="img-fluid" width="800">
+          <img src="assets/images/imagesNew/detente.jpg" alt="" class="img-fluid" width="800">
         </div>
       </div>
 
       <div class="d-block d-md-none mt-4 font-barlow">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, illum!
+        Détendez-vous dans notre salon orné de décorations agréables.
       </div>
     </div>
   </section>
@@ -543,7 +550,7 @@ background-repeat: no-repeat;
 background-size: cover; padding: 12rem 0;">
     <div class="container">
       <div class="d-flex justify-content-center align-items-center ">
-        <a href="" class="d-flex justify-content-center align-items-center title-font fw-bold scale-on-hover">
+        <a href="cafeteria.html" class="d-flex justify-content-center align-items-center title-font fw-bold scale-on-hover">
           <img src="assets/images/cadre_cafeteria.png" alt="" width="160">
         </a>
 
@@ -737,13 +744,11 @@ background-size: cover; padding: 12rem 0;">
               style="position: absolute; font-family: 'palaceFont'; color: white; font-size: 3rem; top: 60px; left: 22px;">
               <!-- Le confort est partout -->
             </div>
-            <img src="assets/images/hotel/h_(1).webp" alt="" class="img-fluid">
+            <img src="assets/images/imagesNew/hotel/h_(2).webp" alt="" class="img-fluid">
           </div>
-          <div class="swiper-slide"><img src="assets/images/hotel/h_(2).webp" alt="" class="img-fluid"></div>
-          <div class="swiper-slide"><img src="assets/images/hotel/h_(3).webp" alt="" class="img-fluid"></div>
-          <div class="swiper-slide"><img src="assets/images/hotel/h_(4).webp" alt="" class="img-fluid"></div>
-          <div class="swiper-slide"><img src="assets/images/hotel/h_(5).webp" alt="" class="img-fluid"></div>
-          <div class="swiper-slide"><img src="assets/images/hotel/h_(3).webp" alt="" class="img-fluid"></div>
+          <div class="swiper-slide"><img src="assets/images/imagesNew/hotel/h_(3).webp" alt="" class="img-fluid"></div>
+          <div class="swiper-slide"><img src="assets/images/imagesNew/room_05.jpg" alt="" class="img-fluid"></div>
+          <div class="swiper-slide"><img src="assets/images/imagesNew/hotel/h_(4).webp" alt="" class="img-fluid"></div>
 
 
         </div>
@@ -827,9 +832,7 @@ background-size: cover; padding: 12rem 0;">
     <div class="gallery-title">
       <div>Galerie</div>
       <div class="gallery-text">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
+        N'hésitez pas à jeter un oeil à notre galerie, vous y trouverez plusieurs captures de notre Hôtel.
       </div>
     </div>
   </div>
@@ -1207,7 +1210,7 @@ background-size: cover; padding: 12rem 0;">
     <div id="reservation-modal-content">
       <div style="width: 100%;background-color: beige;color: rgb(153, 99, 29);font-family: 'palaceFont', cursive;font-size: 3rem;
       padding: 12px; display: flex; justify-content: space-between; align-items: center;">
-        Félicitation
+        Félicitations
         <button id="closeReservation" class="btn bp-btn-close"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div style="position: relative;">
@@ -1329,7 +1332,7 @@ background-size: cover; padding: 12rem 0;">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
-  <script src="app.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 
 </html>

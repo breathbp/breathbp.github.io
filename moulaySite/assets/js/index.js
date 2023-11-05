@@ -372,3 +372,24 @@ function enableScroll() {
 }
 
 
+/*var $grid = $('.grid-masonry').masonry({
+    // options
+    itemSelector: '.grid-masonry-item',
+  });
+
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry('layout');
+  });
+*/
+/*$('#containerRosaliss').imagesLoaded( function() {
+    $('.grid-masonry').masonry({
+        itemSelector: '.grid-masonry-item'
+    });
+}); */
+
+/*$('#containerRosaliss').imagesLoaded().done(
+    $('.grid-masonry').masonry({
+        itemSelector: '.grid-masonry-item'
+    }));*/
+
+    /*Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => { var elem = document.querySelector('.grid'); var msnry = new Masonry( '.grid-masonry', { itemSelector: '.grid-masonry-item', }) });*/

@@ -18,7 +18,9 @@ body {
     display: none;
 }
 .beeSlides img{
-
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 .beeslide-right {
     position: absolute;
@@ -129,7 +131,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
     background-image: url('../images/akidhotel.png');
     background-position: center;
     background-size: contain;
