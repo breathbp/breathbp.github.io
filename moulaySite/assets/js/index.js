@@ -264,19 +264,27 @@ $(document).ready(function () {
         const checkInErrorSpan = chechInInput.nextElementSibling;
         const chechOutInput = document.getElementById("checkOutDate");
         const checkOutErrorSpan = chechOutInput.nextElementSibling;
+        let c1 = false;
+        let c2 = false;
         if (!chechInInput.validity.valid) {
             checkInErrorSpan.style.display = "initial";
+            c1 = false;
             // return;
         } else {
             checkInErrorSpan.style.display = "none";
+            c1 = true;
         }
         if (!chechOutInput.validity.valid) {
             checkOutErrorSpan.style.display = "initial";
+            c2 = false;
             // return;
         } else {
             checkOutErrorSpan.style.display = "none";
+            c2 = true;
         }
-        return;
+        if (!(c1 && c2)) {
+            return;
+        }
         //define url
         const url = '/reservation/submit';
         //get data from form by id
@@ -324,7 +332,7 @@ $(document).ready(function () {
         const clientPhoneInput = document.getElementById("clientPhoneNumber");
         if (!clientFirstNameInput.validity.valid) {
             c1 = false;
-            clientFirstNameInput.nextElementSibling.style.display = "initial"; 
+            clientFirstNameInput.nextElementSibling.style.display = "initial";
         } else {
             c1 = true;
             clientFirstNameInput.nextElementSibling.style.display = "none";
@@ -356,6 +364,8 @@ $(document).ready(function () {
         if (!(c1 && c2 && (c3 || c4))) {
             return;
         }
+        clientEmailInput.nextElementSibling.style.display = "none";
+        clientPhoneInput.nextElementSibling.style.display = "none";
         //////////////////////////////////////////////////////////////////////////////////////////////
         const formElement = document.getElementById('form2');
         const data = new FormData(formElement);
