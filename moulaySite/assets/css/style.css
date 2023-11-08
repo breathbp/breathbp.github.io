@@ -670,6 +670,12 @@ ul {
   padding-top: 4rem; padding-bottom: 4rem !important;
 }
 
+
+.py-big
+{
+  padding-top: 11rem; padding-bottom: 11rem !important;
+}
+
 .py-8
 {
   padding-top: 8rem; padding-bottom: 8rem !important;
@@ -1333,6 +1339,11 @@ h3.section-sub-title strong {
   gap: 24px;
 }
 
+.gap-five
+{
+  gap: 32px;
+}
+
 .icon-tourisme
 {
   height: 48px; width: 48px;
@@ -1340,6 +1351,11 @@ h3.section-sub-title strong {
 
 @media(max-width: 768px)
 {
+  .gap-five
+  {
+    gap: 24px;
+  }
+
   .icon-tourisme
   {
     height: 32px; width: 32px;
@@ -1468,4 +1484,40 @@ h3.section-sub-title strong {
 @media(max-width: 768px)
 {
   .grid-masonry-item { width: 40%; }
+}
+
+.blog-link
+{
+  color: black;
+}
+
+.blog-link:hover
+{
+  color: var(--primary);
+}
+
+.blog-title
+{
+  font-size: 48px !important;
+}
+
+.blog-content
+{
+  font-size: 18px;
+  line-height: 2rem;
+}
+
+.social-button-size
+{
+  height: 48px; width: 48px;
+}
+
+.social-button-size-small
+{
+  height: 32px; width: 32px;
+}
+
+.font-size-14
+{
+  font-size: 14px;
 }
