@@ -33,6 +33,7 @@ function introEnd() {
     $('#introDiv').animate({
         opacity: 0,
     }, 2200, function () {
+        $('#navbar-logo').hide();
         $('.intro-container').addClass('d-none');
         // $(this).addClass('d-none');
 
@@ -78,7 +79,7 @@ function introEnd() {
         // showSlides();
     });
     window.onscroll = function (e) {
-
+        console.log($(document).scrollTop());
         if ($(document).scrollTop() > 550) {
             $('#nav-bar').addClass('hidden-logo');
             if (this.oldScroll > this.scrollY) {
@@ -89,7 +90,6 @@ function introEnd() {
         } else {
             $('#nav-bar').removeClass('hidden-logo');
         }
-
         this.oldScroll = this.scrollY;
     };
     function animateTitle() {
@@ -121,7 +121,7 @@ function introEnd() {
         }
         slidePos++;
         if (slidePos > slides.length) { slidePos = 1 }
-        console.log(slides[slidePos - 1]);
+        // console.log(slides[slidePos - 1]);
         slides[slidePos - 1].style.display = "block";
         setTimeout(showSlides, 10000);
     }
@@ -209,13 +209,14 @@ $(document).ready(function () {
 
     $(document).on('click', '.trigger', function (event) {
         event.preventDefault();
-        $('#modal1').iziModal('setWidth', '1000px');
-        $('#modal').iziModal('setZindex', 99999);
+        document.getElementById("reservation-form").reset();
+        $('#modal3').iziModal('setWidth', '1000px');
+        $('#modal3').iziModal('setZindex', 99999);
         // $('#modal').iziModal('open', { zindex: 99999 });
-        $('#modal').iziModal('open');
+        $('#modal3').iziModal('open');
     });
     $(document).on('click', '#closeReservation', function () {
-        $('#modal4').iziModal('close');
+        $('#modal3').iziModal('close');
     })
 
     $("#modal2").iziModal({
@@ -259,6 +260,23 @@ $(document).ready(function () {
     ////////////////////////SUBMIT RESERVATION FORM//////////////////////////////
     //add click listner
     $(document).on('click', '#submitReservation', function () {
+        const chechInInput = document.getElementById("checkInDate");
+        const checkInErrorSpan = chechInInput.nextElementSibling;
+        const chechOutInput = document.getElementById("checkOutDate");
+        const checkOutErrorSpan = chechOutInput.nextElementSibling;
+        if (!chechInInput.validity.valid) {
+            checkInErrorSpan.style.display = "initial";
+            // return;
+        } else {
+            checkInErrorSpan.style.display = "none";
+        }
+        if (!chechOutInput.validity.valid) {
+            checkOutErrorSpan.style.display = "initial";
+            // return;
+        } else {
+            checkOutErrorSpan.style.display = "none";
+        }
+        return;
         //define url
         const url = '/reservation/submit';
         //get data from form by id
@@ -295,8 +313,51 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '#submitForm2', function () {
-        const formElement = document.getElementById('form2');
+        //validate inputs in form
+        var c1 = false;
+        var c2 = false;
+        var c3 = false;
+        var c4 = false;
+        const clientFirstNameInput = document.getElementById("clientFirstName");
+        const clientLastNameInput = document.getElementById("clientLastName");
+        const clientEmailInput = document.getElementById("clientEmail");
+        const clientPhoneInput = document.getElementById("clientPhoneNumber");
+        if (!clientFirstNameInput.validity.valid) {
+            c1 = false;
+            clientFirstNameInput.nextElementSibling.style.display = "initial"; 
+        } else {
+            c1 = true;
+            clientFirstNameInput.nextElementSibling.style.display = "none";
+        }
 
+        if (!clientLastNameInput.validity.valid) {
+            c2 = false;
+            clientLastNameInput.nextElementSibling.style.display = "initial";
+        } else {
+            c2 = true;
+            clientLastNameInput.nextElementSibling.style.display = "none";
+        }
+
+        if (!clientEmailInput.validity.valid) {
+            c3 = false;
+            clientEmailInput.nextElementSibling.style.display = "initial";
+        } else {
+            c3 = true;
+            clientEmailInput.nextElementSibling.style.display = "none";
+        }
+
+        if (!clientPhoneInput.validity.valid) {
+            c4 = false;
+            clientPhoneInput.nextElementSibling.style.display = "initial";
+        } else {
+            c4 = true;
+            clientPhoneInput.nextElementSibling.style.display = "none";
+        }
+        if (!(c1 && c2 && (c3 || c4))) {
+            return;
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        const formElement = document.getElementById('form2');
         const data = new FormData(formElement);
         const dataArray = [...data.entries()];
 
@@ -337,18 +398,18 @@ $(document).ready(function () {
     function generatePDF() {
         const page = document.getElementById('pdfBody');
         var opt = {
-            margin:       4,
-            filename:     'devis_final.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 1 },
-            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
+            margin: 4,
+            filename: 'devis_final.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 1 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
         };
         // Choose the element that our invoice is rendered in.
         html2pdf().set(opt).from(page).save();
-        };
-        $(document).on('click','.generatePdf',function(){
-            generatePDF();
-        });
+    };
+    $(document).on('click', '.generatePdf', function () {
+        generatePDF();
+    });
 
 });
 //AUTOMATIC SLIDE SHOW
@@ -392,4 +453,86 @@ function enableScroll() {
         itemSelector: '.grid-masonry-item'
     }));*/
 
-    /*Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => { var elem = document.querySelector('.grid'); var msnry = new Masonry( '.grid-masonry', { itemSelector: '.grid-masonry-item', }) });*/
+/*Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => { var elem = document.querySelector('.grid'); var msnry = new Masonry( '.grid-masonry', { itemSelector: '.grid-masonry-item', }) });*/
+
+
+//SET TODAY DATE AS MIN TO INPUT/////////////////////////////////////////////////////////////////
+var today = new Date();
+var tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+//FORMAT THE DATE
+if (dd < 10) {
+    dd = '0' + dd;
+}
+if (mm < 10) {
+    mm = '0' + mm;
+}
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById("checkInDate").setAttribute("min", today);
+dd = tomorrow.getDate();
+mm = tomorrow.getMonth() + 1; //January is 0!
+yyyy = tomorrow.getFullYear();
+//FORMAT THE DATE
+if (dd < 10) {
+    dd = '0' + dd;
+}
+if (mm < 10) {
+    mm = '0' + mm;
+}
+tomorrow = yyyy + '-' + mm + '-' + dd;
+document.getElementById("checkOutDate").setAttribute("min", tomorrow);
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// validating date input
+function verifDate(element) {
+    var value = element.value;
+    // User date
+    const inputDate = new Date(value);
+    // Current date
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+    // Compare the user date with the current date
+    if (inputDate < currentDate) {
+        element.style.backgroundColor = "rgb(241 154 158)";
+        // document.getElementById("submitResrvation").disabled = true;
+    } else {
+        element.style.backgroundColor = "rgb(154 241 167)";
+        // document.getElementById("submitResrvation").disabled = false;
+    }
+}
+function verifDateCheckout(element) {
+    var value = element.value;
+    var firstValue = document.getElementById("checkInDate");
+    // User date
+    const inputDate = new Date(value);
+    // First date
+    const firstDate = new Date();
+    // Compare the user date with the current date
+    if (inputDate <= firstDate) {
+        element.style.backgroundColor = "rgb(241 154 158)";
+        // document.getElementById("submitResrvation").disabled = true;
+    } else {
+        element.style.backgroundColor = "rgb(154 241 167)";
+        // document.getElementById("submitResrvation").disabled = false;
+    }
+}
+// const clientPhoneNumber = document.getElementById("clientPhoneNumber");
+// console.log(clientPhoneNumber);
+// clientPhoneNumber.addEventListener("input", (event) => {
+//     console.log("yes");
+//   if (clientPhoneNumber.validity.typeMismatch) {
+//     clientPhoneNumber.setCustomValidity("I am expecting an clientPhoneNumber address!");
+//   } else {
+//     clientPhoneNumber.setCustomValidity("");
+//   }
+// });
+function resetReservationForm() {
+    // const chechInInput = document.getElementById("checkInDate");
+    const checkInErrorSpan = document.getElementById("checkInDate").nextElementSibling;
+    // const chechOutInput = document.getElementById("checkOutDate");
+    const checkOutErrorSpan = document.getElementById("checkOutDate").nextElementSibling;
+    checkInErrorSpan.style.display = "none";
+    checkOutErrorSpan.style.display = "none";
+}

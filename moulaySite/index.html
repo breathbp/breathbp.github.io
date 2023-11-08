@@ -49,7 +49,7 @@
   <div id="reservation-button-video" style="position: fixed; z-index: 9999; top: 10px; right: 10px;">
     <div class="d-flex align-items-center " style="margin-right: 10px;">
       <button type="button" class="btn btn-reservation trigger"
-        style="font-family: 'palaceFont';">Réserver</button>
+        style="font-family: 'palaceFont';">Réserveration</button>
       <button type="button" class="btn btn-gold" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
         aria-controls="offcanvasRight" style="font-family: 'palaceFont'; margin-left: 5px;"><i
           class="fa-solid fa-bars"></i></button>
@@ -71,7 +71,7 @@
              display: none;">
     <div class="d-flex align-items-center onvideo-buttons" style="margin-right: 10px;">
       <button type="button" class="btn btn-reservation trigger"
-        style="font-family: 'palaceFont'; ">Réserver</button>
+        style="font-family: 'palaceFont'; ">Réserveration</button>
       <button type="button" class="btn btn-gold" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
         aria-controls="offcanvasRight" style="font-family: 'palaceFont'; margin-left: 5px;"><i
           class="fa-solid fa-bars"></i></button>
@@ -94,7 +94,7 @@
 
   <div id="slider">
     <div class="beeslide-container">
-      
+
 
       <div class="beeSlides beeslide-move-right" style="position: relative;">
         <img src="assets/images/imagesNew/hotel/h_(1).webp">
@@ -494,7 +494,8 @@ background-repeat: no-repeat;
 background-size: cover; padding: 12rem 0;">
     <div class="container">
       <div class="d-flex justify-content-center align-items-center ">
-        <a href="restaurants.html" class="d-flex justify-content-center align-items-center title-font fw-bold scale-on-hover">
+        <a href="restaurants.html"
+          class="d-flex justify-content-center align-items-center title-font fw-bold scale-on-hover">
           <img src="assets/images/cadre_restaurant.png" alt="" width="160">
         </a>
 
@@ -550,7 +551,8 @@ background-repeat: no-repeat;
 background-size: cover; padding: 12rem 0;">
     <div class="container">
       <div class="d-flex justify-content-center align-items-center ">
-        <a href="cafeteria.html" class="d-flex justify-content-center align-items-center title-font fw-bold scale-on-hover">
+        <a href="cafeteria.html"
+          class="d-flex justify-content-center align-items-center title-font fw-bold scale-on-hover">
           <img src="assets/images/cadre_cafeteria.png" alt="" width="160">
         </a>
 
@@ -936,31 +938,36 @@ background-size: cover; padding: 12rem 0;">
     <!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
     <!-- Modal content -->
     <div id="reservation-modal-content">
-      <div style="width: 100%;background-color: beige;color: rgb(153, 99, 29);font-family: 'palaceFont', cursive;font-size: 3rem;
+
+      <div style="width: 100%;background-color: beige;color: rgb(153, 99, 29);font-family: 'palaceFont', cursive;font-size: 2rem;
       padding: 12px; display: flex; justify-content: space-between; align-items: center;">
         Réservation de chambres
         <button id="closeReservation" class="btn bp-btn-close"><i class="fa-solid fa-xmark"></i></button>
       </div>
+      <!-- RESERVATION FORM -->
+
       <div style="position: relative;">
         <div class="background-text-div">
           <img src="assets/assets/images/akidback.svg" alt="background" style="width: 95%;">
         </div>
-        <form id="reservation-form">
+        <form id="reservation-form" onreset="resetReservationForm()">
           <div class="px-3">
             <div class="d-flex justify-content-center">
               <div class="form-group mb-3 ">
                 <span class="bp-form-label">Arrivé</span>
-                <input type="date" class="form-input" placeholder="">
+                <input id="checkInDate" type="date" class="form-input verify-input" placeholder="" required>
+                <span class="error-span"><i class="fa-solid fa-triangle-exclamation"></i> Date non valide</span>
               </div>
 
               <div class="form-group mb-3 ">
                 <span class="bp-form-label">Départ</span>
-                <input type="date" class="form-input" placeholder="">
+                <input id="checkOutDate" type="date" class="form-input verify-input" placeholder="" required>
+                <span class="error-span"><i class="fa-solid fa-triangle-exclamation"></i> Date non valide</span>
               </div>
 
             </div>
 
-            <div class="d-flex">
+            <div class="d-flex justify-content-center">
               <div class="form-group mb-3">
                 <span class="bp-form-label">Nbr d'adultes</span>
                 <div class="d-flex">
@@ -995,7 +1002,7 @@ background-size: cover; padding: 12rem 0;">
 
                   <input type="number" class="form-input" placeholder="Nbre de personnes" id="roomCount"
                     style="width: 50px; text-align: center; border: 2px 0px #99631d solid; border-radius: unset;"
-                    value="1" min="1">
+                    value="1" min="1" max="25">
 
                   <button type="button" class="increment-input"><i class="fa-solid fa-plus"></i></i></button>
                 </div>
@@ -1021,7 +1028,7 @@ background-size: cover; padding: 12rem 0;">
 
           </div>
           <div class="d-flex justify-content-end m-3">
-            <button type="button" id="submitResrvation" class="btn btn-gold bp-btn-submit">Soumettre</button>
+            <button type="button" id="submitReservation" class="btn btn-gold bp-btn-submit">Envoyer</button>
           </div>
         </form>
         <div class="d-flex mx-2 mb-2 justify-content-end">
@@ -1031,97 +1038,133 @@ background-size: cover; padding: 12rem 0;">
               class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </div>
+
+      <!-- QR CODE AFTER SENDING FORM -->
+      <!-- <div class="d-flex">
+        <div class="d-flex p-3 justify-content-center align-items-center" style="width: 50%;">
+          <p class="simple-text text-centred">Veuillez conserver ce code pour consulter l'état d'avancement de votre
+            demande.</p>
+        </div>
+        <div class="d-flex p-3 flex-column align-items-center" style="width: 50%;">
+          <div id="qrcode" style="height: 250px; width: 250px; background-color: darkgrey;"></div>
+          <p style="font-size: 22px; font-weight: bold;">CODE</p>
+        </div>
+      </div> -->
     </div>
   </div>
 
   <div id="modal2">
     <!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
     <!-- Modal content -->
-    <div style="width: 100%;background-color: beige;color: rgb(153, 99, 29);font-family: 'palaceFont', cursive;font-size: 3rem;
+    <div style="width: 100%;background-color: beige;color: rgb(153, 99, 29);font-family: 'palaceFont', cursive;font-size: 2rem;
       padding: 12px; display: flex; justify-content: space-between; align-items: center;">
-      Devis N°0005/23
+      Réservation en attente de confirmation
       <button class="btn bp-btn-close" data-izimodal-close="#modal2"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div style="position: relative;">
       <div class="background-text-div">
         <img src="assets/assets/images/akidback.svg" alt="background" style="width: 95%;">
       </div>
-      <div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col"># Item</th>
-              <th scope="col">Désignation</th>
-              <th># de jours</th>
-              <th scope="col">Unité</th>
-              <th scope="col">Qte</th>
-              <th scope="col">Montant avant remise</th>
-              <th scope="col">Montant remise</th>
-              <th scope="col">Montant aptés remise</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Réservation de chambre simple 1 adulte</td>
-              <td>7 jrs</td>
-              <td>Un</td>
-              <td>1</td>
-              <td>6000 DA</td>
-              <td>1200 DA</td>
-              <td>4800 DA</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Réservation de suite 2 adultes</td>
-              <td>7 jrs</td>
-              <td>Un</td>
-              <td>1</td>
-              <td>12 000 DA</td>
-              <td>2000 DA</td>
-              <td>10 000 DA</td>
-            </tr>
-            <tr>
-              <td colspan="6"></td>
-              <td>Sous-total AVR</td>
-              <td><strong>18 000 DA</strong></td>
-            </tr>
-            <tr>
-              <td colspan="6"></td>
-              <td>Montant remise</td>
-              <td><strong>3 200 DA</strong></td>
-            </tr>
-            <tr>
-              <td colspan="6"></td>
-              <td>Sous-total APR</td>
-              <td><strong>14 800 DA</strong></td>
-            </tr>
-            <tr>
-              <td colspan="6"></td>
-              <td>TVA 19%</td>
-              <td><strong>2 812 DA</strong></td>
-            </tr>
-            <tr>
-              <td colspan="6"></td>
-              <td><strong>TTC</strong></td>
-              <td><strong>17 612 DA</strong></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="client-info-div">
+        <div id="pdfBody">
+          <div class="devis-title">Devis N°: 2023/0003</div>
+          <div class="client-info-line" style="text-align: end;">Date: <span>28-08-2023</span></div>
+          <div class="client-info-line">Nom: <span>Non fournie</span></div>
+          <div class="client-info-line">Prénom: <span>Non fournie</span></div>
+          <div class="client-info-line">Mobile: <span>Non fournie</span></div>
+          <div class="client-info-line">Email: <span>Non fournie</span></div>
+          <div class="devis-title">Devis</div>
+
+          <table class="table bp-table">
+            <thead>
+              <tr>
+                <th scope="col"># Item</th>
+                <th scope="col">Désignation</th>
+                <th># de jours</th>
+                <th scope="col">Unité</th>
+                <th scope="col">Qte</th>
+                <th scope="col">P.U</th>
+                <th scope="col">Remise</th>
+                <th scope="col">P.A.R</th>
+                <th scope="col">S.T</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Réservation de chambre simple 1 adulte</td>
+                <td>7 jrs</td>
+                <td>Un</td>
+                <td>1</td>
+                <td>6000 DA</td>
+                <td>6000 DA</td>
+                <td>1200 DA</td>
+                <td>4800 DA</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Réservation de suite 2 adultes</td>
+                <td>7 jrs</td>
+                <td>Un</td>
+                <td>1</td>
+                <td>6000 DA</td>
+                <td>12 000 DA</td>
+                <td>2000 DA</td>
+                <td>10 000 DA</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-between">
+            <div class="qr-code-div">
+              <img src="assets/images/qr.png" alt="">
+              <div>P6rTub</div>
+            </div>
+            <table class="table" style="width: 50%;">
+              <tbody>
+                <tr>
+                  <td>Total AV.R</td>
+                  <td><strong>18 000 DA</strong></td>
+                </tr>
+                <tr>
+                  <td>Remise globale</td>
+                  <td><strong>3 200 DA</strong></td>
+                </tr>
+                <tr>
+                  <td>Total AP.R</td>
+                  <td><strong>14 800 DA</strong></td>
+                </tr>
+                <tr>
+                  <td>TVA 19%</td>
+                  <td><strong>2 812 DA</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>TTC</strong></td>
+                  <td><strong>17 612 DA</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <!-- <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-gold generatePdf mx-1"><i class="fa-solid fa-file-arrow-down"></i>
+            PDF</button>
+          <button type="button" class="btn btn-gold mx-1" id="closeReservation"> Fermer</button>
+        </div> -->
       </div>
       <div class="d-flex justify-content-end m-3">
-        <button id="closeReservation" class="btn btn-gold bp-btn-submit btn-confirm-devis">Confirmer</button>
+        <button id="closeReservation" class="btn btn-gold bp-btn-submit btn-confirm-devis">Confirmer la
+          réservation</button>
       </div>
     </div>
-
   </div>
 
   <div id="modal3">
     <!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
     <!-- Modal content -->
-    <div style="width: 100%;background-color: beige;color: rgb(153, 99, 29);font-family: 'palaceFont', cursive;font-size: 3rem;
+    <div style="width: 100%;background-color: beige;color: rgb(153, 99, 29);font-family: 'palaceFont', cursive;font-size: 2rem;
       padding: 12px; display: flex; justify-content: space-between; align-items: center;">
-      Confirmation
+      Veuillez renseigner les informations suivantes
       <button class="btn bp-btn-close" data-izimodal-close="#modal3"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div style="position: relative;">
@@ -1132,25 +1175,37 @@ background-size: cover; padding: 12rem 0;">
         <form id="form2">
           <div class="d-flex justify-content-center">
             <div class="form-group mb-1 ">
-              <span class="bp-form-label">Nom</span>
-              <input type="text" class="form-input left-input" placeholder="">
+              <span class="bp-form-label">Nom <span style="color: rgb(230, 92, 92); font-weight: bolder;">
+                  *</span></span>
+              <input id="clientLastName" type="text" class="form-input left-input verify-input" placeholder="" required>
+              <span class="error-span"><i class="fa-solid fa-triangle-exclamation"></i> Champ obligatoire</span>
             </div>
             <div class="form-group mb-1 ">
-              <span class="bp-form-label">Prénom</span>
-              <input type="text" class="form-input left-input" placeholder="">
+              <span class="bp-form-label">Prénom<span style="color: rgb(230, 92, 92); font-weight: bolder;">
+                  *</span></span>
+              <input id="clientFirstName" type="text" class="form-input left-input verify-input" placeholder="" required>
+              <span class="error-span"><i class="fa-solid fa-triangle-exclamation"></i> Champ obligatoire</span>
             </div>
           </div>
           <div class="d-flex justify-content-center">
             <div class="form-group mb-1 ">
               <span class="bp-form-label">E-mail</span>
-              <input type="email" class="form-input left-input" placeholder="user@provider.com">
+              <input id="clientEmail" type="email" class="form-input left-input verify-input" placeholder="user@provider.com" required>
+              <span class="error-span"><i class="fa-solid fa-triangle-exclamation"></i> email non valide</span>
             </div>
-            <div class="form-group mb-1 ">
+            <div class="d-flex align-items-end">
+              <p style="font-family: 'Tangerine', cursive;font-size: 36px;color: #d7b14c; margin: 0;">Et / Ou</p>
+            </div>
+            <div class="form-group mb-1 cl123">
               <span class="bp-form-label">N° mobile</span>
-              <input type="tel" class="form-input left-input" placeholder="">
+              <input id="clientPhoneNumber" type="tel" class="form-input left-input verify-input" placeholder=""
+                pattern="[+]{0,1}[0-9]{3,15}" oninput="verifyInput(this)" required>
+                <span class="error-span"><i class="fa-solid fa-triangle-exclamation"></i> N° non valide</span>
             </div>
           </div>
-          <button type="button" id="addUserDocument">+</button>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-gold sm-btn" type="button" id="addUserDocument">+ Ajouter un document</button>
+          </div>
           <div id="userDocumentDiv" style="height: 300px; overflow-y: scroll;">
             <div class="d-flex justify-content-center userDocument" id="userDocument">
 
@@ -1163,7 +1218,7 @@ background-size: cover; padding: 12rem 0;">
                 </select>
               </div>
               <div class="form-group mb-1 ">
-                <span class="bp-form-label">Upload</span>
+                <span class="bp-form-label">Charger</span>
                 <div class="d-flex" style="gap: 10px;">
                   <input type="file" class="form-input left-input" placeholder="">
                   <button class="btn btn-danger removeDocument d-none">X</button>
@@ -1195,8 +1250,15 @@ background-size: cover; padding: 12rem 0;">
 
 
 
-          <div class="d-flex justify-content-end m-3">
-            <button type="button" id="submitForm2" class="btn btn-gold bp-btn-submit">Envoyer</button>
+          <div class="d-flex justify-content-between p-3"
+            style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <div>
+              <p class="simple-text" style="color: rgb(230, 92, 92);">- Le livret de
+                famille obligatoire pour les couples.</p>
+              <p class="simple-text">- Les champs marqués par<span
+                  style="color: rgb(230, 92, 92); font-weight: bolder;"> * </span>sont obligatoires</p>
+            </div>
+            <button type="button" id="submitForm2" class="btn btn-gold bp-btn-submit">Envoyer les informations</button>
           </div>
         </form>
       </div>
@@ -1299,7 +1361,8 @@ background-size: cover; padding: 12rem 0;">
 
           </div>
           <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-gold generatePdf mx-1"><i class="fa-solid fa-file-arrow-down"></i> PDF</button>
+            <button type="button" class="btn btn-gold generatePdf mx-1"><i class="fa-solid fa-file-arrow-down"></i>
+              PDF</button>
             <button type="button" class="btn btn-gold mx-1" id="closeReservation"> Fermer</button>
           </div>
         </div>
