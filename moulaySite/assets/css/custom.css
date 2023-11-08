@@ -510,6 +510,7 @@ a {
   font-size: 2rem;
   font-weight: bold;
 }
+/* ADDED STYLES ///////////////////////////////////////////////////////////////////////////////*/
 .simple-text{
   font-family: 'Architects Daughter', cursive; 
   font-style: italic; 
@@ -521,17 +522,6 @@ a {
 }
 .sm-btn{
   font-size: 16px !important;
-}
-.verify-input:invalid {
- /* background-color: rgb(241 154 158); */
-}
-
-.verify-input:invalid:required {
- /* background-color: rgb(241 154 158); */
-}
-
-.verify-input:valid {
-  /* background-color:  rgb(154 241 167); */
 }
 .error-span{
   background-color: rgb(241 154 158); 
