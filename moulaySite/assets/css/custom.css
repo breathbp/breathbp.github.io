@@ -191,17 +191,19 @@ a {
 .increment-input {
   background-color: #f5f5dc;
   color: #99631d;
-  border: 2px #99631d solid;
+  border: 1px #99631d solid;
   /* border-radius: 0 5px 5px 0; */
   width: 25px;
+  text-align: center;
 }
 
 .decrement-input {
   background-color: #f5f5dc;
   color: #99631d;
-  border: 2px #99631d solid;
+  border: 1px #99631d solid;
   /* border-radius: 5px 0 0 5px; */
   width: 25px;
+  text-align: center;
 }
 
 .bp-btn-submit {
@@ -507,4 +509,37 @@ a {
   align-items: center;
   font-size: 2rem;
   font-weight: bold;
+}
+.simple-text{
+  font-family: 'Architects Daughter', cursive; 
+  font-style: italic; 
+  margin: 0;
+}
+.text-centred{
+  text-align: center;
+  font-size: 20px;
+}
+.sm-btn{
+  font-size: 16px !important;
+}
+.verify-input:invalid {
+ /* background-color: rgb(241 154 158); */
+}
+
+.verify-input:invalid:required {
+ /* background-color: rgb(241 154 158); */
+}
+
+.verify-input:valid {
+  /* background-color:  rgb(154 241 167); */
+}
+.error-span{
+  background-color: rgb(241 154 158); 
+  padding: 5px; 
+  border-radius: 5px; 
+  color: #9e6625; 
+  margin-top: 2px; 
+  display: none;
+  font-size: 12px;
+  text-align: center;
 }
