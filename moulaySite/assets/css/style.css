@@ -1486,6 +1486,27 @@ h3.section-sub-title strong {
 @media(max-width: 768px)
 {
   .grid-masonry-item { width: 40%; }
+
+  #modal, #modal2, #modal3, #modal4
+  {
+   /* width: 95%; height: 100%;*/
+    /*padding: 0 3rem;*/
+  }
+
+  .modal-padding
+  {
+    padding: 0 1rem !important;
+  }
+
+  .table-modal
+  {
+    width: 100% !important;
+  }
+}
+
+.table-modal
+{
+  width: 50%;
 }
 
 .blog-link
