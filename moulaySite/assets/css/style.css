@@ -245,6 +245,11 @@ transform: translateX(-50%);
 
     /*display: none;*/
   }
+
+  .btn-reservation
+  {
+    font-size: 23px !important;
+  }
 }
 
 .image-rectangle {
