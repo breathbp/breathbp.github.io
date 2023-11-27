@@ -1553,7 +1553,7 @@ h3.section-sub-title strong {
   font-size: 14px;
 }
 
-video {
+.video-main {
   height: 100vh;
   width: 100%;
   object-fit: cover;
