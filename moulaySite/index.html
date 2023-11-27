@@ -939,7 +939,7 @@ background-size: cover; padding: 12rem 0;">
         </div>
         <form id="reservation-form" onreset="resetReservationForm()">
           <div class="px-3">
-            <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column flex-lg-row justify-content-center">
               <div class="form-group mb-3 ">
                 <span class="bp-form-label">Arrivé</span>
                 <input id="checkInDate" type="date" class="form-input verify-input" placeholder="" required>
@@ -1018,7 +1018,7 @@ background-size: cover; padding: 12rem 0;">
             <button type="button" id="submitReservation" class="btn btn-gold bp-btn-submit">Envoyer</button>
           </div>
         </form>
-        <div class="d-flex mx-2 mb-2 justify-content-end">
+        <div class="d-flex flex-column flex-lg-row mx-2 mb-2 justify-content-end">
           <span class="bp-form-label">Suivre une demande</span>
           <input class="form-input mx-2" type="text">
           <button type="button" class="btn btn-gold btn-devis" style="font-family: 'palaceFont'; font-size: 1.5rem;"><i
@@ -1237,7 +1237,7 @@ background-size: cover; padding: 12rem 0;">
 
 
 
-          <div class="d-flex justify-content-between p-3"
+          <div class="d-flex flex-column flex-lg-row justify-content-between p-3"
             style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <div>
               <p class="simple-text" style="color: rgb(230, 92, 92);">- Le livret de
@@ -1315,12 +1315,12 @@ background-size: cover; padding: 12rem 0;">
                 </tr>
               </tbody>
             </table>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column flex-lg-row justify-content-between">
               <div class="qr-code-div">
                 <img src="assets/images/qr.png" alt="">
                 <div>P6rTub</div>
               </div>
-              <table class="table" style="width: 50%;">
+              <table class="table table-modal">
                 <tbody>
                   <tr>
                     <td>Total AV.R</td>
