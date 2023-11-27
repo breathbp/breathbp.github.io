@@ -234,16 +234,16 @@ transform: translateX(-50%);
 @media(max-width: 768px)
 {
   .image-rectangle:after {
-    /*content: '';
+    content: '';
     position: absolute;
-    right: 0.8rem !important;
-    bottom: -1rem !important;
+    right: 1.3rem !important;
+    bottom: -0rem !important;
     border: 2px solid var(--primary);
     width: 100%;
     height: 100%;
-    z-index: 2;*/
+    z-index: 2;
 
-    display: none;
+    /*display: none;*/
   }
 }
 
